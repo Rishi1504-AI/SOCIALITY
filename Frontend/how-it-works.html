@@ -58,89 +58,59 @@
     <div class="text-center text-xs text-on-surface-variant font-label-md uppercase tracking-wider">hello@sociality.ai</div>
   </div>
 </div><main class="w-full pt-28 bg-background"><div class="flex flex-col w-full">
-<section class="relative w-full overflow-hidden bg-background py-section-gap">
-<div class="w-full px-6 md:px-12 lg:px-16">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-6 flex flex-col gap-8">
-<span class="font-label-md text-label-md text-primary uppercase tracking-widest [writing-mode:horizontal-tb] lg:[writing-mode:vertical-rl] lg:absolute lg:left-8 lg:top-1/4 lg:transform lg:-rotate-180">The Process</span>
-<h1 class="font-display-lg text-display-lg text-on-background max-w-2xl leading-tight">
-            Everything Your Business Needs.<br/>
-<span class="text-tertiary">One Digital Partner.</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-            Designed for speed. Built for growth. Optimized for results. We take the complexity out of digital transformation, delivering solutions that are as elegant as they are effective.
-          </p>
-<div class="flex flex-col gap-6 mt-8">
-<div class="flex items-start gap-6 group">
-<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<!-- HOW IT WORKS SECTION (WebGL Capabilities Ecosystem) -->
+<div id="how-it-works" class="scroll-mt-28 lg:scroll-mt-32 w-full bg-[#0d0c0a] text-[#fff6de] py-20 lg:py-28 relative overflow-hidden border-t border-b border-[#fff6de]/5">
+  <!-- Starfield / Energy Dust Overlay -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+  
+  <!-- Content Grid -->
+  <div class="w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 min-h-[75vh]">
+    
+    <!-- Left Column: Storytelling Copy -->
+    <div class="col-span-1 lg:col-span-5 flex flex-col gap-6 text-left relative z-20">
+      <span class="font-label-md text-sm text-[#F48F68] uppercase tracking-widest font-bold">Capabilities System</span>
+      <h2 class="font-display-lg text-4xl lg:text-5xl text-[#fff6de] leading-tight font-bold">
+        Everything Your Business Needs.<br/>
+        <span class="text-[#F48F68]">One Digital Partner.</span>
+      </h2>
+      <p class="font-body-md text-[#cec6b0] leading-relaxed max-w-md">
+        Designed for speed. Built for growth. Powered by AI. Optimized for results. 
+        We organize all of your digital needs into one unified ecosystem.
+      </p>
+      <div class="flex items-center gap-3 mt-4 text-[#cec6b0]/70 text-xs font-label-md">
+        <span class="material-symbols-outlined text-sm animate-pulse text-[#F48F68]">explore</span>
+        <span>Hover to inspect. Click any pillar to reveal roadmap details.</span>
+      </div>
+    </div>
+    
+    <!-- Right Column: Interactive Sandbox -->
+    <div class="col-span-1 lg:col-span-7 relative w-full h-[500px] lg:h-[650px] flex items-center justify-center">
+      <!-- WebGL Canvas Container -->
+      <div id="webgl-ecosystem-container" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"></div>
+      
+      <!-- Glassmorphic Information Card -->
+      <div id="ecosystem-detail-card" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 max-w-[95%] bg-[#1c1a16]/90 border border-[#fff6de]/15 rounded-2xl p-6 shadow-[0_24px_50px_rgba(0,0,0,0.7)] backdrop-blur-2xl opacity-0 scale-95 pointer-events-none transition-all duration-500 z-30 flex flex-col gap-4">
+        <button id="close-detail-card" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center bg-[#fff6de]/5 hover:bg-[#fff6de]/10 border border-[#fff6de]/10 text-[#fff6de] transition-colors">
+          <span class="material-symbols-outlined text-sm">close</span>
+        </button>
+        <div class="flex items-center gap-3 pt-2">
+          <div id="detail-card-icon-container" class="w-11 h-11 rounded-full bg-[#F48F68]/15 border border-[#F48F68]/30 flex items-center justify-center text-[#F48F68] shrink-0">
+            <span id="detail-card-icon" class="material-symbols-outlined text-xl">devices</span>
+          </div>
+          <div class="flex flex-col text-left">
+            <span id="detail-card-category" class="text-[9px] font-label-md text-[#cec6b0] uppercase tracking-wider">Web Architecture</span>
+            <h4 id="detail-card-title" class="font-headline-sm text-sm text-[#fff6de] font-bold">More Than a Website</h4>
+          </div>
+        </div>
+        <div class="h-px bg-[#fff6de]/10"></div>
+        <p id="detail-card-desc" class="text-xs text-[#ccc6ba] text-left leading-relaxed">
+          High-performance digital experiences tailored to your business goals. Engineered to convert visitors into customers.
+        </p>
+      </div>
+    </div>
+    
+  </div>
 </div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">More Than a Website</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">High-performance solutions tailored to your unique business objectives, designed to convert and engage.</p>
-</div>
-</div>
-<div class="flex items-start gap-6 group">
-<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_heart</span>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Fully Managed</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Hassle-free setup and ongoing maintenance. You focus on your business; we handle the digital heavy lifting.</p>
-</div>
-</div>
-<div class="flex items-start gap-6 group">
-<div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Modern &amp; Scaleable</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Built on robust, future-proof architectures that grow seamlessly alongside your expanding ambitions.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="lg:col-span-6 relative mt-12 lg:mt-0">
-<div class="absolute inset-0 bg-secondary-fixed/20 blur-[100px] rounded-full transform -translate-x-1/4 -translate-y-1/4"></div>
-<div class="absolute inset-0 bg-tertiary-fixed/20 blur-[100px] rounded-full transform translate-x-1/4 translate-y-1/4"></div>
-<div class="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-surface p-4 z-10">
-<img alt="Website workflow and process illustration" class="w-full h-auto object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG9Mqi0Xvl2-6PBr3oUDuJCFyPd3X2bUfD2SYsrQamOqFzI5ParLImouFFSsOYyCAHeAyap_Y8tbcH851NN2bGC2VqkZ4NSJTM_8YRrApT2zrSwUDqARPLHuwgAfEDxtpCCBR5fhjoYAG0iquDPky_JumJwnV_dYBp2TnXE1FLhTFyyAy_QhQAPiQ-7BRPZPzI-OdqbWDd9qst4Cxcyou6LCDYlx_1BHIQEvxIpqQ9ZbZjbTVg8J3w_aDLY0NjMWqKcA"/>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="w-full bg-surface-container-low py-section-gap">
-<div class="w-full px-6 md:px-12 lg:px-16">
-<div class="flex flex-col items-center text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">A Seamless Journey</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">From initial consultation to final launch, our process is transparent, collaborative, and entirely focused on your success.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="bg-surface p-card-padding rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group">
-<div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
-<span class="font-headline-md text-headline-md">01</span>
-</div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface mb-3">Discovery</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">We dive deep into your brand, audience, and goals to map out a strategic blueprint for your digital presence.</p>
-</div>
-<div class="bg-surface p-card-padding rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group mt-0 md:mt-8">
-<div class="w-16 h-16 rounded-full bg-secondary/10 text-secondary flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-300">
-<span class="font-headline-md text-headline-md">02</span>
-</div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface mb-3">Design &amp; Build</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Our creative and technical teams bring the blueprint to life, crafting pixel-perfect interfaces and robust backend systems.</p>
-</div>
-<div class="bg-surface p-card-padding rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group mt-0 md:mt-16">
-<div class="w-16 h-16 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center mb-6 group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors duration-300">
-<span class="font-headline-md text-headline-md">03</span>
-</div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface mb-3">Launch &amp; Scale</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">We deploy your solution with precision and provide ongoing support to ensure sustained growth and performance.</p>
-</div>
-</div>
-</div>
-</section>
 </div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant pt-section-gap pb-12">
   <div class="w-full px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
     <div class="space-y-4">
@@ -176,4 +146,484 @@
       <span>Terms of Service</span>
     </div>
   </div>
-</footer><script src="nav-controller.js"></script>\n</body></html>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  console.log("Sociality AI: WebGL Ecosystem script loaded on how-it-works.html!");
+
+  const PILLARS_DATA = [
+    { id: 1, category: "Web Tech", icon: "devices", title: "More Than a Website", geometry: "icosahedron", material: "glass", desc: "High-performance digital experiences tailored to your business goals. Every website is engineered to convert visitors into customers while delivering exceptional speed, usability, and long-term value." },
+    { id: 2, category: "Infrastructure", icon: "settings_heart", title: "Fully Managed", geometry: "torus", material: "gold", desc: "From deployment and maintenance to updates, monitoring, and ongoing optimization—we handle everything so you can focus entirely on growing your business." },
+    { id: 3, category: "Web Tech", icon: "architecture", title: "Modern & Scalable", geometry: "cubes", material: "chrome", desc: "Built with modern technologies and modular architecture that effortlessly scales as your company grows, ensuring long-term flexibility and performance." },
+    { id: 4, category: "AI & Automation", icon: "smart_toy", title: "AI Powered Automation", geometry: "neural_sphere", material: "holographic", desc: "Automate repetitive operations, customer support, lead qualification, appointment booking, and internal workflows with intelligent AI agents operating around the clock." },
+    { id: 5, category: "Optimization", icon: "speed", title: "Lightning Fast Performance", geometry: "lightning", material: "electric", desc: "Every millisecond matters. We optimize loading speed, rendering performance, caching, and delivery to create lightning-fast digital experiences that improve SEO and conversions." },
+    { id: 6, category: "Marketing", icon: "search", title: "SEO Optimized", geometry: "arrow", material: "emerald", desc: "Technical SEO built into the foundation, helping your website rank higher, attract organic traffic, and outperform competitors." },
+    { id: 7, category: "Optimization", icon: "ads_click", title: "Conversion Focused", geometry: "target", material: "ruby", desc: "Every layout, interaction, and user journey is strategically crafted to maximize leads, inquiries, bookings, and sales." },
+    { id: 8, category: "Web Tech", icon: "smartphone", title: "Mobile First", geometry: "slab", material: "sapphire", desc: "Designed mobile-first to ensure flawless experiences across smartphones, tablets, laptops, and desktops." },
+    { id: 9, category: "Security", icon: "security", title: "Secure by Default", geometry: "shield", material: "clay", desc: "Enterprise-grade security practices protect your infrastructure, customer data, APIs, and digital assets against modern threats." },
+    { id: 10, category: "Web Tech", icon: "edit_note", title: "Easy Content Management", geometry: "document", material: "glass", desc: "Empower your team with intuitive content management systems that make updates effortless without touching code." },
+    { id: 11, category: "Analytics", icon: "analytics", title: "Analytics & Insights", geometry: "cluster", material: "gold", desc: "Track user behavior, conversions, traffic, and business performance with intelligent analytics that turn data into actionable decisions." },
+    { id: 12, category: "Infrastructure", icon: "cloud_done", title: "Scalable Infrastructure", geometry: "hexagon", material: "chrome", desc: "Cloud-native infrastructure designed to handle growth—from hundreds of visitors to millions—without compromising performance." },
+    { id: 13, category: "AI & Automation", icon: "hub", title: "AI Integrations", geometry: "neural_ring", material: "holographic", desc: "Seamlessly connect AI chatbots, voice assistants, CRMs, booking systems, payment gateways, and business automation tools into one unified ecosystem." },
+    { id: 14, category: "Infrastructure", icon: "loop", title: "Ongoing Partnership", geometry: "loop", material: "electric", desc: "We don't disappear after launch. Continuous improvements, optimization, monitoring, and innovation ensure your digital presence keeps evolving." },
+    { id: 15, category: "Web Tech", icon: "edit_square", title: "Custom Built", geometry: "blueprint", material: "emerald", desc: "Every solution is handcrafted specifically for your business goals. No templates. No shortcuts. Just custom digital experiences." },
+    { id: 16, category: "Infrastructure", icon: "cloud_sync", title: "Reliable Hosting", geometry: "cloud", material: "ruby", desc: "Fast, secure, globally distributed hosting with automatic backups, high availability, and enterprise-level uptime." },
+    { id: 17, category: "Marketing", icon: "rocket_launch", title: "Future Ready", geometry: "rocket", material: "sapphire", desc: "Built using future-proof technologies that keep your business adaptable, maintainable, and prepared for tomorrow's digital landscape." },
+    { id: 18, category: "Marketing", icon: "palette", title: "Brand Consistency", geometry: "spectrum", material: "clay", desc: "Maintain a consistent visual identity across every customer touchpoint through cohesive design systems, messaging, and experiences." }
+  ];
+
+  // Vertex shader for the organic liquid core distortion
+  const CORE_VERTEX_SHADER = `
+    uniform float uTime;
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+
+    // Simple 3D noise generator
+    float hash(vec3 p) {
+      p = fract(p * 0.3183099 + vec3(0.1));
+      p *= 17.0;
+      return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
+    }
+    float noise(vec3 x) {
+      vec3 i = floor(x);
+      vec3 f = fract(x);
+      f = f*f*(3.0-2.0*f);
+      return mix(mix(mix(hash(i+vec3(0,0,0)), hash(i+vec3(1,0,0)), f.x),
+                     mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+                  mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x),
+                     mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y), f.z);
+    }
+
+    void main() {
+      vNormal = normal;
+      vPosition = position;
+      float displacement = noise(position * 2.2 + uTime * 0.6) * 0.15;
+      vec3 newPosition = position + normal * displacement;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+    }
+  `;
+
+  // Fragment shader for warm candlelight core glow
+  const CORE_FRAGMENT_SHADER = `
+    uniform float uTime;
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+
+    void main() {
+      float pulse = sin(uTime * 1.5) * 0.5 + 0.5;
+      vec3 warmIvory = vec3(1.0, 0.96, 0.87); // #fff6de
+      vec3 warmTerracotta = vec3(0.95, 0.56, 0.41); // #F48F68
+      
+      // Calculate smooth outer rim glow
+      float rim = 1.0 - max(0.0, dot(vNormal, vec3(0.0, 0.0, 1.0)));
+      rim = pow(rim, 3.0);
+      
+      vec3 baseGlow = mix(warmTerracotta, warmIvory, pulse * 0.25) + vec3(1.0, 0.5, 0.2) * rim * 1.2;
+      gl_FragColor = vec4(baseGlow, 1.0);
+    }
+  `;
+
+  function initWebGLCapabilities() {
+    const container = document.getElementById("webgl-ecosystem-container");
+    if (!container) return;
+
+    // 1. Setup Scene, Camera & WebGLRenderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
+    camera.position.set(0, 0, 8.5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    container.appendChild(renderer.domElement);
+
+    // 2. Setup Lighting (Warm ambient tones, cool rim light)
+    const ambientLight = new THREE.AmbientLight(0x231f1a, 1.8);
+    scene.add(ambientLight);
+
+    const coreLight = new THREE.PointLight(0xF48F68, 5.0, 15);
+    scene.add(coreLight);
+
+    const rimLight = new THREE.DirectionalLight(0x9aeeec, 0.8);
+    rimLight.position.set(5, 5, 5);
+    scene.add(rimLight);
+
+    // 3. Add Starfield / Energy Dust Particles
+    const starCount = 100;
+    const starGeometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount * 3; i += 3) {
+      const r = 2.0 + Math.random() * 5.0;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos((Math.random() * 2) - 1);
+      positions[i] = r * Math.sin(phi) * Math.cos(theta);
+      positions[i + 1] = r * Math.sin(phi) * Math.sin(theta);
+      positions[i + 2] = r * Math.cos(phi);
+    }
+    starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const starMaterial = new THREE.PointsMaterial({
+      color: 0xfff6de,
+      size: 0.04,
+      transparent: true,
+      opacity: 0.35,
+      sizeAttenuation: true
+    });
+    const starParticles = new THREE.Points(starGeometry, starMaterial);
+    scene.add(starParticles);
+
+    // 4. Setup Custom Liquid AI Energy Core
+    const coreGeo = new THREE.SphereGeometry(1.1, 64, 64);
+    const coreMat = new THREE.ShaderMaterial({
+      uniforms: { uTime: { value: 0 } },
+      vertexShader: CORE_VERTEX_SHADER,
+      fragmentShader: CORE_FRAGMENT_SHADER,
+      transparent: true
+    });
+    const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+    scene.add(coreMesh);
+
+    // 5. Generate Geometries & Materials programmatically for the 18 Pillars
+    const pillars = [];
+    const materialsMap = {
+      glass: new THREE.MeshPhysicalMaterial({ color: 0xfff6de, roughness: 0.1, metalness: 0.1, transmission: 0.95, thickness: 0.5, transparent: true }),
+      gold: new THREE.MeshStandardMaterial({ color: 0xffdbce, roughness: 0.15, metalness: 0.9 }),
+      chrome: new THREE.MeshStandardMaterial({ color: 0xdddddd, roughness: 0.05, metalness: 1.0 }),
+      holographic: new THREE.MeshBasicMaterial({ color: 0xF48F68, wireframe: true, transparent: true, opacity: 0.6 }),
+      electric: new THREE.MeshPhysicalMaterial({ color: 0xffb59a, roughness: 0.2, metalness: 0.3, transmission: 0.8, transparent: true }),
+      emerald: new THREE.MeshPhysicalMaterial({ color: 0xcec6b0, roughness: 0.15, metalness: 0.2, transmission: 0.65 }),
+      ruby: new THREE.MeshPhysicalMaterial({ color: 0x984726, roughness: 0.1, metalness: 0.2, transmission: 0.5 }),
+      sapphire: new THREE.MeshPhysicalMaterial({ color: 0x81d5d3, roughness: 0.1, metalness: 0.2, transmission: 0.75, transparent: true }),
+      clay: new THREE.MeshStandardMaterial({ color: 0xffdbce, roughness: 0.8, metalness: 0.05 })
+    };
+
+    function createPillarGeometry(type) {
+      switch (type) {
+        case "icosahedron":
+          return new THREE.IcosahedronGeometry(0.18, 0);
+        case "torus":
+          return new THREE.TorusGeometry(0.13, 0.04, 8, 32);
+        case "cubes": {
+          const group = new THREE.Group();
+          for (let i = 0; i < 3; i++) {
+            const box = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.08, 0.08), materialsMap.chrome);
+            box.position.set((i - 1) * 0.1, (i - 1) * 0.05, 0);
+            group.add(box);
+          }
+          return group;
+        }
+        case "neural_sphere":
+          return new THREE.SphereGeometry(0.16, 8, 8);
+        case "lightning":
+          return new THREE.ConeGeometry(0.12, 0.35, 4);
+        case "arrow":
+          return new THREE.ConeGeometry(0.12, 0.35, 3);
+        case "target": {
+          const group = new THREE.Group();
+          const inner = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 16), materialsMap.ruby);
+          const outer = new THREE.Mesh(new THREE.SphereGeometry(0.16, 8, 8), materialsMap.holographic);
+          group.add(inner, outer);
+          return group;
+        }
+        case "slab":
+          return new THREE.BoxGeometry(0.24, 0.32, 0.05);
+        case "shield":
+          return new THREE.DodecahedronGeometry(0.16, 0);
+        case "document":
+          return new THREE.BoxGeometry(0.18, 0.24, 0.06);
+        case "cluster": {
+          const group = new THREE.Group();
+          for (let i = 0; i < 3; i++) {
+            const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 16), materialsMap.gold);
+            sphere.position.set(Math.sin(i * 2.0) * 0.08, Math.cos(i * 2.0) * 0.08, 0);
+            group.add(sphere);
+          }
+          return group;
+        }
+        case "hexagon":
+          return new THREE.CylinderGeometry(0.15, 0.15, 0.04, 6);
+        case "neural_ring": {
+          const group = new THREE.Group();
+          const ring = new THREE.Mesh(new THREE.TorusGeometry(0.13, 0.02, 6, 24), materialsMap.holographic);
+          group.add(ring);
+          for (let i = 0; i < 4; i++) {
+            const node = new THREE.Mesh(new THREE.SphereGeometry(0.04, 8, 8), materialsMap.glass);
+            node.position.set(Math.cos(i * Math.PI / 2) * 0.13, Math.sin(i * Math.PI / 2) * 0.13, 0);
+            group.add(node);
+          }
+          return group;
+        }
+        case "loop":
+          return new THREE.TorusKnotGeometry(0.09, 0.03, 48, 6, 2, 3);
+        case "blueprint":
+          return new THREE.CylinderGeometry(0.14, 0.14, 0.28, 6, 1, true);
+        case "cloud": {
+          const group = new THREE.Group();
+          const m = materialsMap.ruby;
+          const s1 = new THREE.Mesh(new THREE.SphereGeometry(0.09, 16, 16), m);
+          const s2 = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 16), m); s2.position.set(0.1, -0.02, 0);
+          const s3 = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), m); s3.position.set(-0.1, -0.02, 0);
+          const s4 = new THREE.Mesh(new THREE.SphereGeometry(0.05, 16, 16), m); s4.position.set(0.02, 0.06, 0);
+          group.add(s1, s2, s3, s4);
+          return group;
+        }
+        case "rocket":
+          return new THREE.ConeGeometry(0.12, 0.35, 6);
+        case "spectrum":
+        default:
+          return new THREE.SphereGeometry(0.15, 32, 32);
+      }
+    }
+
+    PILLARS_DATA.forEach((data, index) => {
+      const geomOrGroup = createPillarGeometry(data.geometry);
+      let mesh;
+      const mat = materialsMap[data.material];
+
+      if (geomOrGroup instanceof THREE.Group) {
+        mesh = geomOrGroup;
+      } else {
+        mesh = new THREE.Mesh(geomOrGroup, mat);
+      }
+
+      mesh.traverse((child) => {
+        if (child.isMesh) {
+          child.material = child.material.clone();
+          child.material.transparent = true;
+        }
+      });
+
+      const pGroup = new THREE.Group();
+      pGroup.add(mesh);
+      scene.add(pGroup);
+
+      const radius = 2.1 + (index % 4) * 0.8;
+      const speed = (0.2 + (index % 3) * 0.1) * (index % 2 === 0 ? 1 : -1);
+      const heightOffset = (index % 3 - 1) * 0.5;
+      const inclination = (index % 5 - 2) * 0.18;
+      const phase = index * (Math.PI * 2 / 18);
+
+      pillars.push({
+        group: pGroup,
+        mesh: mesh,
+        data: data,
+        angle: phase,
+        radius: radius,
+        speed: speed,
+        heightOffset: heightOffset,
+        inclination: inclination,
+        phase: phase
+      });
+    });
+
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+    let hoveredPillar = null;
+    let clickedPillar = null;
+    let isPaused = false;
+
+    const baseCameraPosition = new THREE.Vector3(0, 0, 8.5);
+    const targetParallax = new THREE.Vector2();
+    const currentParallax = new THREE.Vector2();
+
+    container.addEventListener("mousemove", (e) => {
+      const bounds = container.getBoundingClientRect();
+      mouse.x = ((e.clientX - bounds.left) / bounds.width) * 2 - 1;
+      mouse.y = -((e.clientY - bounds.top) / bounds.height) * 2 + 1;
+
+      if (!clickedPillar) {
+        targetParallax.x = mouse.x * 1.5;
+        targetParallax.y = mouse.y * 1.2;
+      }
+    });
+
+    function checkHover() {
+      if (isPaused || clickedPillar) return;
+
+      raycaster.setFromCamera(mouse, camera);
+      const targets = pillars.map(p => p.mesh);
+      const intersects = raycaster.intersectObjects(targets, true);
+
+      if (intersects.length > 0) {
+        let hitMesh = intersects[0].object;
+        while (hitMesh.parent && !targets.includes(hitMesh)) {
+          hitMesh = hitMesh.parent;
+        }
+
+        const pillar = pillars.find(p => p.mesh === hitMesh);
+        if (pillar && hoveredPillar !== pillar) {
+          if (hoveredPillar) {
+            gsap.to(hoveredPillar.mesh.scale, { x: 1, y: 1, z: 1, duration: 0.3 });
+          }
+          hoveredPillar = pillar;
+          gsap.to(pillar.mesh.scale, { x: 1.35, y: 1.35, z: 1.35, duration: 0.3 });
+          container.style.cursor = "pointer";
+        }
+      } else {
+        if (hoveredPillar) {
+          gsap.to(hoveredPillar.mesh.scale, { x: 1, y: 1, z: 1, duration: 0.3 });
+          hoveredPillar = null;
+          container.style.cursor = "grab";
+        }
+      }
+    }
+
+    container.addEventListener("click", () => {
+      if (isPaused) return;
+
+      raycaster.setFromCamera(mouse, camera);
+      const targets = pillars.map(p => p.mesh);
+      const intersects = raycaster.intersectObjects(targets, true);
+
+      if (intersects.length > 0) {
+        let hitMesh = intersects[0].object;
+        while (hitMesh.parent && !targets.includes(hitMesh)) {
+          hitMesh = hitMesh.parent;
+        }
+
+        const pillar = pillars.find(p => p.mesh === hitMesh);
+        if (pillar) {
+          clickedPillar = pillar;
+          isPaused = true;
+          container.style.cursor = "default";
+
+          const targetCamX = pillar.mesh.position.x * 1.4;
+          const targetCamY = pillar.mesh.position.y * 1.2;
+          const targetCamZ = pillar.mesh.position.z * 1.4;
+
+          gsap.to(camera.position, {
+            x: targetCamX,
+            y: targetCamY,
+            z: Math.max(targetCamZ, 3.5),
+            duration: 1.5,
+            ease: "power2.inOut",
+            onUpdate: () => {
+              camera.lookAt(pillar.mesh.position);
+            }
+          });
+
+          pillars.forEach(p => {
+            if (p !== pillar) {
+              p.mesh.traverse(child => {
+                if (child.isMesh) {
+                  gsap.to(child.material, { opacity: 0.15, duration: 1.0 });
+                }
+              });
+            } else {
+              gsap.to(p.mesh.scale, { x: 1.4, y: 1.4, z: 1.4, duration: 0.5 });
+            }
+          });
+
+          const card = document.getElementById("ecosystem-detail-card");
+          document.getElementById("detail-card-icon").innerText = pillar.data.icon;
+          document.getElementById("detail-card-category").innerText = pillar.data.category;
+          document.getElementById("detail-card-title").innerText = pillar.data.title;
+          document.getElementById("detail-card-desc").innerText = pillar.data.desc;
+          
+          card.classList.remove("pointer-events-none");
+          gsap.to(card, { opacity: 1, scale: 1, y: "-50%", x: "-50%", duration: 0.5, delay: 0.6 });
+        }
+      }
+    });
+
+    const closeBtn = document.getElementById("close-detail-card");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const card = document.getElementById("ecosystem-detail-card");
+        card.classList.add("pointer-events-none");
+        
+        gsap.to(card, { opacity: 0, scale: 0.95, y: "-50%", x: "-50%", duration: 0.4 });
+
+        pillars.forEach(p => {
+          p.mesh.traverse(child => {
+            if (child.isMesh) {
+              gsap.to(child.material, { opacity: 1.0, duration: 1.0 });
+            }
+          });
+          if (p === clickedPillar) {
+            gsap.to(p.mesh.scale, { x: 1.0, y: 1.0, z: 1.0, duration: 0.8 });
+          }
+        });
+
+        gsap.to(camera.position, {
+          x: currentParallax.x,
+          y: currentParallax.y,
+          z: baseCameraPosition.z,
+          duration: 1.5,
+          ease: "power2.inOut",
+          onUpdate: () => {
+            camera.lookAt(0, 0, 0);
+          },
+          onComplete: () => {
+            clickedPillar = null;
+            isPaused = false;
+          }
+        });
+      });
+    }
+
+    const clock = new THREE.Clock();
+
+    function tick() {
+      const elapsedTime = clock.getElapsedTime();
+      coreMat.uniforms.uTime.value = elapsedTime;
+      starParticles.rotation.y = elapsedTime * 0.03;
+
+      pillars.forEach((pillar) => {
+        const speedMultiplier = (hoveredPillar === pillar) ? 0.15 : 1.0;
+        
+        if (!isPaused) {
+          pillar.angle += pillar.speed * 0.0035 * speedMultiplier;
+        }
+
+        let x = Math.cos(pillar.angle) * pillar.radius;
+        let z = Math.sin(pillar.angle) * pillar.radius;
+        let y = Math.sin(pillar.angle + pillar.phase) * pillar.heightOffset;
+
+        const rotatedX = x * Math.cos(pillar.inclination) - y * Math.sin(pillar.inclination);
+        const rotatedY = x * Math.sin(pillar.inclination) + y * Math.cos(pillar.inclination);
+
+        if (clickedPillar === pillar) {
+          pillar.mesh.position.set(rotatedX, rotatedY, z);
+          pillar.mesh.rotation.y += 0.005;
+        } else {
+          pillar.mesh.position.set(rotatedX, rotatedY, z);
+          pillar.mesh.rotation.y += 0.015;
+          pillar.mesh.rotation.x += 0.008;
+        }
+      });
+
+      if (!isPaused && !clickedPillar) {
+        currentParallax.x += (targetParallax.x - currentParallax.x) * 0.06;
+        currentParallax.y += (targetParallax.y - currentParallax.y) * 0.06;
+        
+        camera.position.x = currentParallax.x;
+        camera.position.y = currentParallax.y;
+        camera.lookAt(0, 0, 0);
+      }
+
+      checkHover();
+      renderer.render(scene, camera);
+      requestAnimationFrame(tick);
+    }
+
+    tick();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initWebGLCapabilities);
+  } else {
+    initWebGLCapabilities();
+  }
+</script>
+<script src="nav-controller.js"></script>
+</body>
+</html>

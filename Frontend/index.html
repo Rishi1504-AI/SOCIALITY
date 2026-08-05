@@ -1404,8 +1404,10 @@
       if (intersects.length > 0) {
         // Find which pillar data owns the intersected mesh
         let hitMesh = intersects[0].object;
-        while (hitMesh.parent && !targets.includes(hitMesh)) {
+        let depth = 0;
+        while (hitMesh.parent && !targets.includes(hitMesh) && depth < 20) {
           hitMesh = hitMesh.parent;
+          depth++;
         }
 
         const pillar = pillars.find(p => p.mesh === hitMesh);
@@ -1438,8 +1440,10 @@
 
       if (intersects.length > 0) {
         let hitMesh = intersects[0].object;
-        while (hitMesh.parent && !targets.includes(hitMesh)) {
+        let depth = 0;
+        while (hitMesh.parent && !targets.includes(hitMesh) && depth < 20) {
           hitMesh = hitMesh.parent;
+          depth++;
         }
 
         const pillar = pillars.find(p => p.mesh === hitMesh);

@@ -1,0 +1,11 @@
+{
+  "name": "sociality",
+  "version": "1.0.0",
+  "description": "Sociality - Tactile Digital Agency Website",
+  "scripts": {
+    "dev": "npx http-server Frontend -p 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

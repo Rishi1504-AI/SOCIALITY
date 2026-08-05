@@ -1,0 +1,698 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&amp;family=Mulish:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"surface-container-low":"#f7f3f0","surface-container-high":"#ece7e4","background":"#fdf8f5","surface":"#fdf8f5","on-error-container":"#93000a","inverse-on-surface":"#f4f0ed","surface-bright":"#fdf8f5","on-background":"#1c1b1a","inverse-primary":"#cec6b0","surface-variant":"#e6e2df","on-surface-variant":"#4a473e","on-secondary-fixed":"#00201f","secondary-fixed-dim":"#81d5d3","on-secondary":"#ffffff","error-container":"#ffdad6","on-primary-container":"#76705d","error":"#ba1a1a","outline":"#7b776d","tertiary":"#984726","surface-container":"#f2edea","tertiary-container":"#fff4f1","surface-container-highest":"#e6e2df","on-tertiary-fixed":"#380d00","tertiary-fixed":"#ffdbce","outline-variant":"#ccc6ba","surface-container-lowest":"#ffffff","on-primary-fixed":"#1f1b0d","on-primary":"#ffffff","on-surface":"#1c1b1a","on-tertiary-container":"#ae5836","secondary":"#006a69","primary-container":"#fff6de","surface-dim":"#ddd9d6","on-primary-fixed-variant":"#4b4735","on-tertiary":"#ffffff","on-secondary-container":"#006e6d","primary":"#645e4c","inverse-surface":"#31302e","on-tertiary-fixed-variant":"#793010","tertiary-fixed-dim":"#ffb59a","secondary-container":"#9aeeec","on-error":"#ffffff","primary-fixed-dim":"#cec6b0","secondary-fixed":"#9df1ef","primary-fixed":"#ebe2cb","surface-tint":"#645e4c","on-secondary-fixed-variant":"#00504f"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"base":"8px","section-gap":"120px","card-padding":"32px","margin-mobile":"20px","gutter":"24px","container-max":"1280px"},"fontFamily":{"label-md":["Mulish"],"body-md":["Mulish"],"body-lg":["Mulish"],"headline-lg-mobile":["Arima Madurai"],"headline-lg":["Arima Madurai"],"headline-sm":["Arima Madurai"],"body-lg-mobile":["Mulish"],"display-lg":["Arima Madurai"],"headline-md":["Arima Madurai"]},"fontSize":{"label-md":["14px",{"lineHeight":"1.2","letterSpacing":"0.05em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-lg-mobile":["32px",{"lineHeight":"1.2","fontWeight":"700"}],"headline-lg":["40px",{"lineHeight":"1.2","fontWeight":"700"}],"headline-sm":["24px",{"lineHeight":"1.4","fontWeight":"600"}],"body-lg-mobile":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["32px",{"lineHeight":"1.3","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-background"><header class="fixed top-0 left-0 w-full z-50 px-4 pt-4 bg-transparent pointer-events-none">
+  <div class="pointer-events-auto h-20 w-full px-6 lg:px-8 flex items-center justify-between bg-surface/75 backdrop-blur-xl border border-outline-variant/30 rounded-2xl shadow-[0_8px_32px_0_rgba(100,94,76,0.08)]">
+    <div class="flex items-center gap-3">
+      <img alt="Sociality AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACa3CoLU80n-0olM_6cLv8tHBZAk9jztQCfFk1ZQg1ZbN414ZzU26o3L-y808-yNP9xEl54yoXQ8_ADBeCmbdSTzPergbP9xVHXmOAHuVBMf09nJ_KaNqgbMjvOvsZjpOteibTup3YlOgmOZ4nLVdu1LaVleMqOrBcQJnos-JtwQJEX_3bnN8utykmM3R_Zxw3L1ZYSlqyIS7JyuqA2sAHAZwL2RaMvKif5U8qBrY9T1MGd_dqRu1h"/>
+      <span class="font-headline-sm text-headline-sm text-on-surface">Sociality AI</span>
+    </div>
+    <nav class="hidden lg:flex items-center gap-8">
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#home">Home</a>
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#services">Services</a>
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#how-it-works">How it works</a>
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#portfolio">Portfolio</a>
+      <div class="relative group">
+        <button class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1">
+          Others
+          <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+        </button>
+        <div class="absolute right-0 mt-2 w-48 bg-surface/95 backdrop-blur-xl border border-outline-variant rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="design-studio.html">Design Studio</a>
+          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="blogs.html">Blogs</a>
+          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="faqs.html">FAQs</a>
+        </div>
+      </div>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a class="hidden sm:flex items-center justify-center px-6 py-2 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full hover:shadow-lg transition-all transform hover:-translate-y-0.5" href="book-a-call.html">Book a Call</a>
+      <img alt="Profile" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaFm2qyB5Jgdo8XvgaZndZaftj2A59q0d56OiXINZjCFz9F2LWM5ainDHemkWNZw7aQGTJO9ZbsTxDMhLYQcJlMbUQcnaBF9cUS-Y4lAbbqkQsUZ6Rw0ZrOxbWbjWx5iIQwnWDeyJNE0nIj1wfAn09JCRucHfL7NLbipJzk04abUvKEkgtQdIwb1ol71cbjNfOQepVNpoc36k2mZlQa7ShYl5WAUOnoQoisPw5pGSxHSx7qneIAQQ9"/>
+      <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="mobile-menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</header>\n<!-- Mobile Menu Drawer -->
+<div class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl flex flex-col justify-between p-8 translate-x-full transition-transform duration-300 ease-in-out lg:hidden" id="mobile-menu-drawer">
+  <div>
+    <div class="flex justify-between items-center mb-12">
+      <div class="flex items-center gap-3">
+        <img alt="Sociality AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACa3CoLU80n-0olM_6cLv8tHBZAk9jztQCfFk1ZQg1ZbN414ZzU26o3L-y808-yNP9xEl54yoXQ8_ADBeCmbdSTzPergbP9xVHXmOAHuVBMf09nJ_KaNqgbMjvOvsZjpOteibTup3YlOgmOZ4nLVdu1LaVleMqOrBcQJnos-JtwQJEX_3bnN8utykmM3R_Zxw3L1ZYSlqyIS7JyuqA2sAHAZwL2RaMvKif5U8qBrY9T1MGd_dqRu1h"/>
+        <span class="font-headline-sm text-headline-sm text-on-surface">Sociality AI</span>
+      </div>
+      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="mobile-menu-close-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-6">
+      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="#home">Home</a>
+      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="#services">Services</a>
+      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="#how-it-works">How it works</a>
+      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="#portfolio">Portfolio</a>
+      <div class="h-px bg-outline-variant/30 my-2"></div>
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="design-studio.html">Design Studio</a>
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="blogs.html">Blogs</a>
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="faqs.html">FAQs</a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-4">
+    <a class="w-full py-4 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full shadow-md text-center" href="book-a-call.html">Book a Call</a>
+    <div class="text-center text-xs text-on-surface-variant font-label-md uppercase tracking-wider">hello@sociality.ai</div>
+  </div>
+</div>
+<main class="w-full pt-28 bg-background"><div class="flex flex-col w-full">
+    <!-- HOME SECTION -->
+    <div id="home" class="scroll-mt-28 lg:scroll-mt-32">
+      <!-- INTRODUCTION SECTION -->
+      <section class="w-full bg-primary-container relative py-section-gap px-6 md:px-12 lg:px-16 shadow-sm z-10">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[140%] rounded-full bg-gradient-to-bl from-secondary-container/40 to-transparent blur-3xl mix-blend-multiply"></div>
+          <div class="absolute -bottom-[30%] -left-[10%] w-[50%] h-[120%] rounded-full bg-gradient-to-tr from-tertiary-container/60 to-transparent blur-3xl mix-blend-multiply"></div>
+        </div>
+        <div class="w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 flex flex-col items-start text-left">
+            <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-6">Welcome to Sociality AI</span>
+            <h1 class="font-display-lg text-display-lg text-on-surface max-w-4xl mb-8">
+              Bringing Your <span class="text-tertiary font-bold">Business</span> <span class="text-tertiary font-bold">Online</span> with <span class="text-tertiary font-bold">Purpose</span>.
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+              We merge the organic warmth of human creativity with the precision of AI-driven digital solutions. Sociality AI builds bespoke, tactile experiences that elevate your brand and connect with your audience on a deeper level.
+            </p>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <a class="inline-flex items-center justify-center px-8 py-4 bg-tertiary-container text-on-tertiary-container font-label-md text-label-md rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" href="book-a-call.html">
+                Book a Call
+                <span class="material-symbols-outlined ml-2 text-[20px]">calendar_today</span>
+              </a>
+              <a class="inline-flex items-center justify-center px-8 py-4 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-full shadow-sm hover:shadow-md transition-all duration-300" href="#how-it-works">
+                Explore Our Process
+              </a>
+            </div>
+          </div>
+          <!-- Video Animation Container (Right Column) -->
+          <div class="lg:col-span-6 flex justify-center items-center w-full">
+            <div class="relative w-full max-w-[680px] aspect-[1920/940] rounded-2xl overflow-hidden shadow-2xl bg-surface border border-outline-variant/30 p-2">
+              <div class="absolute inset-0 bg-gradient-to-br from-transparent to-secondary-fixed/5 pointer-events-none"></div>
+              <!-- Canvas player for JPEGs from Home.zip (cropped top 140px to hide original navbar) -->
+              <canvas id="hero-animation-player" class="w-full h-full object-cover rounded-xl bg-[#fdf8f5]" width="1920" height="940"></canvas>
+              <!-- Loader spinner -->
+              <div id="video-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-surface/90 transition-opacity duration-300">
+                <span class="material-symbols-outlined animate-spin text-tertiary text-3xl mb-2">sync</span>
+                <span class="font-label-md text-xs text-on-surface-variant tracking-wider uppercase">Loading Video...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- HOW WE HELP SECTION -->
+      <section class="w-full bg-surface-container-lowest py-section-gap px-6 md:px-12 lg:px-16 relative">
+        <div class="w-full px-6 md:px-12 lg:px-16">
+          <div class="flex flex-col mb-16 max-w-4xl text-left">
+            <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">What We Do</span>
+            <h2 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface mb-6 leading-tight">
+              How We Help
+            </h2>
+            <h3 class="font-headline-sm text-headline-sm text-tertiary mb-6 max-w-3xl">
+              Digital solutions built to grow your business—not just your online presence.
+            </h3>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+              We combine modern web development, AI automation, and performance-driven marketing to help businesses attract more customers, streamline operations, and scale with confidence.
+            </p>
+          </div>
+
+          <!-- 6-Item Attractive Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 01 -->
+            <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/30 hover:border-secondary/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+              <div class="absolute top-0 right-0 p-6 font-display-lg text-display-lg text-outline-variant/20 group-hover:text-secondary-fixed-dim/20 transition-colors pointer-events-none">01</div>
+              <div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center relative z-10">
+                <span class="material-symbols-outlined">devices</span>
+              </div>
+              <div class="relative z-10 flex flex-col gap-3">
+                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">First Impressions</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">Custom websites designed to establish trust, strengthen your brand, and convert visitors into customers.</p>
+              </div>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/30 hover:border-secondary/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+              <div class="absolute top-0 right-0 p-6 font-display-lg text-display-lg text-outline-variant/20 group-hover:text-secondary-fixed-dim/20 transition-colors pointer-events-none">02</div>
+              <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center relative z-10">
+                <span class="material-symbols-outlined">forum</span>
+              </div>
+              <div class="relative z-10 flex flex-col gap-3">
+                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Automated Work</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">Deploy AI chatbots and workflows to qualify leads, answer FAQs, and reduce manual team effort.</p>
+              </div>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/30 hover:border-secondary/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+              <div class="absolute top-0 right-0 p-6 font-display-lg text-display-lg text-outline-variant/20 group-hover:text-secondary-fixed-dim/20 transition-colors pointer-events-none">03</div>
+              <div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center relative z-10">
+                <span class="material-symbols-outlined">search</span>
+              </div>
+              <div class="relative z-10 flex flex-col gap-3">
+                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Get Found Online</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">Strategic SEO and technical optimization to rank higher on search engines and drive organic traffic.</p>
+              </div>
+            </div>
+
+            <!-- Card 04 -->
+            <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/30 hover:border-secondary/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+              <div class="absolute top-0 right-0 p-6 font-display-lg text-display-lg text-outline-variant/20 group-hover:text-secondary-fixed-dim/20 transition-colors pointer-events-none">04</div>
+              <div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center relative z-10">
+                <span class="material-symbols-outlined">ads_click</span>
+              </div>
+              <div class="relative z-10 flex flex-col gap-3">
+                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Convert Visitors</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">Conversion-focused designs and clear calls-to-action to maximize bookings, inquiries, and sales.</p>
+              </div>
+            </div>
+
+            <!-- Card 05 -->
+            <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/30 hover:border-secondary/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+              <div class="absolute top-0 right-0 p-6 font-display-lg text-display-lg text-outline-variant/20 group-hover:text-secondary-fixed-dim/20 transition-colors pointer-events-none">05</div>
+              <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center relative z-10">
+                <span class="material-symbols-outlined">cloud_sync</span>
+              </div>
+              <div class="relative z-10 flex flex-col gap-3">
+                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">All-in-One Service</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">Hosting, maintenance, custom AI implementations, SEO, and paid advertising managed under one roof.</p>
+              </div>
+            </div>
+
+            <!-- Card 06 -->
+            <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/30 hover:border-secondary/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+              <div class="absolute top-0 right-0 p-6 font-display-lg text-display-lg text-outline-variant/20 group-hover:text-secondary-fixed-dim/20 transition-colors pointer-events-none">06</div>
+              <div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center relative z-10">
+                <span class="material-symbols-outlined">trending_up</span>
+              </div>
+              <div class="relative z-10 flex flex-col gap-3">
+                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Grow Without Limits</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">Scalable cloud technology, dedicated team support, and data-driven upgrades to evolve with you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <div id="services" class="scroll-mt-28 lg:scroll-mt-32">
+      <div class="flex flex-col w-full px-6 md:px-12 lg:px-16 py-section-gap gap-section-gap bg-surface-container-low/50">
+        <section class="flex flex-col gap-6 max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-on-background relative inline-block">
+<span class="relative z-10">Services</span>
+<span class="absolute bottom-2 left-0 w-full h-4 bg-tertiary/20 -z-0 rounded-full"></span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            WE provide the Services which brings Your Business Grow Faster. We blend human-centric creativity with AI precision to deliver bespoke digital experiences.
+        </p>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter relative">
+<div class="absolute -inset-12 bg-gradient-to-br from-primary-container/40 via-surface/5 to-tertiary-container/30 blur-3xl -z-10 rounded-full"></div>
+<!-- Service Card 1 -->
+<article class="bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col gap-6 relative group overflow-hidden">
+<div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">design_services</span>
+</div>
+<div class="relative z-10 flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Digital Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                    Crafting intuitive and visually stunning interfaces that resonate with your target audience, balancing aesthetic appeal with seamless functionality.
+                </p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-secondary-container/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</article>
+<!-- Service Card 2 -->
+<article class="bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col gap-6 relative group overflow-hidden">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<div class="relative z-10 flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Web Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                    Building robust, scalable, and high-performance websites using cutting-edge technologies tailored to your specific business requirements.
+                </p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-primary-container/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</article>
+<!-- Service Card 3 -->
+<article class="bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col gap-6 relative group overflow-hidden">
+<div class="w-14 h-14 rounded-full bg-tertiary-container flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div class="relative z-10 flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Digital Marketing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                    Data-driven strategies to amplify your brand's voice, reach wider audiences, and drive meaningful conversions across digital channels.
+                </p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-tertiary-container/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</article>
+<!-- Service Card 4 -->
+<article class="bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col gap-6 relative group overflow-hidden">
+<div class="w-14 h-14 rounded-full bg-error-container flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-on-error-container" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="relative z-10 flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">AI Integration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                    Implementing intelligent automated solutions and AI-driven features to optimize workflows and personalize user experiences.
+                </p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-error-container/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</article>
+<!-- Service Card 5 -->
+<article class="bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col gap-6 relative group overflow-hidden">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-on-secondary-fixed" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div class="relative z-10 flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Data Analytics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                    Transforming raw data into actionable insights, providing comprehensive reporting to inform strategic decision-making.
+                </p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-secondary-fixed/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</article>
+<!-- Service Card 6 -->
+<article class="bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col gap-6 relative group overflow-hidden">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-on-primary-fixed" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div class="relative z-10 flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dedicated Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                    Ongoing maintenance, troubleshooting, and continuous improvement to ensure your digital assets operate flawlessly.
+                </p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-primary-fixed/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</article>
+</section>
+<!-- Visual Reference Section -->
+<section class="mt-section-gap w-full rounded-3xl overflow-hidden shadow-xl bg-surface-container-low p-4 lg:p-8">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest [writing-mode:vertical-rl] rotate-180">Process</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Our Workflow Mapping</h2>
+</div>
+<div class="relative w-full aspect-[3.71] rounded-xl overflow-hidden bg-surface-container shadow-inner">
+<img alt="Website workflow" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJIGnC5zCxdfhefhi4QuTAm2xc1_SQjrlirfMrbrYNCZJNd0V_v0gkcax3PaI7hF2RQJjjIxh3IBWkONuwnpgrY73GN6Yy2LoG2FfulFL9DCna5FQxb54Ni2F7Gitr9rz6M-Y8sOsQIgRF8BnfdzpK5h7JRBB9qCN3hgqMapUfleUr7WLcH-nm1jWHSY55O6SEXR99fk6gPaPz1Z40v6qiKrcEgrL_2lUdC49a_Nop8oCiwOFs528syaGPuHHEXgVZjQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent pointer-events-none"></div>
+</div>
+</div>
+</section>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS SECTION -->
+    <div id="how-it-works" class="scroll-mt-28 lg:scroll-mt-32 w-full bg-background border-t border-b border-outline-variant/20">
+      <section class="relative w-full overflow-hidden bg-background py-section-gap">
+<div class="w-full px-6 md:px-12 lg:px-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-6 flex flex-col gap-8">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest [writing-mode:horizontal-tb] lg:[writing-mode:vertical-rl] lg:absolute lg:left-8 lg:top-1/4 lg:transform lg:-rotate-180">The Process</span>
+<h1 class="font-display-lg text-display-lg text-on-background max-w-2xl leading-tight">
+            Everything Your Business Needs.<br/>
+<span class="text-tertiary">One Digital Partner.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Designed for speed. Built for growth. Optimized for results. We take the complexity out of digital transformation, delivering solutions that are as elegant as they are effective.
+          </p>
+<div class="flex flex-col gap-6 mt-8">
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">More Than a Website</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">High-performance solutions tailored to your unique business objectives, designed to convert and engage.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_heart</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Fully Managed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Hassle-free setup and ongoing maintenance. You focus on your business; we handle the digital heavy lifting.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Modern &amp; Scaleable</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Built on robust, future-proof architectures that grow seamlessly alongside your expanding ambitions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 relative mt-12 lg:mt-0">
+<div class="absolute inset-0 bg-secondary-fixed/20 blur-[100px] rounded-full transform -translate-x-1/4 -translate-y-1/4"></div>
+<div class="absolute inset-0 bg-tertiary-fixed/20 blur-[100px] rounded-full transform translate-x-1/4 translate-y-1/4"></div>
+<div class="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-surface p-4 z-10">
+<img alt="Website workflow and process illustration" class="w-full h-auto object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG9Mqi0Xvl2-6PBr3oUDuJCFyPd3X2bUfD2SYsrQamOqFzI5ParLImouFFSsOYyCAHeAyap_Y8tbcH851NN2bGC2VqkZ4NSJTM_8YRrApT2zrSwUDqARPLHuwgAfEDxtpCCBR5fhjoYAG0iquDPky_JumJwnV_dYBp2TnXE1FLhTFyyAy_QhQAPiQ-7BRPZPzI-OdqbWDd9qst4Cxcyou6LCDYlx_1BHIQEvxIpqQ9ZbZjbTVg8J3w_aDLY0NjMWqKcA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-surface-container-low py-section-gap">
+<div class="w-full px-6 md:px-12 lg:px-16">
+<div class="flex flex-col items-center text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">A Seamless Journey</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">From initial consultation to final launch, our process is transparent, collaborative, and entirely focused on your success.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface p-card-padding rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="font-headline-md text-headline-md">01</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-3">Discovery</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We dive deep into your brand, audience, and goals to map out a strategic blueprint for your digital presence.</p>
+</div>
+<div class="bg-surface p-card-padding rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group mt-0 md:mt-8">
+<div class="w-16 h-16 rounded-full bg-secondary/10 text-secondary flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-300">
+<span class="font-headline-md text-headline-md">02</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-3">Design &amp; Build</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Our creative and technical teams bring the blueprint to life, crafting pixel-perfect interfaces and robust backend systems.</p>
+</div>
+<div class="bg-surface p-card-padding rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group mt-0 md:mt-16">
+<div class="w-16 h-16 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center mb-6 group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors duration-300">
+<span class="font-headline-md text-headline-md">03</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-3">Launch &amp; Scale</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We deploy your solution with precision and provide ongoing support to ensure sustained growth and performance.</p>
+</div>
+</div>
+</div>
+</section>
+    </div>
+
+    <!-- PORTFOLIO SECTION -->
+    <div id="portfolio" class="scroll-mt-28 lg:scroll-mt-32 w-full bg-surface-container-low/30">
+      <!-- Hero / Title Section -->
+<section class="w-full pt-16 pb-12 lg:pt-32 lg:pb-24 px-margin-mobile lg:px-gutter w-full px-6 md:px-12 lg:px-16 relative overflow-hidden">
+<div class="absolute -top-32 -right-32 w-96 h-96 bg-primary-container rounded-full blur-[80px] opacity-60 pointer-events-none"></div>
+<div class="flex flex-col gap-6 relative z-10 max-w-3xl">
+<span class="font-label-md text-label-md text-tertiary uppercase tracking-widest [writing-mode:vertical-rl] absolute -left-8 lg:-left-16 top-2 hidden sm:block opacity-70">Our Work</span>
+<h1 class="font-display-lg text-display-lg text-on-background relative">
+                Portfolio
+                <div class="absolute -bottom-4 left-0 w-24 h-1 bg-secondary rounded-full"></div>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+                Explore a curated selection of our digital craftsmanship. We blend organic creativity with AI-driven precision to build bespoke experiences that stand out.
+            </p>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="w-full pb-12 px-margin-mobile lg:px-gutter w-full px-6 md:px-12 lg:px-16">
+<div class="flex flex-wrap gap-4 items-center">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-all shadow-md transform hover:-translate-y-0.5">All Work</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">Web Design</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">Development</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">AI Solutions</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">Brand Strategy</button>
+</div>
+</section>
+<!-- Workflow Feature Section (Requested in Prompt) -->
+<section class="w-full py-section-gap px-margin-mobile lg:px-gutter w-full px-6 md:px-12 lg:px-16">
+<div class="w-full bg-surface-container rounded-[24px] p-8 lg:p-12 relative overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent via-primary-container/20 to-secondary-container/10"></div>
+<div class="relative z-10 flex flex-col gap-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Our Workflow Philosophy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                     A glimpse into our structured yet organic approach to digital design, ensuring every project is meticulously crafted from concept to execution.
+                 </p>
+<div class="mt-8 rounded-xl overflow-hidden shadow-md bg-surface-container-lowest">
+<img alt="Website workflow diagram" class="w-full h-auto object-contain bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXUehMrSYvoyBjVjShtrKD9jMu1dlpvHXwWKzHZewO4YE_XTvD3eQ7WZoi5_DdefXh7Z2h4s5O73U12BKqz4vXmLR7y1uuv9f1hONEEtBBpMqrRkw2P9HUekoIGapAjxpmRZgBr_XsA89esU6KtqGXTITK-lR8FITkIxlEveZVKJ3yrV0nX670aHCqIW9bOTk_BeLYlT4mJd7_leG6vIzA9dx7gUVFvW5Enzn8xl6B0F7TzKBu8WI85oMOXrw8O5UuHA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Grid -->
+<section class="w-full pb-section-gap px-margin-mobile lg:px-gutter w-full px-6 md:px-12 lg:px-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter lg:gap-8">
+<!-- Card 1 -->
+<a class="group flex flex-col gap-6 bg-surface-container-lowest rounded-[20px] p-card-padding shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A modern, warm, and highly polished e-commerce website landing page on a desktop mockup. The design features soft minimalistic layouts, a hero section with tactile elements, and a split-screen product showcase. The color palette includes soft beige (surface), rich slate grey text, and accents of muted teal and warm terra cotta. Natural studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP140-WfDTVlAzdm6yWfpXDGm7KMhSP6QTxY_01hwxQiMp7Ps4TZcgRIzithY1TqJq7-ZlVHOdYJ2hX8qQa0rhJJmiJC7AeXWqQeKQpsAZPanfuO6UpddS2BmW3DVimlkmB4lfVZ6TxZlgWo0uzWX_8zWerVz9dLGUDht_GVjiRu22SUHf5l8bliepXc1m3AsSp5xjy38-J3GbR2jjKeAiIPSkpl3nzLKf-NIYjB_SbTrT7XJyGoFJ"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-[12px] uppercase tracking-wider">Web Design</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Lumina E-Commerce</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A bespoke digital storefront reimagining the tactile shopping experience through soft minimalism and AI-driven recommendations.</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between text-secondary relative z-10">
+<span class="font-label-md text-label-md">View Case Study</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2 (Asymmetric layout via padding) -->
+<a class="group flex flex-col gap-6 bg-surface-container-lowest rounded-[20px] p-card-padding shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 lg:translate-y-8 relative overflow-hidden" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A sleek SaaS application dashboard UI mockup on a tablet screen. The design uses soft minimalism with tactile cards, avoiding harsh lines. The palette is bright and inviting, using a warm off-white background, deep charcoal text, and soft mint green (secondary) accents for active states and data visualizations. Professional, optimistic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaKxb2W3KCNDtnGB0ee4xHIsYjojo2OBT8g6fzj5dXb2T_WWyw87kdcsseUj5BapEor776Ys59hAATjAcnZM50C7Dt_OOzl7LAg4cMzUY8459kWlQQ9stgVhs23_pZosiebYaPGzA2XZtTRQVu7V8DRlhqXPMJM4EudOLz9LCpLrUh-CJSkxWRBM6bb2XycmU6j3no5GlxQwHQ2ZNOEYnuUa-e1FLzjAOx9wIgpHryrWNN1yrd8a4d"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-[12px] uppercase tracking-wider">Development</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Aero Dashboard</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Streamlining complex data into an approachable, tactile interface that empowers users rather than overwhelming them.</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between text-secondary relative z-10">
+<span class="font-label-md text-label-md">View Case Study</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group flex flex-col gap-6 bg-surface-container-lowest rounded-[20px] p-card-padding shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-tertiary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A striking creative agency portfolio website displayed on a mobile and desktop mockup side-by-side. The design features a split layout, bold typography (Arima Madurai), and immense visual impact through scale and sharp contrast. Color palette is a warm ivory background, rich brown text, and vibrant terracotta (tertiary) highlights. Artistic and bespoke feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMUqUtrqNq2tZo5ouTBpiCt3aVtl6nETVUSHaRSoA-nhufaIRXEBJFxTnkDCbjhhLxrbVF944MZKQMRC_iuOfR9bbfLrXR5_0zAfAMTcDZ2z6vFyzBVUjWalykOSjpZzLVjitAkrgND2-K3adt36QYenNhR5XOwYvfUkg4pJcSiwq9TxR2QjhX_GRnZGuqasalZ7XUoRl42rPuZ6DHIdwbabxbB8uBBaT4qMvTvqlKhDmGHoIjRe3e"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-[12px] uppercase tracking-wider">Brand Strategy</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Studio Kin</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A bold digital rebranding focusing on organic shapes, asymmetric layouts, and unexpected typographic alignments.</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between text-secondary relative z-10">
+<span class="font-label-md text-label-md">View Case Study</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group flex flex-col gap-6 bg-surface-container-lowest rounded-[20px] p-card-padding shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden lg:-mt-8" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An AI-powered wellness application interface on a smartphone mockup. The design is approachable and optimistic, using soft tonal layering and ambient shadows. The interface uses a warm background (#fdf8f5), soft teal secondary colors, and clean, legible Mulish typography. Focus on human-centric digital experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpS1tsAIJCgXfG68f9dNp7biXhJTdJVhBfs1VGU3hDiyIrx71Yjj5V-e_OYL-9fMl9_IRNgDyfIpGzhn_HojYvUy4JBWaQZZDcuJ_JJdV9BZlDhcxKOkg2KBaTKmH676PNwxDioUJu16h3uZAPQaTOleSGHm5H86ZsheN5tkzdY5_nnHsJhjKbVyZ2G_DTCXCCXIEVviEoiLOmPvirKFXMHW9YuBYBfdl5qDZeNUbkyYwxq5tbAGp3"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-[12px] uppercase tracking-wider">AI Solutions</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Mindful AI</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Integrating advanced generative models into a wellness platform with a human-centric, empathetic user interface.</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between text-secondary relative z-10">
+<span class="font-label-md text-label-md">View Case Study</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 5 (Asymmetric layout) -->
+<a class="group flex flex-col gap-6 bg-surface-container-lowest rounded-[20px] p-card-padding shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 lg:translate-y-8 relative overflow-hidden" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A modern architectural firm website layout. The design treats whitespace as an active element, featuring a large high-quality hero image of a modern building, framed by a soft minimalistic UI. Uses a fluid grid system, beige background tones, and strong slate typography. Very premium and structural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4KqQuyly1ugu_Y5b49xJqAJjMIL4LFbfYA3VjkEzk0IxAalf-AE_SNer461e3WZ-vHICX34hNxRI7ttM_H0HLyXxYjlxbKgFOvxLRi6abips7elbazAHu7AVG-vkS9pRsMJyKlqYWhpWPfCXKjmI0YinpvvTZl5V4eRStqUghPD8V27swYeSsG8xfZf6QWUtgxiA4gNjqkJmXOP7dlslsejdJyxWNlqENJw85K2guyRM-I-SA6-F5"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-[12px] uppercase tracking-wider">Web Design</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Architechture Co.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A digital portfolio for a leading architectural firm, mirroring their physical structures with generous whitespace and rigid yet elegant grids.</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between text-secondary relative z-10">
+<span class="font-label-md text-label-md">View Case Study</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 6 -->
+<a class="group flex flex-col gap-6 bg-surface-container-lowest rounded-[20px] p-card-padding shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden lg:-mt-16" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-tertiary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-sm bg-surface-container">
+<!-- Abstract representation since it's a data vis project -->
+<svg class="w-full h-full text-secondary opacity-20 transform group-hover:scale-110 transition-transform duration-1000" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,100 C20,80 30,90 50,50 C70,10 80,40 100,0 L100,100 Z" fill="currentColor"></path>
+<path d="M0,100 C30,60 40,70 60,30 C80,-10 90,20 100,0 L100,100 Z" fill="currentColor" opacity="0.5"></path>
+</svg>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-[12px] uppercase tracking-wider">Development</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">FinTech Analytics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Custom data visualization dashboards translating complex financial metrics into intuitive, beautiful, and tactile charts.</p>
+</div>
+<div class="mt-auto pt-4 flex items-center justify-between text-secondary relative z-10">
+<span class="font-label-md text-label-md">View Case Study</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Call to Action Banner -->
+<section class="w-full pb-section-gap px-margin-mobile lg:px-gutter w-full px-6 md:px-12 lg:px-16">
+<div class="bg-primary text-on-primary rounded-[32px] p-8 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl">
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-surface/10 rounded-full blur-[40px] pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-surface/10 to-transparent pointer-events-none"></div>
+<div class="flex flex-col gap-4 max-w-2xl relative z-10">
+<h2 class="font-display-lg text-display-lg">Ready to build something extraordinary?</h2>
+<p class="font-body-lg text-body-lg text-on-primary/90">Let's collaborate to bring your digital vision to life with warmth, precision, and impact.</p>
+</div>
+<div class="relative z-10 flex-shrink-0">
+<a class="inline-flex items-center gap-3 px-8 py-4 bg-surface text-primary font-label-md text-label-md rounded-full hover:bg-surface-container hover:shadow-lg transition-all transform hover:-translate-y-1" href="#">
+                    Start a Project
+                    <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+</div>
+</section>
+    </div>
+
+    <!-- DESIGN STUDIO SECTION -->
+  </div>
+</main><footer class="w-full bg-[#F48F68] border-t border-white/20 pt-section-gap pb-12 text-[#fff6de]">
+  <div class="w-full px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <img alt="Logo" class="h-6 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACa3CoLU80n-0olM_6cLv8tHBZAk9jztQCfFk1ZQg1ZbN414ZzU26o3L-y808-yNP9xEl54yoXQ8_ADBeCmbdSTzPergbP9xVHXmOAHuVBMf09nJ_KaNqgbMjvOvsZjpOteibTup3YlOgmOZ4nLVdu1LaVleMqOrBcQJnos-JtwQJEX_3bnN8utykmM3R_Zxw3L1ZYSlqyIS7JyuqA2sAHAZwL2RaMvKif5U8qBrY9T1MGd_dqRu1h"/>
+        <span class="font-headline-sm text-headline-sm text-white">Sociality AI</span>
+      </div>
+      <p class="text-body-md font-body-md text-white/95">Crafting human-centric digital experiences through organic creativity and AI precision.</p>
+    </div>
+    <div class="flex flex-col gap-4">
+      <span class="font-label-md text-label-md text-white uppercase tracking-widest">Navigation</span>
+      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="#home">Home</a>
+      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="#services">Services</a>
+      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="#how-it-works">How it works</a>
+      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="#portfolio">Portfolio</a>
+      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="design-studio.html">Design Studio</a>
+      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="blogs.html">Blogs</a>
+      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="faqs.html">FAQs</a>
+    </div>
+    <div class="flex flex-col gap-4">
+      <span class="font-label-md text-label-md text-white uppercase tracking-widest">Contact</span>
+      <p class="text-body-md font-body-md text-white/80 italic">hello@sociality.ai</p>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-white cursor-pointer">alternate_email</span>
+        <span class="material-symbols-outlined text-white cursor-pointer">public</span>
+      </div>
+    </div>
+  </div>
+  <div class="w-full px-6 md:px-12 lg:px-16 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/70 font-label-md text-label-md">
+    <span>© 2024 Sociality AI. All rights reserved.</span>
+    <div class="flex gap-6">
+      <span class="hover:text-white cursor-pointer">Privacy Policy</span>
+      <span class="hover:text-white cursor-pointer">Terms of Service</span>
+    </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- SCROLL SPY NAVBAR HIGHLIGHT ---
+    const sections = document.querySelectorAll('div[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 180) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          if (targetId === current) {
+            link.className = "nav-link font-headline-sm text-primary font-bold underline decoration-tertiary underline-offset-8 transition-colors";
+          } else {
+            link.className = "nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors";
+          }
+        }
+      });
+    });
+
+    // --- MOBILE DRAWER HIGHLIGHT & TOGGLE ---
+    const mobileLinks = document.querySelectorAll('#mobile-menu-drawer a');
+    const drawer = document.getElementById('mobile-menu-drawer');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.add('translate-x-full');
+      });
+    });
+
+    // --- HERO CANVAS VIDEO PLAYER ---
+    const canvas = document.getElementById('hero-animation-player');
+    const loader = document.getElementById('video-loader');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      const totalFrames = 40;
+      const images = [];
+      let loadedCount = 0;
+      let currentFrame = 0;
+
+      function getFrameFilename(index) {
+        const pad = String(index).padStart(3, '0');
+        return `Assets/ezgif-frame-${pad}.jpg`;
+      }
+
+      for (let i = 1; i <= totalFrames; i++) {
+        const img = new Image();
+        img.src = getFrameFilename(i);
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === totalFrames) {
+            if (loader) {
+              loader.style.opacity = '0';
+              setTimeout(() => loader.style.display = 'none', 300);
+            }
+            startPlayback();
+          }
+        };
+        img.onerror = () => {
+          console.error('Failed to load frame:', img.src);
+        };
+        images.push(img);
+      }
+
+      function startPlayback() {
+        const fps = 12; // Slowed down to 12 FPS
+        setInterval(() => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          const img = images[currentFrame];
+          const sy = 140; // Crop the top 140px to hide the embedded navigation words
+          ctx.drawImage(
+            img, 
+            0, sy, img.naturalWidth || 1920, (img.naturalHeight || 1080) - sy, 
+            0, 0, canvas.width, canvas.height
+          );
+          currentFrame = (currentFrame + 1) % totalFrames;
+        }, 1000 / fps);
+      }
+    }
+  });
+</script>
+\n</body></html>

@@ -106,6 +106,12 @@
         <p id="detail-card-desc" class="text-xs text-[#ccc6ba] text-left leading-relaxed">
           High-performance digital experiences tailored to your business goals. Engineered to convert visitors into customers.
         </p>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] font-label-md text-[#F48F68] uppercase tracking-widest font-bold">What's Included:</span>
+          <ul id="detail-card-bullets" class="grid grid-cols-1 gap-1 text-[11px] text-[#ccc6ba] text-left list-none pl-0">
+            <!-- Populated dynamically -->
+          </ul>
+        </div>
       </div>
     </div>
     
@@ -153,24 +159,63 @@
   console.log("Sociality AI: WebGL Ecosystem script loaded on how-it-works.html!");
 
   const PILLARS_DATA = [
-    { id: 1, category: "Web Tech", icon: "devices", title: "More Than a Website", geometry: "icosahedron", material: "glass", desc: "High-performance digital experiences tailored to your business goals. Every website is engineered to convert visitors into customers while delivering exceptional speed, usability, and long-term value." },
-    { id: 2, category: "Infrastructure", icon: "settings_heart", title: "Fully Managed", geometry: "torus", material: "gold", desc: "From deployment and maintenance to updates, monitoring, and ongoing optimization—we handle everything so you can focus entirely on growing your business." },
-    { id: 3, category: "Web Tech", icon: "architecture", title: "Modern & Scalable", geometry: "cubes", material: "chrome", desc: "Built with modern technologies and modular architecture that effortlessly scales as your company grows, ensuring long-term flexibility and performance." },
-    { id: 4, category: "AI & Automation", icon: "smart_toy", title: "AI Powered Automation", geometry: "neural_sphere", material: "holographic", desc: "Automate repetitive operations, customer support, lead qualification, appointment booking, and internal workflows with intelligent AI agents operating around the clock." },
-    { id: 5, category: "Optimization", icon: "speed", title: "Lightning Fast Performance", geometry: "lightning", material: "electric", desc: "Every millisecond matters. We optimize loading speed, rendering performance, caching, and delivery to create lightning-fast digital experiences that improve SEO and conversions." },
-    { id: 6, category: "Marketing", icon: "search", title: "SEO Optimized", geometry: "arrow", material: "emerald", desc: "Technical SEO built into the foundation, helping your website rank higher, attract organic traffic, and outperform competitors." },
-    { id: 7, category: "Optimization", icon: "ads_click", title: "Conversion Focused", geometry: "target", material: "ruby", desc: "Every layout, interaction, and user journey is strategically crafted to maximize leads, inquiries, bookings, and sales." },
-    { id: 8, category: "Web Tech", icon: "smartphone", title: "Mobile First", geometry: "slab", material: "sapphire", desc: "Designed mobile-first to ensure flawless experiences across smartphones, tablets, laptops, and desktops." },
-    { id: 9, category: "Security", icon: "security", title: "Secure by Default", geometry: "shield", material: "clay", desc: "Enterprise-grade security practices protect your infrastructure, customer data, APIs, and digital assets against modern threats." },
-    { id: 10, category: "Web Tech", icon: "edit_note", title: "Easy Content Management", geometry: "document", material: "glass", desc: "Empower your team with intuitive content management systems that make updates effortless without touching code." },
-    { id: 11, category: "Analytics", icon: "analytics", title: "Analytics & Insights", geometry: "cluster", material: "gold", desc: "Track user behavior, conversions, traffic, and business performance with intelligent analytics that turn data into actionable decisions." },
-    { id: 12, category: "Infrastructure", icon: "cloud_done", title: "Scalable Infrastructure", geometry: "hexagon", material: "chrome", desc: "Cloud-native infrastructure designed to handle growth—from hundreds of visitors to millions—without compromising performance." },
-    { id: 13, category: "AI & Automation", icon: "hub", title: "AI Integrations", geometry: "neural_ring", material: "holographic", desc: "Seamlessly connect AI chatbots, voice assistants, CRMs, booking systems, payment gateways, and business automation tools into one unified ecosystem." },
-    { id: 14, category: "Infrastructure", icon: "loop", title: "Ongoing Partnership", geometry: "loop", material: "electric", desc: "We don't disappear after launch. Continuous improvements, optimization, monitoring, and innovation ensure your digital presence keeps evolving." },
-    { id: 15, category: "Web Tech", icon: "edit_square", title: "Custom Built", geometry: "blueprint", material: "emerald", desc: "Every solution is handcrafted specifically for your business goals. No templates. No shortcuts. Just custom digital experiences." },
-    { id: 16, category: "Infrastructure", icon: "cloud_sync", title: "Reliable Hosting", geometry: "cloud", material: "ruby", desc: "Fast, secure, globally distributed hosting with automatic backups, high availability, and enterprise-level uptime." },
-    { id: 17, category: "Marketing", icon: "rocket_launch", title: "Future Ready", geometry: "rocket", material: "sapphire", desc: "Built using future-proof technologies that keep your business adaptable, maintainable, and prepared for tomorrow's digital landscape." },
-    { id: 18, category: "Marketing", icon: "palette", title: "Brand Consistency", geometry: "spectrum", material: "clay", desc: "Maintain a consistent visual identity across every customer touchpoint through cohesive design systems, messaging, and experiences." }
+    {
+      id: 1,
+      category: "Design & Dev",
+      icon: "devices",
+      title: "More Than a Website",
+      geometry: "crystal",
+      material: "glass",
+      desc: "We don't just build websites—we engineer complete digital experiences designed to grow your business. Every project is strategically crafted for performance, engagement, and measurable results.",
+      bullets: [
+        "High-performance custom websites",
+        "Conversion-focused UI/UX design",
+        "Mobile-first responsive experiences",
+        "Lightning-fast performance optimization",
+        "Technical SEO built into the foundation",
+        "Brand-consistent design systems",
+        "Future-ready development practices",
+        "Custom-built solutions (never templates)"
+      ]
+    },
+    {
+      id: 2,
+      category: "Post-Launch",
+      icon: "loop",
+      title: "Fully Managed",
+      geometry: "ring",
+      material: "gold",
+      desc: "Launching your website is only the beginning. We continuously manage, optimize, secure, and improve your digital ecosystem so you can focus entirely on running your business.",
+      bullets: [
+        "Complete setup & deployment",
+        "Ongoing maintenance & updates",
+        "Enterprise-grade security",
+        "Reliable cloud hosting",
+        "Automated backups & monitoring",
+        "Analytics & business insights",
+        "Easy content management",
+        "Continuous improvements & support"
+      ]
+    },
+    {
+      id: 3,
+      category: "AI & Scalability",
+      icon: "smart_toy",
+      title: "AI-Powered Growth",
+      geometry: "neural_network",
+      material: "purple_network",
+      desc: "Leverage the power of AI to automate workflows, qualify leads, enhance customer experiences, and build scalable systems that grow alongside your business.",
+      bullets: [
+        "AI-powered automation",
+        "Intelligent chat & voice agents",
+        "Lead qualification & booking",
+        "CRM & third-party integrations",
+        "Workflow automation",
+        "Scalable cloud architecture",
+        "Modern modular infrastructure",
+        "Future-proof technology stack"
+      ]
+    }
   ];
 
   // Vertex shader for the organic liquid core distortion
@@ -239,11 +284,11 @@
     renderer.shadowMap.enabled = true;
     container.appendChild(renderer.domElement);
 
-    // 2. Setup Lighting (Warm ambient tones, cool rim light)
+    // 2. Setup Lighting (Warm ambient tones, core point light, cool rim light)
     const ambientLight = new THREE.AmbientLight(0x231f1a, 1.8);
     scene.add(ambientLight);
 
-    const coreLight = new THREE.PointLight(0xF48F68, 5.0, 15);
+    const coreLight = new THREE.PointLight(0xF48F68, 6.0, 15); // Enhanced point light inside the core
     scene.add(coreLight);
 
     const rimLight = new THREE.DirectionalLight(0x9aeeec, 0.8);
@@ -284,95 +329,73 @@
     const coreMesh = new THREE.Mesh(coreGeo, coreMat);
     scene.add(coreMesh);
 
-    // 5. Generate Geometries & Materials programmatically for the 18 Pillars
+    // 5. Generate Geometries & Materials programmatically for the 3 Nodes
     const pillars = [];
     const materialsMap = {
-      glass: new THREE.MeshPhysicalMaterial({ color: 0xfff6de, roughness: 0.1, metalness: 0.1, transmission: 0.95, thickness: 0.5, transparent: true }),
-      gold: new THREE.MeshStandardMaterial({ color: 0xffdbce, roughness: 0.15, metalness: 0.9 }),
-      chrome: new THREE.MeshStandardMaterial({ color: 0xdddddd, roughness: 0.05, metalness: 1.0 }),
-      holographic: new THREE.MeshBasicMaterial({ color: 0xF48F68, wireframe: true, transparent: true, opacity: 0.6 }),
-      electric: new THREE.MeshPhysicalMaterial({ color: 0xffb59a, roughness: 0.2, metalness: 0.3, transmission: 0.8, transparent: true }),
-      emerald: new THREE.MeshPhysicalMaterial({ color: 0xcec6b0, roughness: 0.15, metalness: 0.2, transmission: 0.65 }),
-      ruby: new THREE.MeshPhysicalMaterial({ color: 0x984726, roughness: 0.1, metalness: 0.2, transmission: 0.5 }),
-      sapphire: new THREE.MeshPhysicalMaterial({ color: 0x81d5d3, roughness: 0.1, metalness: 0.2, transmission: 0.75, transparent: true }),
-      clay: new THREE.MeshStandardMaterial({ color: 0xffdbce, roughness: 0.8, metalness: 0.05 })
+      glass: new THREE.MeshPhysicalMaterial({ 
+        color: 0x81d5d3, // Light cyan glassmorphism tint
+        roughness: 0.1, 
+        metalness: 0.1, 
+        transmission: 0.95, 
+        thickness: 0.6, 
+        transparent: true 
+      }),
+      gold: new THREE.MeshStandardMaterial({ 
+        color: 0xffdbce, // Brushed coppery gold / brass
+        roughness: 0.2, 
+        metalness: 0.95 
+      })
     };
 
     function createPillarGeometry(type) {
       switch (type) {
-        case "icosahedron":
-          return new THREE.IcosahedronGeometry(0.18, 0);
-        case "torus":
-          return new THREE.TorusGeometry(0.13, 0.04, 8, 32);
-        case "cubes": {
+        case "crystal":
+          // 🔷 Premium Glass Crystal (Icosahedron) scaled up to command attention
+          return new THREE.IcosahedronGeometry(0.38, 0);
+        case "ring":
+          // ⚪ Infinite Floating Torus Ring
+          return new THREE.TorusGeometry(0.3, 0.07, 16, 64);
+        case "neural_network": {
+          // 🟣 Modular Neural Cube Network
           const group = new THREE.Group();
-          for (let i = 0; i < 3; i++) {
-            const box = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.08, 0.08), materialsMap.chrome);
-            box.position.set((i - 1) * 0.1, (i - 1) * 0.05, 0);
-            group.add(box);
-          }
+          
+          // Connective thin wireframe lines
+          const lineMat = new THREE.LineBasicMaterial({ color: 0xa387cf, transparent: true, opacity: 0.3 });
+          const points = [];
+          points.push(new THREE.Vector3(-0.25, 0.1, 0));
+          points.push(new THREE.Vector3(0.25, 0.1, 0));
+          points.push(new THREE.Vector3(0, -0.2, 0));
+          points.push(new THREE.Vector3(-0.25, 0.1, 0));
+          
+          const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+          const line = new THREE.Line(lineGeo, lineMat);
+          group.add(line);
+
+          // 3 nested floating modular boxes (soft purple frosted glass)
+          const boxMat = new THREE.MeshPhysicalMaterial({
+            color: 0xa387cf, 
+            roughness: 0.2, 
+            metalness: 0.1, 
+            transmission: 0.8, 
+            transparent: true
+          });
+          
+          const boxGeo = new THREE.BoxGeometry(0.14, 0.14, 0.14);
+          
+          const b1 = new THREE.Mesh(boxGeo, boxMat);
+          b1.position.set(-0.25, 0.1, 0);
+          
+          const b2 = new THREE.Mesh(boxGeo, boxMat);
+          b2.position.set(0.25, 0.1, 0);
+          
+          const b3 = new THREE.Mesh(boxGeo, boxMat);
+          b3.position.set(0, -0.2, 0);
+          
+          group.add(b1, b2, b3);
           return group;
         }
-        case "neural_sphere":
-          return new THREE.SphereGeometry(0.16, 8, 8);
-        case "lightning":
-          return new THREE.ConeGeometry(0.12, 0.35, 4);
-        case "arrow":
-          return new THREE.ConeGeometry(0.12, 0.35, 3);
-        case "target": {
-          const group = new THREE.Group();
-          const inner = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 16), materialsMap.ruby);
-          const outer = new THREE.Mesh(new THREE.SphereGeometry(0.16, 8, 8), materialsMap.holographic);
-          group.add(inner, outer);
-          return group;
-        }
-        case "slab":
-          return new THREE.BoxGeometry(0.24, 0.32, 0.05);
-        case "shield":
-          return new THREE.DodecahedronGeometry(0.16, 0);
-        case "document":
-          return new THREE.BoxGeometry(0.18, 0.24, 0.06);
-        case "cluster": {
-          const group = new THREE.Group();
-          for (let i = 0; i < 3; i++) {
-            const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 16), materialsMap.gold);
-            sphere.position.set(Math.sin(i * 2.0) * 0.08, Math.cos(i * 2.0) * 0.08, 0);
-            group.add(sphere);
-          }
-          return group;
-        }
-        case "hexagon":
-          return new THREE.CylinderGeometry(0.15, 0.15, 0.04, 6);
-        case "neural_ring": {
-          const group = new THREE.Group();
-          const ring = new THREE.Mesh(new THREE.TorusGeometry(0.13, 0.02, 6, 24), materialsMap.holographic);
-          group.add(ring);
-          for (let i = 0; i < 4; i++) {
-            const node = new THREE.Mesh(new THREE.SphereGeometry(0.04, 8, 8), materialsMap.glass);
-            node.position.set(Math.cos(i * Math.PI / 2) * 0.13, Math.sin(i * Math.PI / 2) * 0.13, 0);
-            group.add(node);
-          }
-          return group;
-        }
-        case "loop":
-          return new THREE.TorusKnotGeometry(0.09, 0.03, 48, 6, 2, 3);
-        case "blueprint":
-          return new THREE.CylinderGeometry(0.14, 0.14, 0.28, 6, 1, true);
-        case "cloud": {
-          const group = new THREE.Group();
-          const m = materialsMap.ruby;
-          const s1 = new THREE.Mesh(new THREE.SphereGeometry(0.09, 16, 16), m);
-          const s2 = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 16), m); s2.position.set(0.1, -0.02, 0);
-          const s3 = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), m); s3.position.set(-0.1, -0.02, 0);
-          const s4 = new THREE.Mesh(new THREE.SphereGeometry(0.05, 16, 16), m); s4.position.set(0.02, 0.06, 0);
-          group.add(s1, s2, s3, s4);
-          return group;
-        }
-        case "rocket":
-          return new THREE.ConeGeometry(0.12, 0.35, 6);
-        case "spectrum":
         default:
-          return new THREE.SphereGeometry(0.15, 32, 32);
+          return new THREE.SphereGeometry(0.2, 32, 32);
       }
     }
 
@@ -398,11 +421,12 @@
       pGroup.add(mesh);
       scene.add(pGroup);
 
-      const radius = 2.1 + (index % 4) * 0.8;
-      const speed = (0.2 + (index % 3) * 0.1) * (index % 2 === 0 ? 1 : -1);
-      const heightOffset = (index % 3 - 1) * 0.5;
-      const inclination = (index % 5 - 2) * 0.18;
-      const phase = index * (Math.PI * 2 / 18);
+      // Clean, mathematically structured orbits: 120 degrees spaced
+      const radius = 2.8; 
+      const phase = index * (Math.PI * 2 / 3); // Spaced perfectly at 0, 120, 240 degrees
+      const speed = 0.15; // Slow precise rotation speed
+      const heightOffset = 0.0; // Flat circular plane
+      const inclination = 0.15; // Fixed system inclination
 
       pillars.push({
         group: pGroup,
@@ -524,6 +548,17 @@
           document.getElementById("detail-card-category").innerText = pillar.data.category;
           document.getElementById("detail-card-title").innerText = pillar.data.title;
           document.getElementById("detail-card-desc").innerText = pillar.data.desc;
+          
+          const bulletsUl = document.getElementById("detail-card-bullets");
+          if (bulletsUl) {
+            bulletsUl.innerHTML = "";
+            pillar.data.bullets.forEach(bullet => {
+              const li = document.createElement("li");
+              li.className = "flex items-start gap-2";
+              li.innerHTML = `<span class="text-[#F48F68] shrink-0">•</span><span>${bullet}</span>`;
+              bulletsUl.appendChild(li);
+            });
+          }
           
           card.classList.remove("pointer-events-none");
           gsap.to(card, { opacity: 1, scale: 1, y: "-50%", x: "-50%", duration: 0.5, delay: 0.6 });

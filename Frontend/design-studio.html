@@ -3,82 +3,128 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Design Studio | Sociality AI</title>
+  <title>Design Studio 2.0 • Coming Soon | Sociality AI</title>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&amp;family=Mulish:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&amp;family=Mulish:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
   <style>
     @layer base {
-      html, body { margin: 0; padding: 0; }
-      body { overscroll-behavior: none; }
-      main > :first-child { margin-top: 0 !important; }
-      main > :last-child { margin-bottom: 0 !important; }
-    }
-    ::-webkit-scrollbar { display: none; }
-
-    /* Keyframes for live motion previews */
-    @keyframes floatMotion {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-12px) rotate(2deg); }
+      html, body { margin: 0; padding: 0; min-height: 100vh; }
     }
 
-    @keyframes eqMotion {
-      0%, 100% { height: 8px; }
-      50% { height: 32px; }
+    @keyframes pulseGlow {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 0.8;
+      }
     }
 
-    .animate-studio-float {
-      animation: floatMotion 3.5s ease-in-out infinite;
+    @keyframes orbitRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
-    .studio-eq-bar {
-      width: 4px;
-      background: linear-gradient(180deg, #F48F68 0%, #fff6de 100%);
-      border-radius: 4px;
-      animation: eqMotion 1.2s ease-in-out infinite;
+    @keyframes orbitRotateReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
     }
-    .studio-eq-bar:nth-child(1) { animation-delay: 0.0s; }
-    .studio-eq-bar:nth-child(2) { animation-delay: 0.2s; }
-    .studio-eq-bar:nth-child(3) { animation-delay: 0.4s; }
-    .studio-eq-bar:nth-child(4) { animation-delay: 0.1s; }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .animate-pulse-glow {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    .animate-orbit {
+      animation: orbitRotate 22s linear infinite;
+    }
+
+    .animate-orbit-rev {
+      animation: orbitRotateReverse 16s linear infinite;
+    }
+
+    .shimmer-text {
+      background: linear-gradient(90deg, #984726 0%, #F48F68 50%, #984726 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s infinite;
+    }
   </style>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
-    tailwind.config={theme:{extend:{"colors":{"surface-container-low":"#f7f3f0","surface-container-high":"#ece7e4","background":"#fdf8f5","surface":"#fdf8f5","on-error-container":"#93000a","inverse-on-surface":"#f4f0ed","surface-bright":"#fdf8f5","on-background":"#1c1b1a","inverse-primary":"#cec6b0","surface-variant":"#e6e2df","on-surface-variant":"#4a473e","on-secondary-fixed":"#00201f","secondary-fixed-dim":"#81d5d3","on-secondary":"#ffffff","error-container":"#ffdad6","on-primary-container":"#76705d","error":"#ba1a1a","outline":"#7b776d","tertiary":"#984726","surface-container":"#f2edea","tertiary-container":"#fff4f1","surface-container-highest":"#e6e2df","on-tertiary-fixed":"#380d00","tertiary-fixed":"#ffdbce","outline-variant":"#ccc6ba","surface-container-lowest":"#ffffff","on-primary-fixed":"#1f1b0d","on-primary":"#ffffff","on-surface":"#1c1b1a","on-tertiary-container":"#ae5836","secondary":"#006a69","primary-container":"#fff6de","surface-dim":"#ddd9d6","on-primary-fixed-variant":"#4b4735","on-tertiary":"#ffffff","on-secondary-container":"#006e6d","primary":"#645e4c","inverse-surface":"#31302e","on-tertiary-fixed-variant":"#793010","tertiary-fixed-dim":"#ffb59a","secondary-container":"#9aeeec","on-error":"#ffffff","primary-fixed-dim":"#cec6b0","secondary-fixed":"#9df1ef","primary-fixed":"#ebe2cb","surface-tint":"#645e4c","on-secondary-fixed-variant":"#00504f"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"base":"8px","section-gap":"120px","card-padding":"32px","margin-mobile":"20px","gutter":"24px","container-max":"1280px"},"fontFamily":{"label-md":["Mulish"],"body-md":["Mulish"],"body-lg":["Mulish"],"headline-lg-mobile":["Arima Madurai"],"headline-lg":["Arima Madurai"],"headline-sm":["Arima Madurai"],"body-lg-mobile":["Mulish"],"display-lg":["Arima Madurai"],"headline-md":["Arima Madurai"]},"fontSize":{"label-md":["14px",{"lineHeight":"1.2","letterSpacing":"0.05em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-lg-mobile":["32px",{"lineHeight":"1.2","fontWeight":"700"}],"headline-lg":["40px",{"lineHeight":"1.2","fontWeight":"700"}],"headline-sm":["24px",{"lineHeight":"1.4","fontWeight":"600"}],"body-lg-mobile":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["32px",{"lineHeight":"1.3","fontWeight":"600"}]}}}}
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f7f3f0",
+            "surface-container-high": "#ece7e4",
+            "background": "#fdf8f5",
+            "surface": "#fdf8f5",
+            "on-background": "#1c1b1a",
+            "on-surface": "#1c1b1a",
+            "on-surface-variant": "#4a473e",
+            "outline": "#7b776d",
+            "outline-variant": "#ccc6ba",
+            "tertiary": "#984726",
+            "surface-container": "#f2edea",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#006a69",
+            "primary-container": "#fff6de"
+          },
+          fontFamily: {
+            "label-md": ["Mulish", "sans-serif"],
+            "body-md": ["Mulish", "sans-serif"],
+            "headline-sm": ["Arima Madurai", "sans-serif"],
+            "display-lg": ["Arima Madurai", "sans-serif"]
+          }
+        }
+      }
+    };
   </script>
 </head>
-<body class="bg-background font-body-md text-on-background">
+<body class="bg-[#0d0c0a] font-body-md text-[#fff6de] min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-[#F48F68] selection:text-white">
 
 <!-- Header Navigation -->
 <header class="fixed top-0 left-0 w-full z-50 px-4 pt-4 bg-transparent pointer-events-none">
-  <div class="pointer-events-auto h-20 w-full px-6 lg:px-8 flex items-center justify-between bg-surface/75 backdrop-blur-xl border border-outline-variant/30 rounded-2xl shadow-[0_8px_32px_0_rgba(100,94,76,0.08)]">
-    <div class="flex items-center gap-3">
+  <div class="pointer-events-auto h-20 w-full px-6 lg:px-8 flex items-center justify-between bg-[#1c1a16]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+    <a href="index.html" class="flex items-center gap-3">
       <img alt="Sociality AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACa3CoLU80n-0olM_6cLv8tHBZAk9jztQCfFk1ZQg1ZbN414ZzU26o3L-y808-yNP9xEl54yoXQ8_ADBeCmbdSTzPergbP9xVHXmOAHuVBMf09nJ_KaNqgbMjvOvsZjpOteibTup3YlOgmOZ4nLVdu1LaVleMqOrBcQJnos-JtwQJEX_3bnN8utykmM3R_Zxw3L1ZYSlqyIS7JyuqA2sAHAZwL2RaMvKif5U8qBrY9T1MGd_dqRu1h"/>
-      <span class="font-headline-sm text-headline-sm text-on-surface">Sociality AI</span>
-    </div>
+      <span class="font-headline-sm text-xl text-[#fff6de] font-bold">Sociality AI</span>
+    </a>
     <nav class="hidden lg:flex items-center gap-8">
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#home">Home</a>
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#services">Services</a>
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#how-it-works">How it works</a>
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#portfolio">Portfolio</a>
+      <a class="nav-link font-headline-sm text-white/70 hover:text-white transition-colors text-base" href="index.html#home">Home</a>
+      <a class="nav-link font-headline-sm text-white/70 hover:text-white transition-colors text-base" href="index.html#services">Services</a>
+      <a class="nav-link font-headline-sm text-white/70 hover:text-white transition-colors text-base" href="index.html#how-it-works">How it works</a>
+      <a class="nav-link font-headline-sm text-white/70 hover:text-white transition-colors text-base" href="index.html#portfolio">Portfolio</a>
       <div class="relative group">
-        <button class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1 nav-active">
+        <button class="nav-link font-headline-sm text-[#F48F68] font-bold flex items-center gap-1 text-base">
           Others
           <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
         </button>
-        <div class="absolute right-0 mt-2 w-48 bg-surface/95 backdrop-blur-xl border border-outline-variant rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="design-studio.html">Design Studio</a>
-          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="blogs.html">Blogs</a>
-          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="faqs.html">FAQs</a>
-          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="hiring.html">We Are Hiring</a>
+        <div class="absolute right-0 mt-2 w-48 bg-[#1c1a16]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <a class="block px-4 py-2 hover:bg-white/5 text-white/80 hover:text-white transition-colors font-headline-sm text-[15px]" href="dashboard.html">Dashboard</a>
+          <a class="block px-4 py-2 bg-white/5 text-[#F48F68] font-bold transition-colors font-headline-sm text-[15px]" href="design-studio.html">Design Studio</a>
+          <a class="block px-4 py-2 hover:bg-white/5 text-white/80 hover:text-white transition-colors font-headline-sm text-[15px]" href="blogs.html">Blogs</a>
+          <a class="block px-4 py-2 hover:bg-white/5 text-white/80 hover:text-white transition-colors font-headline-sm text-[15px]" href="faqs.html">FAQs</a>
+          <a class="block px-4 py-2 hover:bg-white/5 text-white/80 hover:text-white transition-colors font-headline-sm text-[15px]" href="hiring.html">We Are Hiring</a>
         </div>
       </div>
     </nav>
     <div class="flex items-center gap-4">
-      <a class="hidden sm:flex items-center justify-center px-6 py-2 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full hover:shadow-lg transition-all transform hover:-translate-y-0.5" href="book-a-call.html">Book a Call</a>
-      <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="mobile-menu-btn">
+      <a class="hidden sm:flex items-center justify-center px-6 py-2.5 bg-[#984726] text-white font-label-md text-sm font-bold rounded-full hover:bg-[#F48F68] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5" href="book-a-call.html">Book a Call</a>
+      <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white" id="mobile-menu-btn">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
@@ -86,707 +132,226 @@
 </header>
 
 <!-- Mobile Menu Drawer -->
-<div class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl flex flex-col justify-between p-8 translate-x-full transition-transform duration-300 ease-in-out lg:hidden" id="mobile-menu-drawer">
+<div class="fixed inset-0 z-50 bg-[#0d0c0a]/95 backdrop-blur-xl flex flex-col justify-between p-8 translate-x-full transition-transform duration-300 ease-in-out lg:hidden" id="mobile-menu-drawer">
   <div>
     <div class="flex justify-between items-center mb-12">
       <div class="flex items-center gap-3">
         <img alt="Sociality AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACa3CoLU80n-0olM_6cLv8tHBZAk9jztQCfFk1ZQg1ZbN414ZzU26o3L-y808-yNP9xEl54yoXQ8_ADBeCmbdSTzPergbP9xVHXmOAHuVBMf09nJ_KaNqgbMjvOvsZjpOteibTup3YlOgmOZ4nLVdu1LaVleMqOrBcQJnos-JtwQJEX_3bnN8utykmM3R_Zxw3L1ZYSlqyIS7JyuqA2sAHAZwL2RaMvKif5U8qBrY9T1MGd_dqRu1h"/>
-        <span class="font-headline-sm text-headline-sm text-on-surface">Sociality AI</span>
+        <span class="font-headline-sm text-xl text-white font-bold">Sociality AI</span>
       </div>
-      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="mobile-menu-close-btn">
+      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white" id="mobile-menu-close-btn">
         <span class="material-symbols-outlined">close</span>
       </button>
     </div>
     <nav class="flex flex-col gap-6">
-      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#home">Home</a>
-      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#services">Services</a>
-      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#how-it-works">How it works</a>
-      <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#portfolio">Portfolio</a>
-      <div class="h-px bg-outline-variant/30 my-2"></div>
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="design-studio.html">Design Studio</a>
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="blogs.html">Blogs</a>
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="faqs.html">FAQs</a>
-      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="hiring.html">We Are Hiring</a>
+      <a class="nav-link font-headline-sm text-2xl text-white/70 hover:text-white transition-colors" href="index.html#home">Home</a>
+      <a class="nav-link font-headline-sm text-2xl text-white/70 hover:text-white transition-colors" href="index.html#services">Services</a>
+      <a class="nav-link font-headline-sm text-2xl text-white/70 hover:text-white transition-colors" href="index.html#how-it-works">How it works</a>
+      <a class="nav-link font-headline-sm text-2xl text-white/70 hover:text-white transition-colors" href="index.html#portfolio">Portfolio</a>
+      <div class="h-px bg-white/10 my-2"></div>
+      <a class="nav-link font-headline-sm text-xl text-white/70 hover:text-white transition-colors" href="dashboard.html">Dashboard</a>
+      <a class="nav-link font-headline-sm text-xl text-[#F48F68] font-bold" href="design-studio.html">Design Studio (Coming Soon)</a>
+      <a class="nav-link font-headline-sm text-xl text-white/70 hover:text-white transition-colors" href="blogs.html">Blogs</a>
+      <a class="nav-link font-headline-sm text-xl text-white/70 hover:text-white transition-colors" href="faqs.html">FAQs</a>
+      <a class="nav-link font-headline-sm text-xl text-white/70 hover:text-white transition-colors" href="hiring.html">We Are Hiring</a>
     </nav>
   </div>
-  <div class="flex flex-col gap-4">
-    <a class="w-full py-4 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full shadow-md text-center" href="book-a-call.html">Book a Call</a>
-    <div class="text-center text-xs text-on-surface-variant font-label-md uppercase tracking-wider">hello@sociality.ai</div>
-  </div>
+  <a class="w-full py-4 bg-[#984726] text-white font-label-md text-center rounded-full font-bold shadow-lg" href="book-a-call.html">Book a Strategy Call</a>
 </div>
 
-<!-- Main Content Area -->
-<main class="w-full pt-28 bg-background min-h-screen relative overflow-hidden pb-section-gap">
-  <!-- Ambient background glow -->
-  <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary-fixed/20 rounded-full blur-[140px] -z-10 pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
-  <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-tertiary-fixed/20 rounded-full blur-[120px] -z-10 pointer-events-none -translate-x-1/3 translate-y-1/4"></div>
+<!-- ====================================================================== -->
+<!-- ANIMATED LOCKED "COMING SOON" HERO SECTION                            -->
+<!-- ====================================================================== -->
+<main class="flex-1 flex flex-col items-center justify-center pt-32 pb-20 px-6 relative overflow-hidden">
+  
+  <!-- Subtle Background Glows -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-[#F48F68]/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] bg-[#984726]/20 rounded-full blur-[90px] pointer-events-none"></div>
 
-  <div class="w-full px-6 md:px-12 lg:px-16 pt-8">
-    
-    <!-- Top Page Title Banner -->
-    <div class="flex flex-col gap-2 mb-10 pb-6 border-b border-outline-variant/30">
-      <span class="font-label-md text-sm text-[#F48F68] uppercase tracking-widest font-bold">Interactive Brand System</span>
-      <h1 class="font-display-lg text-3xl sm:text-4xl lg:text-5xl text-on-surface font-bold">Design Studio</h1>
-    </div>
+  <div class="w-full max-w-5xl mx-auto flex flex-col items-center text-center relative z-10 gap-10">
 
-    <!-- Main 2-Column Grid Layout (Matching Wireframe Sketch) -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+    <!-- Orbital Animated Lock Icon Badge -->
+    <div class="relative w-36 h-36 flex items-center justify-center">
       
-      <!-- LEFT COLUMN: Collapsible Accordions for Categories (As sketched) -->
-      <div class="lg:col-span-4 flex flex-col gap-4">
-        
-        <!-- 1. WEBSITE STYLE -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-style')">
-            <span>Website Style</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-style" class="accordion-body hidden flex-col gap-1.5 p-3 border-t border-outline-variant/20 bg-surface-container-low">
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Minimal', this)">
-              <span>Minimal</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-bold text-left text-white bg-[#984726] shadow-sm transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Modern', this)">
-              <span>Modern</span>
-              <span class="material-symbols-outlined text-sm opacity-100 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Luxury', this)">
-              <span>Luxury</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Corporate', this)">
-              <span>Corporate</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Creative', this)">
-              <span>Creative</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Glassmorphism', this)">
-              <span>Glassmorphism</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Dark Theme', this)">
-              <span>Dark Theme</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('style', 'Light Theme', this)">
-              <span>Light Theme</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 2. COLOR PALETTE -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-colors')">
-            <span>Color Palette</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-colors" class="accordion-body hidden flex-col gap-1.5 p-3 border-t border-outline-variant/20 bg-surface-container-low">
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('colors', 'Primary Color', this)">
-              <span>Primary Color</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('colors', 'Secondary Color', this)">
-              <span>Secondary Color</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('colors', 'Accent Color', this)">
-              <span>Accent Color</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('colors', 'Background Style', this)">
-              <span>Background Style</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 3. TYPOGRAPHY -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-typography')">
-            <span>Typography</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-typography" class="accordion-body hidden flex-col gap-1.5 p-3 border-t border-outline-variant/20 bg-surface-container-low">
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('typography', 'Heading Font', this)">
-              <span>Heading Font</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('typography', 'Body Font', this)">
-              <span>Body Font</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('typography', 'Font Weight', this)">
-              <span>Font Weight</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('typography', 'Font Scale', this)">
-              <span>Font Scale</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 4. COMPONENTS -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-components')">
-            <span>Components</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-components" class="accordion-body hidden flex-col gap-1.5 p-3 border-t border-outline-variant/20 bg-surface-container-low">
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('components', 'Button Style', this)">
-              <span>Button Style</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('components', 'Border Radius', this)">
-              <span>Border Radius</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('components', 'Card Style', this)">
-              <span>Card Style</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('components', 'Shadows', this)">
-              <span>Shadows</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('components', 'Icons', this)">
-              <span>Icons</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 5. ANIMATIONS -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-animations')">
-            <span>Animations</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-animations" class="accordion-body hidden flex-col gap-1.5 p-3 border-t border-outline-variant/20 bg-surface-container-low">
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('animations', 'Minimal Motion', this)">
-              <span>Minimal Motion</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('animations', 'Smooth Motion', this)">
-              <span>Smooth Motion</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('animations', 'Premium Motion', this)">
-              <span>Premium Motion</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('animations', 'Interactive Motion', this)">
-              <span>Interactive Motion</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 6. LAYOUT -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-layout')">
-            <span>Layout</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-layout" class="accordion-body hidden flex-col gap-1.5 p-3 border-t border-outline-variant/20 bg-surface-container-low">
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('layout', 'Full Width', this)">
-              <span>Full Width</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('layout', 'Boxed', this)">
-              <span>Boxed</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('layout', 'Grid', this)">
-              <span>Grid</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-            <button type="button" class="sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="selectSubOption('layout', 'Split Layout', this)">
-              <span>Split Layout</span>
-              <span class="material-symbols-outlined text-sm opacity-0 opt-check">check</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 7. INSPIRATIONS -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-inspirations')">
-            <span>Inspirations</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-inspirations" class="accordion-body hidden flex-col gap-3 p-4 border-t border-outline-variant/20 bg-surface-container-low">
-            <span class="font-label-md text-xs text-on-surface-variant font-bold">Paste image of a website or URL:</span>
-            <div class="flex flex-col gap-2">
-              <input id="inspire-url-input" type="url" placeholder="https://example.com or image URL" class="w-full bg-surface border border-outline-variant/40 rounded-xl py-2.5 px-3 text-xs font-body-md text-on-surface focus:outline-none focus:border-[#F48F68]" />
-              <button type="button" class="w-full py-2 bg-[#984726] text-white rounded-xl text-xs font-label-md font-bold hover:bg-[#F48F68] transition-colors" onclick="loadInspirationURL()">Load Preview</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. FEATURES -->
-        <div class="accordion-item rounded-3xl border-2 border-outline-variant/30 bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
-          <button type="button" class="accordion-header w-full py-4 px-6 font-headline-sm text-base font-bold text-on-surface flex justify-between items-center text-left hover:bg-[#fff4f1] transition-colors" onclick="toggleAccordion('cat-features')">
-            <span>Features</span>
-            <span class="material-symbols-outlined accordion-icon transition-transform duration-300">expand_more</span>
-          </button>
-          <div id="cat-features" class="accordion-body hidden flex-col gap-1.5 p-3 border-t border-outline-variant/20 bg-surface-container-low max-h-[280px] overflow-y-auto">
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-bold text-left text-white bg-[#984726] shadow-sm transition-all flex items-center justify-between" onclick="toggleFeatureOption('AI Chatbot', this)">
-              <span>AI Chatbot</span><span class="material-symbols-outlined text-sm opacity-100 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-bold text-left text-white bg-[#984726] shadow-sm transition-all flex items-center justify-between" onclick="toggleFeatureOption('Booking System', this)">
-              <span>Booking System</span><span class="material-symbols-outlined text-sm opacity-100 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('Blog', this)">
-              <span>Blog</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('CMS', this)">
-              <span>CMS</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('E-commerce', this)">
-              <span>E-commerce</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('Dashboard', this)">
-              <span>Dashboard</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('Authentication', this)">
-              <span>Authentication</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('Payment Gateway', this)">
-              <span>Payment Gateway</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('SEO', this)">
-              <span>SEO</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('Analytics', this)">
-              <span>Analytics</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-            <button type="button" class="feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between" onclick="toggleFeatureOption('Contact Forms', this)">
-              <span>Contact Forms</span><span class="material-symbols-outlined text-sm opacity-0 feat-check">check_box</span>
-            </button>
-          </div>
-        </div>
-
+      <!-- Outer Orbit Ring 1 -->
+      <div class="absolute inset-0 rounded-full border border-dashed border-[#F48F68]/30 animate-orbit pointer-events-none"></div>
+      
+      <!-- Inner Orbit Ring 2 -->
+      <div class="absolute inset-2 rounded-full border border-[#984726]/40 animate-orbit-rev pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#F48F68] shadow-[0_0_12px_#F48F68]"></div>
       </div>
-
-      <!-- RIGHT COLUMN: Dynamic Live Preview Panel (As sketched) -->
-      <div class="lg:col-span-8">
-        <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-3xl p-8 lg:p-10 shadow-lg flex flex-col gap-6 min-h-[620px] relative overflow-hidden">
-          
-          <!-- Preview Header -->
-          <div class="flex items-center justify-between border-b border-outline-variant/20 pb-4">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[#F48F68] text-2xl">preview</span>
-              <h2 class="font-display-lg text-2xl lg:text-3xl text-on-surface font-bold">Preview</h2>
-            </div>
-            <span id="preview-badge" class="px-4 py-1.5 rounded-full bg-[#fff4f1] text-[#984726] border border-[#F48F68]/30 font-label-md text-xs font-bold uppercase tracking-wider">
-              Viewing: Website Style > Modern
-            </span>
-          </div>
-
-          <!-- Dynamic Live View Container -->
-          <div id="preview-display" class="flex-1 flex flex-col justify-center gap-6">
-            <!-- Rendered dynamically by JavaScript based on active sub-option -->
-          </div>
-
-        </div>
+      
+      <!-- Pulsing Aura Halo -->
+      <div class="absolute inset-4 rounded-full bg-gradient-to-tr from-[#984726]/40 to-[#F48F68]/30 animate-pulse-glow blur-sm pointer-events-none"></div>
+      
+      <!-- Center Lock Core -->
+      <div class="w-20 h-20 rounded-2xl bg-gradient-to-b from-[#2a241e] to-[#161310] border-2 border-[#F48F68]/50 shadow-[0_8px_32px_rgba(244,143,104,0.25)] flex items-center justify-center relative z-10 group">
+        <span class="material-symbols-outlined text-4xl text-[#F48F68] group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">lock</span>
       </div>
 
     </div>
+
+    <!-- Title & Teaser Copy -->
+    <div class="flex flex-col items-center gap-4 max-w-3xl">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#984726]/20 border border-[#F48F68]/40 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-[#F48F68] animate-ping"></span>
+        <span class="font-label-md text-xs uppercase tracking-widest font-bold text-[#F48F68]">Design Studio 2.0 • Locked &amp; Coming Soon</span>
+      </div>
+
+      <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+        Next-Generation Autonomous <br class="hidden sm:inline"/>
+        <span class="shimmer-text">Web Architecture Studio</span>
+      </h1>
+
+      <p class="font-body-md text-base sm:text-lg text-[#cec6b0] leading-relaxed max-w-2xl mt-2">
+        We are engineering a proprietary tactile design canvas powered by autonomous AI intelligence. Real-time brand synthesis, multi-framework code serialization, and instant high-fidelity previews are currently undergoing private testing.
+      </p>
+
+    </div>
+
+    <!-- 3 Teaser Feature Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl text-left mt-2">
+      
+      <!-- Card 1 -->
+      <div class="p-6 rounded-2xl bg-[#1a1714]/80 border border-white/10 hover:border-[#F48F68]/40 transition-all shadow-lg flex flex-col gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#984726]/20 text-[#F48F68] flex items-center justify-center font-bold group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-xl">psychology</span>
+        </div>
+        <h3 class="font-headline-sm text-lg font-bold text-white">Neural Layout Engine</h3>
+        <p class="font-body-md text-xs sm:text-sm text-[#cec6b0]/80 leading-relaxed">
+          AI dynamically adapts typography hierarchy, harmonious chromatic balance, and tactile spatial physics in real time.
+        </p>
+        <span class="text-[11px] font-mono text-[#F48F68] uppercase font-bold tracking-wider mt-auto flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#F48F68]"></span> In Active Development
+        </span>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="p-6 rounded-2xl bg-[#1a1714]/80 border border-white/10 hover:border-[#F48F68]/40 transition-all shadow-lg flex flex-col gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#006a69]/20 text-[#81d5d3] flex items-center justify-center font-bold group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-xl">token</span>
+        </div>
+        <h3 class="font-headline-sm text-lg font-bold text-white">Tactile Canvas System</h3>
+        <p class="font-body-md text-xs sm:text-sm text-[#cec6b0]/80 leading-relaxed">
+          Full responsive screen scaling, interactive audio-visual feedback, and zero-latency component sandboxing.
+        </p>
+        <span class="text-[11px] font-mono text-[#81d5d3] uppercase font-bold tracking-wider mt-auto flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#81d5d3]"></span> Private Alpha
+        </span>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="p-6 rounded-2xl bg-[#1a1714]/80 border border-white/10 hover:border-[#F48F68]/40 transition-all shadow-lg flex flex-col gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#F48F68]/20 text-[#F48F68] flex items-center justify-center font-bold group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-xl">sync_saved_locally</span>
+        </div>
+        <h3 class="font-headline-sm text-lg font-bold text-white">Full-Stack Export</h3>
+        <p class="font-body-md text-xs sm:text-sm text-[#cec6b0]/80 leading-relaxed">
+          Instantly compile specifications into production React, Next.js, and clean Tailwind CSS archetypes with one click.
+        </p>
+        <span class="text-[11px] font-mono text-[#F48F68] uppercase font-bold tracking-wider mt-auto flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#F48F68]"></span> Architecture Phase
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Early Access Notification Box & Call to Action -->
+    <div class="w-full max-w-xl p-8 rounded-3xl bg-[#161310]/90 border border-white/15 shadow-2xl flex flex-col items-center gap-5 mt-4">
+      
+      <div class="flex flex-col items-center gap-1 text-center">
+        <h4 class="font-headline-sm text-xl font-bold text-white">Request Early Access Beta</h4>
+        <p class="font-body-md text-xs sm:text-sm text-[#cec6b0]/80">
+          Be the first to create autonomous website architectures when Design Studio 2.0 launches.
+        </p>
+      </div>
+
+      <form id="notify-form" onsubmit="handleNotifySubmit(event)" class="w-full flex flex-col sm:flex-row gap-3 items-center">
+        <input 
+          type="email" 
+          id="notify-email"
+          required 
+          placeholder="Enter your work email address"
+          class="w-full flex-1 px-5 py-3.5 rounded-full bg-white/5 border border-white/20 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-[#F48F68] focus:bg-white/10 transition-all font-body-md"
+        />
+        <button 
+          type="submit" 
+          id="notify-submit-btn"
+          class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#984726] hover:bg-[#F48F68] text-white font-label-md text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 hover:scale-105"
+        >
+          <span>Notify Me</span>
+          <span class="material-symbols-outlined text-sm">notifications</span>
+        </button>
+      </form>
+
+      <div id="notify-success" class="hidden text-xs text-green-400 font-label-md font-semibold items-center gap-1.5">
+        <span class="material-symbols-outlined text-sm">check_circle</span>
+        <span>You're on the VIP list! We will notify you the moment beta access opens.</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs text-white/50 pt-2 border-t border-white/10 w-full justify-center">
+        <span>Need a website right now?</span>
+        <a href="book-a-call.html" class="text-[#F48F68] font-bold hover:underline flex items-center gap-1">
+          Schedule Founder Consultation
+          <span class="material-symbols-outlined text-xs">arrow_forward</span>
+        </a>
+      </div>
+
+    </div>
+
   </div>
 </main>
 
-<!-- Footer Section -->
-<footer class="w-full bg-[#0d0c0a] border-t border-white/20 pt-section-gap pb-12 text-[#fff6de]">
-  <div class="w-full px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
-    <div class="space-y-4">
-      <span class="font-label-md text-label-md text-[#F48F68] uppercase tracking-widest block font-bold">Ready When You Are.</span>
-      <h3 class="font-headline-md text-headline-md lg:text-headline-lg text-[#fff6de] leading-tight font-bold">AI that runs the work.<br/>You run the business.</h3>
-      <div class="pt-2 flex flex-col items-start gap-3">
-        <a href="book-a-call.html" class="inline-flex items-center justify-center px-8 py-3.5 bg-[#FDF8F5BF] text-[#1C1B1A] font-bold text-base rounded-full hover:bg-[#FDF8F5] hover:scale-105 transition-all shadow-md">
-          Book a Call
-        </a>
-        <div class="flex flex-col gap-1.5 pt-1 text-sm font-body-md text-[#fff6de]/80">
-          <a href="tel:+918275551084" class="hover:text-white transition-colors flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm text-[#F48F68]">call</span>
-            +91 8275551084
-          </a>
-          <a href="mailto:kondarushi42@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm text-[#F48F68]">mail</span>
-            kondarushi42@gmail.com
-          </a>
-        </div>
-      </div>
+<!-- Standard Footer -->
+<footer class="w-full bg-[#080706] border-t border-white/10 pt-10 pb-8 text-[#fff6de]">
+  <div class="w-full px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-4 text-white/70 font-label-md text-xs">
+    <div class="flex items-center gap-3">
+      <span class="font-bold text-[#F48F68]">SOCIALITY AI</span>
+      <span>•</span>
+      <span>Autonomous Web Architecture &amp; Strategy</span>
     </div>
-    <div class="flex flex-col gap-4">
-      <span class="font-label-md text-label-md text-white uppercase tracking-widest">Navigation</span>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="index.html#home">Home</a>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="index.html#services">Services</a>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="index.html#how-it-works">How it works</a>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="index.html#portfolio">Portfolio</a>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="design-studio.html">Design Studio</a>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="blogs.html">Blogs</a>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="faqs.html">FAQs</a>
-      <a class="text-body-md font-body-md text-white/80 hover:text-white transition-colors" href="hiring.html">We Are Hiring</a>
+    <div class="flex gap-6">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a>
+      <a href="book-a-call.html" class="hover:text-white transition-colors">Book a Call</a>
     </div>
-    <div class="flex flex-col gap-4">
-      <span class="font-label-md text-label-md text-white uppercase tracking-widest">Contact</span>
-      <div class="flex flex-col gap-2 text-body-md font-body-md text-white/80">
-        <a href="tel:+918275551084" class="hover:text-white transition-colors flex items-center gap-2">
-          <span class="material-symbols-outlined text-sm text-[#F48F68]">call</span>
-          +91 8275551084
-        </a>
-        <a href="mailto:kondarushi42@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
-          <span class="material-symbols-outlined text-sm text-[#F48F68]">mail</span>
-          kondarushi42@gmail.com
-        </a>
-      </div>
+  </div>
+  <div class="w-full px-6 md:px-12 lg:px-16 border-t border-white/5 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs">
+    <span>© 2024 Sociality AI. All rights reserved.</span>
+    <div class="flex gap-6">
+      <span class="hover:text-white cursor-pointer">Privacy Policy</span>
+      <span class="hover:text-white cursor-pointer">Terms of Service</span>
     </div>
   </div>
 </footer>
 
 <script src="nav-controller.js"></script>
 <script>
-  // Accordion Toggle logic
-  function toggleAccordion(id) {
-    const body = document.getElementById(id);
-    const item = body.closest('.accordion-item');
-    const icon = item.querySelector('.accordion-icon');
-    const isHidden = body.classList.contains('hidden');
+  function handleNotifySubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('notify-email').value;
+    const btn = document.getElementById('notify-submit-btn');
+    const successMsg = document.getElementById('notify-success');
+    
+    btn.disabled = true;
+    btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">sync</span> Subscribing...`;
+    
+    setTimeout(() => {
+      // Save notification interest to localStorage
+      try {
+        const list = JSON.parse(localStorage.getItem('sociality_studio_waitlist') || '[]');
+        list.push({ email, timestamp: new Date().toISOString() });
+        localStorage.setItem('sociality_studio_waitlist', JSON.stringify(list));
+      } catch (err) {}
 
-    // Close all accordions
-    document.querySelectorAll('.accordion-body').forEach(b => {
-      b.classList.add('hidden');
-      b.classList.remove('flex');
-    });
-    document.querySelectorAll('.accordion-icon').forEach(ic => {
-      ic.style.transform = 'rotate(0deg)';
-    });
-
-    // Open target accordion if was hidden
-    if (isHidden) {
-      body.classList.remove('hidden');
-      body.classList.add('flex');
-      if (icon) icon.style.transform = 'rotate(180deg)';
-    }
+      btn.classList.add('hidden');
+      document.getElementById('notify-email').classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      successMsg.classList.add('flex');
+    }, 600);
   }
-
-  // Select Sub-Option Logic
-  function selectSubOption(category, optionName, btnElement) {
-    // Reset all sub-option buttons
-    document.querySelectorAll('.sub-option-btn').forEach(btn => {
-      btn.className = "sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between";
-      const check = btn.querySelector('.opt-check');
-      if (check) {
-        check.classList.remove('opacity-100');
-        check.classList.add('opacity-0');
-      }
-    });
-
-    // Highlight clicked sub-option
-    btnElement.className = "sub-option-btn w-full py-2.5 px-4 rounded-xl text-xs font-label-md font-bold text-left text-white bg-[#984726] shadow-sm transition-all flex items-center justify-between";
-    const check = btnElement.querySelector('.opt-check');
-    if (check) {
-      check.classList.remove('opacity-0');
-      check.classList.add('opacity-100');
-    }
-
-    // Update Preview Header Badge
-    const badge = document.getElementById('preview-badge');
-    const catTitles = {
-      style: 'Website Style',
-      colors: 'Color Palette',
-      typography: 'Typography',
-      components: 'Components',
-      animations: 'Animations',
-      layout: 'Layout',
-      inspirations: 'Inspirations',
-      features: 'Features'
-    };
-    if (badge) {
-      badge.textContent = `Viewing: ${catTitles[category] || category} > ${optionName}`;
-    }
-
-    // Render Live Preview Content for selected sub-option
-    renderPreviewContent(category, optionName);
-  }
-
-  // Live Preview Renderer based on exact sub-option clicked
-  function renderPreviewContent(category, option) {
-    const display = document.getElementById('preview-display');
-    if (!display) return;
-
-    if (category === 'style') {
-      display.innerHTML = `
-        <div class="flex flex-col gap-4">
-          <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Style Preset Preview</span>
-          <h3 class="font-display-lg text-2xl text-on-surface font-bold">${option} Aesthetic</h3>
-          <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
-            Live previewing the <strong>${option}</strong> theme configuration. Tailored typography scale, color harmony, and container elevation configured for Sociality AI.
-          </p>
-          <div class="p-8 rounded-3xl bg-surface-container-low border border-outline-variant/30 flex flex-col gap-4 shadow-sm">
-            <span class="font-headline-sm text-lg text-on-surface font-bold">Sample Component (${option})</span>
-            <p class="font-body-md text-xs text-on-surface-variant">Elevated surface with smooth rounded geometry and warm ambient backlighting.</p>
-            <div class="flex gap-3">
-              <button class="px-5 py-2.5 bg-[#984726] text-white rounded-full font-label-md text-xs font-bold shadow-md">Action Button</button>
-              <button class="px-5 py-2.5 bg-surface text-on-surface border border-outline-variant/40 rounded-full font-label-md text-xs font-semibold">Secondary</button>
-            </div>
-          </div>
-        </div>
-      `;
-    } else if (category === 'colors') {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Color Table &amp; Presets</span>
-            <h3 class="font-display-lg text-2xl text-on-surface font-bold">${option} Inspector</h3>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div class="p-4 rounded-2xl bg-[#984726] text-white flex flex-col gap-2 shadow-md">
-              <span class="font-headline-sm text-sm font-bold">#984726</span>
-              <span class="font-label-md text-[11px] opacity-80">Terracotta Primary</span>
-            </div>
-            <div class="p-4 rounded-2xl bg-[#F48F68] text-white flex flex-col gap-2 shadow-md">
-              <span class="font-headline-sm text-sm font-bold">#F48F68</span>
-              <span class="font-label-md text-[11px] opacity-80">Terracotta Accent</span>
-            </div>
-            <div class="p-4 rounded-2xl bg-[#006a69] text-white flex flex-col gap-2 shadow-md">
-              <span class="font-headline-sm text-sm font-bold">#006A69</span>
-              <span class="font-label-md text-[11px] opacity-80">Teal Secondary</span>
-            </div>
-            <div class="p-4 rounded-2xl bg-[#1c1b1a] text-white flex flex-col gap-2 shadow-md">
-              <span class="font-headline-sm text-sm font-bold">#1C1B1A</span>
-              <span class="font-label-md text-[11px] opacity-80">Warm Dark Surface</span>
-            </div>
-          </div>
-          <div class="p-4 rounded-2xl bg-[#fff4f1] border border-[#F48F68]/30 flex items-center justify-between text-xs font-label-md text-[#984726]">
-            <span>Click any color swatch to copy HEX code.</span>
-            <span class="material-symbols-outlined text-base">palette</span>
-          </div>
-        </div>
-      `;
-    } else if (category === 'typography') {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Type System</span>
-            <h3 class="font-display-lg text-2xl text-on-surface font-bold">${option} Overview</h3>
-          </div>
-          <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col gap-3">
-            <span class="font-label-md text-xs text-[#984726] uppercase font-bold">Heading Font Specimen — Arima Madurai</span>
-            <h2 class="font-display-lg text-3xl text-on-surface font-bold">Human warmth meets AI precision.</h2>
-          </div>
-          <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col gap-3">
-            <span class="font-label-md text-xs text-[#006a69] uppercase font-bold">Body Font Specimen — Mulish</span>
-            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
-              Mulish provides high legibility across mobile and desktop devices with clear geometric proportions.
-            </p>
-          </div>
-        </div>
-      `;
-    } else if (category === 'components') {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Component Library</span>
-            <h3 class="font-display-lg text-2xl text-on-surface font-bold">${option} Showcase</h3>
-          </div>
-          <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-wrap gap-4 items-center">
-            <button class="px-6 py-3 bg-[#984726] text-white rounded-full font-label-md text-sm font-bold shadow-md hover:scale-105 transition-all">Action Pill</button>
-            <button class="px-6 py-3 bg-[#fff4f1] text-[#984726] border border-[#F48F68]/40 rounded-full font-label-md text-sm font-bold shadow-sm">Secondary Pill</button>
-            <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm">
-              <span class="material-symbols-outlined text-lg">check_circle</span>
-            </div>
-          </div>
-        </div>
-      `;
-    } else if (category === 'animations') {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Motion &amp; Keyframes</span>
-            <h3 class="font-display-lg text-2xl text-on-surface font-bold">${option} Demo</h3>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col items-center gap-3 text-center">
-              <div class="animate-studio-float w-14 h-14 rounded-full bg-[#1c1b1a] border border-[#F48F68]/40 shadow-xl flex items-center justify-center text-[#F48F68]">
-                <span class="material-symbols-outlined text-xl">graphic_eq</span>
-              </div>
-              <span class="font-headline-sm text-xs font-bold text-on-surface">Floating Motion</span>
-            </div>
-            <div class="p-6 rounded-2xl bg-[#1c1b1a] text-white border border-white/10 flex flex-col items-center justify-center gap-3 text-center">
-              <div class="flex items-center gap-1.5 h-8">
-                <span class="studio-eq-bar"></span>
-                <span class="studio-eq-bar"></span>
-                <span class="studio-eq-bar"></span>
-                <span class="studio-eq-bar"></span>
-              </div>
-              <span class="font-headline-sm text-xs font-bold text-[#fff6de]">Soundwaves Motion</span>
-            </div>
-          </div>
-        </div>
-      `;
-    } else if (category === 'layout') {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Grid &amp; Containers</span>
-            <h3 class="font-display-lg text-2xl text-on-surface font-bold">${option} Grid</h3>
-          </div>
-          <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col gap-3 text-center">
-            <div class="p-4 bg-[#fff4f1] border border-[#F48F68]/30 rounded-xl text-xs font-label-md font-bold text-[#984726]">
-              Layout: ${option} • 1280px Max Container • 24px Responsive Gutter
-            </div>
-          </div>
-        </div>
-      `;
-    } else if (category === 'inspirations') {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Inspirations</span>
-            <h3 class="font-display-lg text-2xl text-on-surface font-bold">Reference Website Preview</h3>
-          </div>
-          <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col gap-3">
-            <span class="font-body-md text-sm text-on-surface-variant">Sociality AI design reference loaded cleanly.</span>
-          </div>
-        </div>
-      `;
-    } else if (category === 'features') {
-      renderFeaturesMultiPreview();
-    }
-  }
-
-  // Multi-Select Features State
-  const selectedFeaturesSet = new Set(['AI Chatbot', 'Booking System']);
-
-  function toggleFeatureOption(featureName, btnElement) {
-    if (selectedFeaturesSet.has(featureName)) {
-      selectedFeaturesSet.delete(featureName);
-      btnElement.className = "feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between";
-      const check = btnElement.querySelector('.feat-check');
-      if (check) check.className = "material-symbols-outlined text-sm opacity-0 feat-check";
-    } else {
-      selectedFeaturesSet.add(featureName);
-      btnElement.className = "feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-bold text-left text-white bg-[#984726] shadow-sm transition-all flex items-center justify-between";
-      const check = btnElement.querySelector('.feat-check');
-      if (check) check.className = "material-symbols-outlined text-sm opacity-100 feat-check";
-    }
-
-    // Update Preview Badge
-    const badge = document.getElementById('preview-badge');
-    if (badge) {
-      badge.textContent = `Viewing: Features > Selected (${selectedFeaturesSet.size}/11)`;
-    }
-
-    renderFeaturesMultiPreview();
-  }
-
-  function renderFeaturesMultiPreview() {
-    const display = document.getElementById('preview-display');
-    if (!display) return;
-
-    if (selectedFeaturesSet.size === 0) {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6 items-center justify-center text-center p-8">
-          <span class="material-symbols-outlined text-4xl text-[#F48F68]">check_box_outline_blank</span>
-          <h3 class="font-display-lg text-xl text-on-surface font-bold">No Features Selected</h3>
-          <p class="font-body-md text-sm text-on-surface-variant max-w-md">
-            Select one or more features from the left panel under <strong>Features</strong> to preview your custom web stack solution.
-          </p>
-        </div>
-      `;
-      return;
-    }
-
-    const featuresList = Array.from(selectedFeaturesSet);
-    const cardsHTML = featuresList.map(feat => `
-      <div class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-center justify-between shadow-sm group hover:border-[#F48F68] transition-all">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-[#fff4f1] text-[#984726] flex items-center justify-center font-bold">
-            <span class="material-symbols-outlined text-xl">auto_awesome</span>
-          </div>
-          <div class="flex flex-col">
-            <span class="font-headline-sm text-sm text-on-surface font-bold">${feat}</span>
-            <span class="font-label-md text-[11px] text-[#006a69] font-bold">Active Module</span>
-          </div>
-        </div>
-        <button type="button" class="text-xs font-label-md text-on-surface-variant hover:text-red-600 transition-colors p-1" onclick="removeFeatureFromPreview('${feat}')">
-          <span class="material-symbols-outlined text-lg">close</span>
-        </button>
-      </div>
-    `).join('');
-
-    display.innerHTML = `
-      <div class="flex flex-col gap-6">
-        <div class="flex items-center justify-between">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">Multi-Select Architecture</span>
-            <h3 class="font-display-lg text-2xl text-on-surface font-bold">Selected Features Stack (${featuresList.length})</h3>
-          </div>
-          <button type="button" class="px-4 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-xs font-label-md font-bold text-on-surface transition-all" onclick="clearAllFeatures()">Clear All</button>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[380px] overflow-y-auto pr-1">
-          ${cardsHTML}
-        </div>
-      </div>
-    `;
-  }
-
-  function removeFeatureFromPreview(featName) {
-    const btns = document.querySelectorAll('.feature-option-btn');
-    btns.forEach(btn => {
-      if (btn.querySelector('span').textContent.trim() === featName) {
-        toggleFeatureOption(featName, btn);
-      }
-    });
-  }
-
-  function clearAllFeatures() {
-    selectedFeaturesSet.clear();
-    document.querySelectorAll('.feature-option-btn').forEach(btn => {
-      btn.className = "feature-option-btn w-full py-2 px-3.5 rounded-xl text-xs font-label-md font-semibold text-left text-on-surface hover:bg-[#F48F68]/20 transition-all flex items-center justify-between";
-      const check = btn.querySelector('.feat-check');
-      if (check) check.className = "material-symbols-outlined text-sm opacity-0 feat-check";
-    });
-    renderFeaturesMultiPreview();
-  }
-
-  function loadInspirationURL() {
-    const input = document.getElementById('inspire-url-input');
-    const val = input ? input.value.trim() : '';
-    if (!val) {
-      alert('Please enter a valid website URL or image URL.');
-      return;
-    }
-    const badge = document.getElementById('preview-badge');
-    if (badge) badge.textContent = `Viewing: Inspirations > ${val}`;
-
-    const display = document.getElementById('preview-display');
-    if (display) {
-      display.innerHTML = `
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-md text-xs text-[#F48F68] uppercase font-bold tracking-widest">External Inspiration Loaded</span>
-            <h3 class="font-display-lg text-xl text-on-surface font-bold break-all">${val}</h3>
-          </div>
-          <div class="w-full h-64 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col items-center justify-center p-6 text-center gap-3">
-            <span class="material-symbols-outlined text-[#F48F68] text-4xl">public</span>
-            <span class="font-body-md text-sm text-on-surface font-semibold">Reference website link attached:</span>
-            <a href="${val}" target="_blank" class="font-label-md text-xs text-[#984726] underline font-bold">${val}</a>
-          </div>
-        </div>
-      `;
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // Open Website Style accordion by default
-    toggleAccordion('cat-style');
-    renderPreviewContent('style', 'Modern');
-  });
 </script>
+
 </body>
 </html>

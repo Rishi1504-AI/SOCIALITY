@@ -16,6 +16,7 @@
           <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
         </button>
         <div class="absolute right-0 mt-2 w-48 bg-surface/95 backdrop-blur-xl border border-outline-variant rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="dashboard.html">Dashboard</a>
           <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="design-studio.html">Design Studio</a>
           <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="blogs.html">Blogs</a>
           <a class="block px-4 py-2 hover:bg-primary-container text-on-surface transition-colors font-headline-sm text-[16px]" href="faqs.html">FAQs</a>
@@ -49,6 +50,7 @@
       <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="#how-it-works">How it works</a>
       <a class="nav-link font-headline-md text-on-surface-variant hover:text-on-surface transition-colors" href="#portfolio">Portfolio</a>
       <div class="h-px bg-outline-variant/30 my-2"></div>
+      <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="dashboard.html">Dashboard</a>
       <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="design-studio.html">Design Studio</a>
       <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="blogs.html">Blogs</a>
       <a class="nav-link font-headline-sm text-on-surface-variant hover:text-on-surface transition-colors pl-4" href="faqs.html">FAQs</a>
@@ -69,8 +71,8 @@
           <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[140%] rounded-full bg-gradient-to-bl from-secondary-container/40 to-transparent blur-3xl mix-blend-multiply"></div>
           <div class="absolute -bottom-[30%] -left-[10%] w-[50%] h-[120%] rounded-full bg-gradient-to-tr from-tertiary-container/60 to-transparent blur-3xl mix-blend-multiply"></div>
         </div>
-        <div class="w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-6 flex flex-col items-start text-left">
+        <div class="w-full relative z-10 flex flex-col items-center justify-center">
+          <div class="max-w-4xl flex flex-col items-center text-center">
             <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-6">Welcome to Sociality AI</span>
             <h1 class="font-display-lg text-display-lg text-on-surface max-w-4xl mb-8">
               Bringing Your <span class="text-tertiary font-bold">Business</span> <span class="text-tertiary font-bold">Online</span> with <span class="text-tertiary font-bold">Purpose</span>.
@@ -78,27 +80,14 @@
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
               We merge the organic warmth of human creativity with the precision of AI-driven digital solutions. Sociality AI builds bespoke, tactile experiences that elevate your brand and connect with your audience on a deeper level.
             </p>
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <a class="inline-flex items-center justify-center px-8 py-4 bg-tertiary-container text-on-tertiary-container font-label-md text-label-md rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" href="book-a-call.html">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a class="inline-flex items-center justify-center px-8 py-4 bg-[#984726] text-white font-label-md text-label-md rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" href="book-a-call.html">
                 Book a Call
                 <span class="material-symbols-outlined ml-2 text-[20px]">calendar_today</span>
               </a>
               <a class="inline-flex items-center justify-center px-8 py-4 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-full shadow-sm hover:shadow-md transition-all duration-300" href="#how-it-works">
                 Explore Our Process
               </a>
-            </div>
-          </div>
-          <!-- Video Animation Container (Right Column) -->
-          <div class="lg:col-span-6 flex justify-center items-center w-full">
-            <div class="relative w-full max-w-[680px] aspect-[1920/940] rounded-2xl overflow-hidden shadow-2xl bg-surface border border-outline-variant/30 p-2">
-              <div class="absolute inset-0 bg-gradient-to-br from-transparent to-secondary-fixed/5 pointer-events-none"></div>
-              <!-- Canvas player for JPEGs from Home.zip (cropped top 140px to hide original navbar) -->
-              <canvas id="hero-animation-player" class="w-full h-full object-cover rounded-xl bg-[#fdf8f5]" width="1920" height="940"></canvas>
-              <!-- Loader spinner -->
-              <div id="video-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-surface/90 transition-opacity duration-300">
-                <span class="material-symbols-outlined animate-spin text-tertiary text-3xl mb-2">sync</span>
-                <span class="font-label-md text-xs text-on-surface-variant tracking-wider uppercase">Loading Video...</span>
-              </div>
             </div>
           </div>
         </div>
@@ -1249,55 +1238,7 @@
       });
     });
 
-    // --- HERO CANVAS VIDEO PLAYER ---
-    const canvas = document.getElementById('hero-animation-player');
-    const loader = document.getElementById('video-loader');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      const totalFrames = 40;
-      const images = [];
-      let loadedCount = 0;
-      let currentFrame = 0;
-
-      function getFrameFilename(index) {
-        const pad = String(index).padStart(3, '0');
-        return `Assets/Video_Images/ezgif-frame-${pad}.jpg`;
-      }
-
-      for (let i = 1; i <= totalFrames; i++) {
-        const img = new Image();
-        img.src = getFrameFilename(i);
-        img.onload = () => {
-          loadedCount++;
-          if (loadedCount === totalFrames) {
-            if (loader) {
-              loader.style.opacity = '0';
-              setTimeout(() => loader.style.display = 'none', 300);
-            }
-            startPlayback();
-          }
-        };
-        img.onerror = () => {
-          console.error('Failed to load frame:', img.src);
-        };
-        images.push(img);
-      }
-
-      function startPlayback() {
-        const fps = 12; // Slowed down to 12 FPS
-        setInterval(() => {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          const img = images[currentFrame];
-          const sy = 140; // Crop the top 140px to hide the embedded navigation words
-          ctx.drawImage(
-            img, 
-            0, sy, img.naturalWidth || 1920, (img.naturalHeight || 1080) - sy, 
-            0, 0, canvas.width, canvas.height
-          );
-          currentFrame = (currentFrame + 1) % totalFrames;
-        }, 1000 / fps);
-      }
-    }
+    // --- HERO CANVAS VIDEO PLAYER REMOVED ---
   });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

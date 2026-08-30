@@ -38,11 +38,12 @@
       });
     }
 
-    const othersGroup = ['design-studio', 'blogs', 'faqs', 'hiring'];
+    const othersGroup = ['design-studio', 'blogs', 'faqs', 'hiring', 'dashboard'];
 
     function getLinkKey(href) {
       if (!href) return '';
       const cleanHref = href.split('?')[0];
+      if (cleanHref.endsWith('dashboard.html')) return 'dashboard';
       if (cleanHref.endsWith('hiring.html')) return 'hiring';
       if (cleanHref.endsWith('services.html') || cleanHref.includes('#services')) return 'services';
       if (cleanHref.endsWith('how-it-works.html') || cleanHref.includes('#how-it-works')) return 'how-it-works';
@@ -57,6 +58,7 @@
 
     function getActiveKey() {
       const path = window.location.pathname.split('/').pop() || 'index.html';
+      if (path === 'dashboard.html') return 'dashboard';
       if (path === 'services.html') return 'services';
       if (path === 'how-it-works.html') return 'how-it-works';
       if (path === 'portfolio.html') return 'portfolio';

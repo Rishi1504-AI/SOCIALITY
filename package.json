@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Sociality - Tactile Digital Agency Website",
   "scripts": {
-    "dev": "npx http-server Frontend -p 8080"
+    "dev": "npx http-server Frontend -p 8080 -c-1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.4"
+  }
 }

@@ -304,6 +304,44 @@ We look forward to helping you build something exceptional.
 </button>
 </div>
 </form>
+
+<!-- In-Place Consultation Confirmation Card (Prevents Redirection to Owner Dashboard) -->
+<div id="booking-confirmation-card" class="hidden flex flex-col items-center text-center gap-6 py-6">
+  <div class="w-16 h-16 rounded-full bg-[#006a69]/10 text-secondary border border-secondary/30 flex items-center justify-center shadow-sm">
+    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+  </div>
+  <div class="flex flex-col gap-1.5 max-w-md">
+    <span class="text-xs font-label-md uppercase tracking-widest text-[#984726] font-bold">Consultation Confirmed</span>
+    <h3 class="font-display-lg text-2xl sm:text-3xl text-on-surface font-bold">You're All Scheduled!</h3>
+    <p class="font-body-md text-sm text-on-surface-variant">
+      Thank you, <span id="confirmed-client-name" class="font-bold text-on-surface"></span>. We have reserved your consultation session with our strategy and architecture team.
+    </p>
+  </div>
+
+  <div class="w-full bg-surface-container/50 border border-outline-variant/40 rounded-2xl p-5 flex flex-col gap-3 text-left">
+    <div class="flex items-center justify-between text-xs border-b border-outline-variant/30 pb-2.5">
+      <span class="text-on-surface-variant font-label-md">Date &amp; Time</span>
+      <span id="confirmed-slot-details" class="font-bold text-on-surface font-label-md"></span>
+    </div>
+    <div class="flex items-center justify-between text-xs border-b border-outline-variant/30 pb-2.5">
+      <span class="text-on-surface-variant font-label-md">Consultation Type</span>
+      <span id="confirmed-consultation-type" class="font-bold text-secondary font-label-md"></span>
+    </div>
+    <div class="flex items-center justify-between text-xs">
+      <span class="text-on-surface-variant font-label-md">Confirmation Email</span>
+      <span id="confirmed-client-email" class="font-bold text-on-surface font-label-md"></span>
+    </div>
+  </div>
+
+  <div class="flex flex-col sm:flex-row items-center gap-3 w-full pt-2">
+    <a href="index.html" class="w-full sm:flex-1 py-3 px-6 rounded-full bg-tertiary hover:bg-[#793010] text-on-tertiary font-label-md text-xs font-bold shadow-md transition-all text-center">
+      Return to Home
+    </a>
+    <a href="services.html" class="w-full sm:flex-1 py-3 px-6 rounded-full bg-surface border border-outline-variant/50 hover:border-[#f48f68] text-on-surface font-label-md text-xs font-bold transition-all text-center">
+      Explore Services
+    </a>
+  </div>
+</div>
 </div>
 </div>
 </div>
@@ -327,6 +365,10 @@ We look forward to helping you build something exceptional.
             <span class="material-symbols-outlined text-sm text-[#F48F68]">mail</span>
             kondarushi42@gmail.com
           </a>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm text-[#F48F68]">location_on</span>
+            Solapur, Maharashtra
+          </div>
         </div>
       </div>
     </div>
@@ -352,6 +394,10 @@ We look forward to helping you build something exceptional.
           <span class="material-symbols-outlined text-sm text-[#F48F68]">mail</span>
           kondarushi42@gmail.com
         </a>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm text-[#F48F68]">location_on</span>
+          Solapur, Maharashtra
+        </div>
       </div>
       <div class="flex gap-4 pt-1">
         <span class="material-symbols-outlined text-white cursor-pointer">alternate_email</span>
@@ -543,82 +589,94 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Could not parse bookingData:', e);
     }
 
-    // 3. Form Submission Handler -> Supabase Database + Redirect to Custom Dashboard
-    const form = document.getElementById('booking-form');
-    if (!form) return;
-    const submitBtn = form.querySelector('button[type="submit"]');
+    // 3. Clean Code Form Submission & Confirmation Architecture
+    const bookingForm = document.getElementById('booking-form');
+    if (!bookingForm) return;
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    function getInputValue(elementId, fallbackValue = '') {
+      const element = document.getElementById(elementId);
+      if (!element || !element.value) return fallbackValue;
+      const value = element.value.trim();
+      return value.length > 0 ? value : fallbackValue;
+    }
 
-        // Animate button to connecting state
-        const originalBtnHTML = submitBtn.innerHTML;
-        submitBtn.innerHTML = `<span class="material-symbols-outlined animate-spin" style="font-variation-settings: 'FILL' 1;">sync</span> Saving to Supabase...`;
-        submitBtn.disabled = true;
-        submitBtn.classList.add('opacity-80', 'cursor-wait');
+    function getSelectedRadioValue(formElement, groupName, fallbackValue = 'Not specified') {
+      const checkedInput = formElement.querySelector(`input[name="${groupName}"]:checked`);
+      return checkedInput ? checkedInput.value : fallbackValue;
+    }
 
-        try {
-            // Collect Form Inputs with guaranteed non-null values for PostgreSQL
-            const name = (document.getElementById('name')?.value || '').trim() || 'Valued Client';
-            const email = (document.getElementById('email')?.value || '').trim() || 'client@example.com';
-            const company = (document.getElementById('company')?.value || '').trim() || 'Private Client';
-            const website = (document.getElementById('website')?.value || '').trim() || null;
-            const phone = (document.getElementById('phone')?.value || '').trim() || '+1 (555) 000-0000';
-            const sms = (document.getElementById('sms')?.value || '').trim() || null;
-            
-            const revenueEl = form.querySelector('input[name="revenue"]:checked');
-            const revenue = revenueEl ? revenueEl.value : 'Not specified';
-            
-            const investmentEl = form.querySelector('input[name="investment"]:checked');
-            const investment = investmentEl ? investmentEl.value : 'Not specified';
-            
-            const priorInvestEl = form.querySelector('input[name="prior_investment"]:checked');
-            const priorInvestment = priorInvestEl ? priorInvestEl.value : 'Not specified';
-            
-            const notes = (document.getElementById('notes')?.value || '').trim() || null;
+    function buildBookingPayload(formElement, slotData) {
+      return {
+        full_name: getInputValue('name', 'Valued Client'),
+        email: getInputValue('email', 'client@example.com'),
+        company: getInputValue('company', 'Private Client'),
+        website: getInputValue('website', null),
+        phone: getInputValue('phone', '+1 (555) 000-0000'),
+        sms_reminders: getInputValue('sms', null),
+        monthly_revenue: getSelectedRadioValue(formElement, 'revenue', 'Not specified'),
+        investment_budget: getSelectedRadioValue(formElement, 'investment', 'Not specified'),
+        prior_investment: getSelectedRadioValue(formElement, 'prior_investment', 'Not specified'),
+        notes: getInputValue('notes', null),
+        consultation_type: (slotData && slotData.type) ? slotData.type : 'Online',
+        booking_date: (slotData && slotData.date) ? slotData.date : 'Aug 31, 2026',
+        booking_time: (slotData && slotData.time) ? slotData.time : '12.00 pm',
+        status: 'confirmed'
+      };
+    }
 
-            const bookingPayload = {
-                full_name: name,
-                email: email,
-                company: company,
-                website: website,
-                phone: phone,
-                sms_reminders: sms,
-                monthly_revenue: revenue,
-                investment_budget: investment,
-                prior_investment: priorInvestment,
-                notes: notes,
-                consultation_type: (bookingSlotData && bookingSlotData.type) ? bookingSlotData.type : 'Online',
-                booking_date: (bookingSlotData && bookingSlotData.date) ? bookingSlotData.date : 'Aug 31, 2026',
-                booking_time: (bookingSlotData && bookingSlotData.time) ? bookingSlotData.time : '12.00 pm',
-                status: 'confirmed'
-            };
+    function renderConfirmationView(booking) {
+      const formElement = document.getElementById('booking-form');
+      const confirmationCard = document.getElementById('booking-confirmation-card');
+      if (!formElement || !confirmationCard) return;
 
-            // Send payload to Supabase
-            const result = await window.SocialityDB.submitBookingToSupabase(bookingPayload);
-            const savedBooking = (result && result.data && result.data[0]) ? result.data[0] : bookingPayload;
-            const targetBookingId = savedBooking.id || 'latest';
+      formElement.classList.add('hidden');
+      confirmationCard.classList.remove('hidden');
 
-            submitBtn.innerHTML = `<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span> Saved to Supabase! Redirecting...`;
-            submitBtn.classList.replace('bg-[#F48F68]', 'bg-secondary');
+      const nameTarget = document.getElementById('confirmed-client-name');
+      const emailTarget = document.getElementById('confirmed-client-email');
+      const slotTarget = document.getElementById('confirmed-slot-details');
+      const typeTarget = document.getElementById('confirmed-consultation-type');
 
-            // Redirect to Custom Dashboard with the new ID
-            setTimeout(() => {
-                window.location.href = `dashboard.html?id=${encodeURIComponent(targetBookingId)}`;
-            }, 600);
+      if (nameTarget) nameTarget.textContent = booking.full_name;
+      if (emailTarget) emailTarget.textContent = booking.email;
+      if (slotTarget) slotTarget.textContent = `${booking.booking_date} at ${booking.booking_time}`;
+      if (typeTarget) typeTarget.textContent = booking.consultation_type;
 
-        } catch (error) {
-            console.error('Error submitting booking:', error);
-            submitBtn.innerHTML = `<span class="material-symbols-outlined">error</span> Error: ${error.message || 'Check console'}`;
-            submitBtn.classList.replace('bg-[#F48F68]', 'bg-red-600');
-            setTimeout(() => {
-                submitBtn.innerHTML = originalBtnHTML;
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-80', 'cursor-wait');
-                submitBtn.classList.replace('bg-red-600', 'bg-[#F48F68]');
-            }, 3000);
-        }
-    });
+      confirmationCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function renderSubmissionError(submitBtn, originalHTML, errorMessage) {
+      submitBtn.innerHTML = `<span class="material-symbols-outlined">error</span> Error: ${errorMessage}`;
+      submitBtn.classList.replace('bg-[#F48F68]', 'bg-red-600');
+      setTimeout(() => {
+        submitBtn.innerHTML = originalHTML;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-80', 'cursor-wait');
+        submitBtn.classList.replace('bg-red-600', 'bg-[#F48F68]');
+      }, 3000);
+    }
+
+    async function handleBookingSubmit(event) {
+      event.preventDefault();
+      const submitBtn = bookingForm.querySelector('button[type="submit"]');
+      if (!submitBtn) return;
+
+      const originalBtnHTML = submitBtn.innerHTML;
+      submitBtn.innerHTML = `<span class="material-symbols-outlined animate-spin" style="font-variation-settings: 'FILL' 1;">sync</span> Saving to Supabase...`;
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-80', 'cursor-wait');
+
+      try {
+        const payload = buildBookingPayload(bookingForm, bookingSlotData);
+        await window.SocialityDB.submitBookingToSupabase(payload);
+        renderConfirmationView(payload);
+      } catch (error) {
+        console.error('Error submitting booking:', error);
+        renderSubmissionError(submitBtn, originalBtnHTML, error.message || 'Check console');
+      }
+    }
+
+    bookingForm.addEventListener('submit', handleBookingSubmit);
 });
 </script>
 

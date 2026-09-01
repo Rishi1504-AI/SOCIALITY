@@ -106,7 +106,7 @@
     }
 
     // 3. Route Identification Mapping
-    const othersGroup = ['design-studio', 'blogs', 'faqs', 'hiring', 'dashboard'];
+    const othersGroup = ['design-studio', 'blogs', 'faqs', 'hiring'];
 
     // Map of recognized routes and their user-facing breadcrumb labels
     const routeTitles = {
@@ -494,6 +494,28 @@
     updateActiveLinks();
     injectSitemapBreadcrumb();
     setupSmoothNavigation();
+    ensureEmojiBurstScript();
+    ensureButtonAnimationScript();
+  }
+
+  function ensureEmojiBurstScript() {
+    if (window.__socialityEmojiBurstLoaded || document.querySelector('script[src*="emoji-burst-button.js"]')) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'emoji-burst-button.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
+  function ensureButtonAnimationScript() {
+    if (window.__originkitButtonAnimationsLoaded || document.querySelector('script[src*="originkit-button-animations.js"]')) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'originkit-button-animations.js';
+    script.defer = true;
+    document.head.appendChild(script);
   }
 
   if (document.readyState === 'loading') {

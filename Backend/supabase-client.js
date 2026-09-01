@@ -1,4 +1,4 @@
-// Frontend/supabase-client.js
+// Backend/supabase-client.js
 // Rock-solid Supabase Client & REST Database Engine for Sociality AI
 
 (function() {

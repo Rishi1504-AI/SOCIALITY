@@ -13,7 +13,9 @@ SOCIALITY/
 │   ├── book-a-call.html  # Appointment scheduling form page
 │   ├── ...               # Other pages & navigation scripts
 │   └── nav-controller.js # Mobile menu and active navigation link controller
-└── Backend/              # Reserved folder for future API/server-side code
+└── Backend/              # Database client, API, and server-side code
+    ├── supabase.js       # Supabase SDK bundle
+    └── supabase-client.js# Supabase client & REST database integration
 ```
 
 ## Getting Started

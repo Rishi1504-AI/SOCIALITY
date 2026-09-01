@@ -17,3 +17,7 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+# Frontend junction link to Backend
+Frontend/Backend/
+

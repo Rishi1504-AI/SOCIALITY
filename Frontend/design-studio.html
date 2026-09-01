@@ -63,36 +63,7 @@
   </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "surface-container-low": "#f7f3f0",
-            "surface-container-high": "#ece7e4",
-            "background": "#fdf8f5",
-            "surface": "#fdf8f5",
-            "on-background": "#1c1b1a",
-            "on-surface": "#1c1b1a",
-            "on-surface-variant": "#4a473e",
-            "outline": "#7b776d",
-            "outline-variant": "#ccc6ba",
-            "tertiary": "#984726",
-            "surface-container": "#f2edea",
-            "surface-container-lowest": "#ffffff",
-            "secondary": "#006a69",
-            "primary-container": "#fff6de"
-          },
-          fontFamily: {
-            "label-md": ["Mulish", "sans-serif"],
-            "body-md": ["Mulish", "sans-serif"],
-            "headline-sm": ["Arima Madurai", "sans-serif"],
-            "display-lg": ["Arima Madurai", "sans-serif"]
-          }
-        }
-      }
-    };
-  </script>
+  <script src="tailwind-config.js"></script>
 </head>
 <body class="bg-[#0d0c0a] font-body-md text-[#fff6de] min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-[#F48F68] selection:text-white">
 
@@ -124,7 +95,7 @@
     </nav>
     <div class="flex items-center gap-4">
       <a class="hidden sm:flex items-center justify-center px-6 py-2.5 bg-[#984726] text-white font-label-md text-sm font-bold rounded-full hover:bg-[#F48F68] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5" href="book-a-call.html">Book a Call</a>
-      <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white" id="mobile-menu-btn">
+      <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white" id="mobile-menu-btn" aria-label="Open navigation menu">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
@@ -139,7 +110,7 @@
         <img alt="Sociality AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACa3CoLU80n-0olM_6cLv8tHBZAk9jztQCfFk1ZQg1ZbN414ZzU26o3L-y808-yNP9xEl54yoXQ8_ADBeCmbdSTzPergbP9xVHXmOAHuVBMf09nJ_KaNqgbMjvOvsZjpOteibTup3YlOgmOZ4nLVdu1LaVleMqOrBcQJnos-JtwQJEX_3bnN8utykmM3R_Zxw3L1ZYSlqyIS7JyuqA2sAHAZwL2RaMvKif5U8qBrY9T1MGd_dqRu1h"/>
         <span class="font-headline-sm text-xl text-white font-bold">Sociality AI</span>
       </div>
-      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white" id="mobile-menu-close-btn">
+      <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white" id="mobile-menu-close-btn" aria-label="Close navigation menu">
         <span class="material-symbols-outlined">close</span>
       </button>
     </div>

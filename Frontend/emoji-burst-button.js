@@ -43,14 +43,13 @@
   // 3. Target Detection
   function findBookCallTarget(eventTarget) {
     if (!eventTarget || !eventTarget.closest) return null;
-    return eventTarget.closest('a[href*="book-a-call"], button[onclick*="book-a-call"]');
+    return eventTarget.closest('a[href*="calendly.com"], a[href*="book-a-call"], button[onclick*="book-a-call"]');
   }
 
   function isEligibleRedirect(linkElement) {
     if (!linkElement) return false;
     const href = linkElement.getAttribute('href') || '';
-    const isAlreadyOnBooking = window.location.pathname.endsWith('book-a-call.html');
-    return /book-a-call(\.html)?/i.test(href) && !isAlreadyOnBooking;
+    return /calendly\.com|book-a-call/i.test(href);
   }
 
   // 4. Click & Navigation Orchestration
@@ -63,7 +62,7 @@
     if (shouldDeferNavigation(event, bookCallBtn)) {
       event.preventDefault();
       const destination = bookCallBtn.getAttribute('href');
-      setTimeout(() => navigateToDestination(destination), BURST_CONFIG.redirectDelayMs);
+      setTimeout(() => navigateToDestination(destination, bookCallBtn), BURST_CONFIG.redirectDelayMs);
     }
   }
 
@@ -72,9 +71,13 @@
     return isEligibleRedirect(element) && !hasModifierKey;
   }
 
-  function navigateToDestination(destinationUrl) {
+  function navigateToDestination(destinationUrl, linkElement) {
     if (destinationUrl) {
-      window.location.href = destinationUrl;
+      if (linkElement && linkElement.getAttribute('target') === '_blank') {
+        window.open(destinationUrl, '_blank', 'noopener,noreferrer');
+      } else {
+        window.location.href = destinationUrl;
+      }
     }
   }
 

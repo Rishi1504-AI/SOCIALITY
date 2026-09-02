@@ -114,9 +114,6 @@
       'services': 'Services',
       'how-it-works': 'How It Works',
       'portfolio': 'Portfolio',
-      'book-a-call': 'Book a Call',
-      'booking-details': 'Booking Details',
-      'dashboard': 'Dashboard',
       'design-studio': 'Design Studio',
       'blogs': 'Blogs',
       'faqs': 'FAQs',
@@ -133,15 +130,17 @@
       }
     }
 
-    function getLinkKey(href, el) {
-      if (el && el.getAttribute('data-path')) {
-        const dp = el.getAttribute('data-path');
-        if (dp !== 'others') return dp;
+    function getLinkKey(link) {
+      const href = link.getAttribute('href') || '';
+      if (href.startsWith('#')) {
+        const hash = href.substring(1);
+        if (['home', 'services', 'how-it-works', 'portfolio', 'faqs'].includes(hash)) {
+          return hash;
+        }
       }
       if (!href) return '';
       const cleanHref = href.split('?')[0];
 
-      if (cleanHref.endsWith('dashboard.html')) return 'dashboard';
       if (cleanHref.endsWith('hiring.html')) return 'hiring';
       if (cleanHref.endsWith('services.html') || cleanHref.includes('#services')) return 'services';
       if (cleanHref.endsWith('how-it-works.html') || cleanHref.includes('#how-it-works')) return 'how-it-works';
@@ -149,8 +148,6 @@
       if (cleanHref.endsWith('design-studio.html')) return 'design-studio';
       if (cleanHref.endsWith('blogs.html')) return 'blogs';
       if (cleanHref.endsWith('faqs.html') || cleanHref.includes('#faqs')) return 'faqs';
-      if (cleanHref.endsWith('booking-details.html')) return 'booking-details';
-      if (cleanHref.endsWith('book-a-call.html')) return 'book-a-call';
       if (cleanHref.endsWith('index.html') || cleanHref.includes('#home') || cleanHref === '/' || cleanHref === '') return 'home';
       return '';
     }
@@ -159,13 +156,10 @@
       const currentFile = window.location.pathname.split('/').pop() || 'index.html';
 
       // Specific multi-page route detections
-      if (currentFile === 'dashboard.html') return 'dashboard';
       if (currentFile === 'design-studio.html') return 'design-studio';
       if (currentFile === 'blogs.html') return 'blogs';
       if (currentFile === 'faqs.html') return 'faqs';
       if (currentFile === 'hiring.html') return 'hiring';
-      if (currentFile === 'booking-details.html') return 'booking-details';
-      if (currentFile === 'book-a-call.html') return 'book-a-call';
 
       // If on dedicated services / how-it-works / portfolio HTML files
       if (currentFile === 'services.html') return 'services';

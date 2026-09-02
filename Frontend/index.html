@@ -24,7 +24,7 @@
       </div>
     </nav>
     <div class="flex items-center gap-4">
-      <a class="hidden sm:flex items-center justify-center px-6 py-2 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full hover:shadow-lg transition-all transform hover:-translate-y-0.5" href="book-a-call.html">Book a Call</a>
+      <a class="hidden sm:flex items-center justify-center px-6 py-2 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full hover:shadow-lg transition-all transform hover:-translate-y-0.5" href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer">Book a Call</a>
       <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="mobile-menu-btn" aria-label="Open navigation menu">
         <span class="material-symbols-outlined">menu</span>
       </button>
@@ -56,7 +56,7 @@
     </nav>
   </div>
   <div class="flex flex-col gap-4">
-    <a class="w-full py-4 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full shadow-md text-center" href="book-a-call.html">Book a Call</a>
+    <a class="w-full py-4 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-full shadow-md text-center" href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer">Book a Call</a>
     <div class="text-center text-xs text-on-surface-variant font-label-md uppercase tracking-wider">hello@sociality.ai</div>
   </div>
 </div>
@@ -64,26 +64,28 @@
     <!-- HOME SECTION -->
     <div id="home" class="scroll-mt-28 lg:scroll-mt-32">
       <!-- INTRODUCTION SECTION -->
-      <section class="w-full bg-primary-container relative py-section-gap px-6 md:px-12 lg:px-16 shadow-sm z-10">
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-          <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[140%] rounded-full bg-gradient-to-bl from-secondary-container/40 to-transparent blur-3xl mix-blend-multiply"></div>
-          <div class="absolute -bottom-[30%] -left-[10%] w-[50%] h-[120%] rounded-full bg-gradient-to-tr from-tertiary-container/60 to-transparent blur-3xl mix-blend-multiply"></div>
-        </div>
-        <div class="w-full relative z-10 flex flex-col items-center justify-center">
-          <div class="max-w-4xl flex flex-col items-center text-center">
-            <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-6">Welcome to Sociality AI</span>
-            <h1 class="font-display-lg text-display-lg text-on-surface max-w-4xl mb-8">
+      <section class="w-full relative py-section-gap px-6 md:px-12 lg:px-16 shadow-sm z-10 overflow-hidden min-h-[700px] flex items-center justify-center">
+        <!-- WebGL Cloud Sky Background Canvas -->
+        <canvas id="hero-cloud-canvas" class="absolute inset-0 w-full h-full object-cover z-0"></canvas>
+
+        <!-- Subtle Top & Bottom Gradient Blends for Seamless Harmony -->
+        <div class="absolute inset-0 bg-gradient-to-b from-primary-container/20 via-transparent to-surface-container-lowest pointer-events-none z-[1]"></div>
+
+        <div class="w-full relative z-10 flex flex-col items-center justify-center py-6">
+          <div class="max-w-4xl flex flex-col items-center text-center p-8 sm:p-12 md:p-14 rounded-3xl backdrop-blur-md bg-white/70 border border-white/80 shadow-[0_20px_60px_rgba(28,27,26,0.06)]">
+            <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-6 font-semibold">Welcome to Sociality AI</span>
+            <h1 class="font-display-lg text-display-lg text-on-surface max-w-4xl mb-8 leading-tight tracking-tight">
               Bringing Your <span class="text-tertiary font-bold">Business</span> <span class="text-tertiary font-bold">Online</span> with <span class="text-tertiary font-bold">Purpose</span>.
             </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10 font-normal leading-relaxed">
               We merge the organic warmth of human creativity with the precision of AI-driven digital solutions. Sociality AI builds bespoke, tactile experiences that elevate your brand and connect with your audience on a deeper level.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a class="inline-flex items-center justify-center px-8 py-4 bg-[#984726] text-white font-label-md text-label-md rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" href="book-a-call.html">
+              <a class="inline-flex items-center justify-center px-8 py-4 bg-[#984726] text-white font-label-md text-label-md rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer">
                 Book a Call
                 <span class="material-symbols-outlined ml-2 text-[20px]">calendar_today</span>
               </a>
-              <a class="inline-flex items-center justify-center px-8 py-4 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-full shadow-sm hover:shadow-md transition-all duration-300" href="#how-it-works">
+              <a class="inline-flex items-center justify-center px-8 py-4 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:bg-white" href="#how-it-works">
                 Explore Our Process
               </a>
             </div>
@@ -339,253 +341,133 @@
   <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>Retargeting campaigns</li>
   <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>Performance &amp; ROI tracking</li>
 </ul>
-</div>
-<div class="absolute inset-0 bg-gradient-to-br from-transparent to-secondary-container/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-</article>
 </section>
 </div>
+<!-- HOW IT WORKS SECTION (Seamlessly Blended Chess Horizon) -->
+<section id="workflow-storytelling" class="w-full relative overflow-hidden h-[88vh] min-h-[700px] bg-[#0D0C0A] flex items-center justify-center select-none">
+  <!-- Interactive WebGL Chess Horizon Canvas -->
+  <canvas data-chess-horizon data-bg="#0D0C0A" data-base="#181612" data-accent="#F48F68" class="absolute inset-0 w-full h-full object-cover"></canvas>
+  
+  <!-- Seamless Top Feathering: Dissolves from Page Cream into Dark Horizon -->
+  <div class="absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-[#fdf8f5] via-[#fdf8f5]/40 to-transparent pointer-events-none z-20"></div>
 
-<!-- Storytelling Workflow Section (Full-Bleed, Pinned by GSAP) -->
-<section id="workflow-storytelling" style="height: 100vh;" class="relative w-full overflow-hidden bg-[#1c1a16] text-[#fff6de] select-none">
-  <!-- Viewport Container -->
-  <div class="w-full h-full flex items-center justify-center relative">
-    
-    <!-- Background Layers -->
-    <div class="absolute inset-0 bg-[#1c1a16]"></div>
-    <!-- Vintage Paper/Noise Texture Overlay -->
-    <div class="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
-    
-    <!-- Ambient Vintage Glows -->
-    <div id="ambient-glow" class="absolute w-[600px] h-[600px] rounded-full blur-[140px] bg-gradient-to-br from-[#F48F68]/20 to-[#cec6b0]/15 opacity-60 mix-blend-screen pointer-events-none transform -translate-x-1/4 -translate-y-1/4"></div>
+  <!-- Radial Vignette: Softens lateral bounds into rich dark aesthetic -->
+  <div class="absolute inset-0 pointer-events-none z-10" style="background: radial-gradient(ellipse at center, transparent 35%, #0D0C0A 92%);"></div>
 
-    <!-- Center Journey Path -->
-    <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-4 flex justify-center pointer-events-none z-10">
-      <svg class="h-full w-2 overflow-visible" viewBox="0 0 10 1000" preserveAspectRatio="none">
-        <!-- Background vintage ink track -->
-        <line x1="5" y1="0" x2="5" y2="1000" stroke="#332f27" stroke-width="1.5" stroke-dasharray="4 4" />
-        <!-- Glowing drawn path -->
-        <line id="journey-path" x1="5" y1="0" x2="5" y2="1000" fill="none" stroke="url(#vintage-glow-grad)" stroke-width="3" />
-        
-        <defs>
-          <linearGradient id="vintage-glow-grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#F48F68" />
-            <stop offset="50%" stop-color="#cec6b0" />
-            <stop offset="100%" stop-color="#ffb59a" />
-          </linearGradient>
-        </defs>
-      </svg>
-      
-      <!-- Travelling Amber Orb (looks like a warm light/flame) -->
-      <div id="journey-orb" class="absolute top-0 w-5 h-5 rounded-full bg-[#fff6de] shadow-[0_0_15px_#fff,0_0_30px_#F48F68] -translate-y-1/2 z-20"></div>
+  <!-- Ambient Warm Atmosphere Glow -->
+  <div class="absolute w-[600px] h-[600px] rounded-full blur-[140px] bg-gradient-to-br from-[#F48F68]/15 to-[#cec6b0]/10 opacity-70 pointer-events-none z-10"></div>
+
+  <!-- Seamless Bottom Feathering: Melts Canvas into following Dark Section -->
+  <div class="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#0D0C0A] via-[#0D0C0A]/70 to-transparent pointer-events-none z-20"></div>
+
+  <!-- Hover Image Reveal Overlay (Interactive Kinetic Titles & Floating Preview) -->
+  <div data-hover-image-reveal class="relative z-30 w-full max-w-5xl mx-auto px-6 py-12 flex flex-col items-center justify-center select-none">
+    
+    <!-- Clean Typographic Title (No Radio Button / Selection Badge) -->
+    <div class="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-[#F48F68] font-bold mb-8 select-none">
+      How It Works
     </div>
 
-    <!-- Story Content Grid -->
-    <div class="relative w-full max-w-7xl h-full px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center z-30">
+    <!-- Floating Cursor-Following Image Preview Card -->
+    <div class="reveal-floating-card w-[280px] sm:w-[330px] md:w-[380px] h-[360px] sm:h-[420px] md:h-[480px] rounded-2xl overflow-hidden pointer-events-none z-50 opacity-0 shadow-[0_30px_90px_rgba(0,0,0,0.85),0_0_40px_rgba(244,143,104,0.3)] border border-[#fff6de]/20 backdrop-blur-md">
+      <!-- Image Layer 1: Book Discovery Sessions -->
+      <div class="reveal-image-layer absolute inset-0 w-full h-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-full opacity-0">
+        <img src="Assets/Extra assets/Digital_booking_call_creation_2K_202609030032.jpeg" alt="Book Discovery Sessions" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6">
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#F48F68]">Step 01</span>
+          <h4 class="text-lg font-bold text-[#fff6de]">Book Discovery Sessions</h4>
+        </div>
+      </div>
+      <!-- Image Layer 2: Identify Pain-Points -->
+      <div class="reveal-image-layer absolute inset-0 w-full h-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-full opacity-0">
+        <img src="Assets/Extra assets/Creating_image_of_meeting_2K_202609030032.jpeg" alt="Identify Pain-Points" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6">
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#F48F68]">Step 02</span>
+          <h4 class="text-lg font-bold text-[#fff6de]">Identify Pain-Points</h4>
+        </div>
+      </div>
+      <!-- Image Layer 3: Create Custom Solutions -->
+      <div class="reveal-image-layer absolute inset-0 w-full h-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-full opacity-0">
+        <img src="Assets/Extra assets/Founder_showing_web_development_…_202609030032.jpeg" alt="Create Custom Solutions" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6">
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#F48F68]">Step 03</span>
+          <h4 class="text-lg font-bold text-[#fff6de]">Create Custom Solutions</h4>
+        </div>
+      </div>
+      <!-- Image Layer 4: Accelerate Business Growth -->
+      <div class="reveal-image-layer absolute inset-0 w-full h-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-full opacity-0">
+        <img src="Assets/Extra assets/Creating_business_growth_image_2K_202609030032.jpeg" alt="Accelerate Business Growth" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6">
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#F48F68]">Step 04</span>
+          <h4 class="text-lg font-bold text-[#fff6de]">Accelerate Business Growth</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Items List with Kinetic Rolling Text (Full Visibility Guaranteed) -->
+    <div class="flex flex-col items-center gap-4 sm:gap-6 w-full max-w-4xl z-30">
       
-      <!-- Left Column: Story Text -->
-      <div class="col-span-1 lg:col-span-5 relative h-[380px] flex items-center">
-        
-        <!-- Section Title Badge -->
-        <div class="absolute -top-14 left-0 z-40 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#27231c]/85 border border-[#F48F68]/30 backdrop-blur-md shadow-lg">
-          <span class="w-2 h-2 rounded-full bg-[#F48F68] shadow-[0_0_8px_#F48F68] animate-pulse"></span>
-          <span class="font-label-md text-xs sm:text-sm uppercase tracking-widest font-bold bg-gradient-to-r from-[#F48F68] via-[#fff6de] to-[#cec6b0] bg-clip-text text-transparent">How it works</span>
+      <!-- Item 1 -->
+      <div class="reveal-item group cursor-pointer text-center py-2 px-4">
+        <div class="reveal-roll-wrapper">
+          <span class="reveal-roll-primary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            BOOK DISCOVERY SESSIONS
+          </span>
+          <span aria-hidden="true" class="reveal-roll-secondary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            BOOK DISCOVERY SESSIONS
+          </span>
         </div>
-
-        <!-- Act 1 -->
-        <div id="act-1-text" class="absolute w-full opacity-0 flex flex-col gap-4 text-left pointer-events-none transform translate-y-8 transition-all duration-300">
-          <span class="font-label-md text-sm text-[#F48F68] uppercase tracking-widest">Act 01 // Connect &amp; Discover</span>
-          <h2 class="font-display-lg text-3xl lg:text-4xl text-[#fff6de] leading-tight font-bold">Every great project starts with a conversation.</h2>
-          <p class="font-body-md text-[#ccc6ba] leading-relaxed">Whether you reach out to us or we discover your business, our first goal is understanding your vision, challenges, customers, and long-term ambitions.</p>
-          <div class="flex gap-2 flex-wrap mt-2">
-            <span class="px-3 py-1 rounded-full bg-[#fff6de]/5 border border-[#fff6de]/10 text-[11px] text-[#fff6de]/80 font-label-md">Growth</span>
-            <span class="px-3 py-1 rounded-full bg-[#fff6de]/5 border border-[#fff6de]/10 text-[11px] text-[#fff6de]/80 font-label-md">Automation</span>
-            <span class="px-3 py-1 rounded-full bg-[#fff6de]/5 border border-[#fff6de]/10 text-[11px] text-[#fff6de]/80 font-label-md">AI &amp; Brand</span>
-          </div>
-        </div>
-
-        <!-- Act 2 -->
-        <div id="act-2-text" class="absolute w-full opacity-0 flex flex-col gap-4 text-left pointer-events-none transform translate-y-8 transition-all duration-300">
-          <span class="font-label-md text-sm text-[#cec6b0] uppercase tracking-widest">Act 02 // Business Analysis</span>
-          <h2 class="font-display-lg text-3xl lg:text-4xl text-[#fff6de] leading-tight font-bold">Understanding Before Building.</h2>
-          <p class="font-body-md text-[#ccc6ba] leading-relaxed">We deeply analyze your business, study your workflows, and identify friction. If AI, automation, or a website isn't the right solution, we'll tell you honestly. We only build what creates genuine value.</p>
-        </div>
-
-        <!-- Act 3 -->
-        <div id="act-3-text" class="absolute w-full opacity-0 flex flex-col gap-4 text-left pointer-events-none transform translate-y-8 transition-all duration-300">
-          <span class="font-label-md text-sm text-[#F48F68] uppercase tracking-widest">Act 03 // Strategy &amp; Blueprint</span>
-          <h2 class="font-display-lg text-3xl lg:text-4xl text-[#fff6de] leading-tight font-bold">Planning Every Single Detail.</h2>
-          <p class="font-body-md text-[#ccc6ba] leading-relaxed">Before writing a single line of code, we construct the complete project roadmap. User flows, site architecture, and wireframes are mapped out and validated together.</p>
-        </div>
-
-        <!-- Act 4 -->
-        <div id="act-4-text" class="absolute w-full opacity-0 flex flex-col gap-4 text-left pointer-events-none transform translate-y-8 transition-all duration-300">
-          <span class="font-label-md text-sm text-[#cec6b0] uppercase tracking-widest">Act 04 // Design &amp; Development</span>
-          <h2 class="font-display-lg text-3xl lg:text-4xl text-[#fff6de] leading-tight font-bold">Crafting Your Digital Experience.</h2>
-          <p class="font-body-md text-[#ccc6ba] leading-relaxed">Our designers and developers translate the blueprint into a fast, beautiful, AI-powered product. Every interaction is carefully engineered for speed, aesthetics, and conversion.</p>
-        </div>
-
-        <!-- Act 5 -->
-        <div id="act-5-text" class="absolute w-full opacity-0 flex flex-col gap-4 text-left pointer-events-none transform translate-y-8 transition-all duration-300">
-          <span class="font-label-md text-sm text-[#F48F68] uppercase tracking-widest">Act 05 // Launch &amp; Growth</span>
-          <h2 class="font-display-lg text-3xl lg:text-4xl text-[#fff6de] leading-tight font-bold">Launch. Optimize. Scale.</h2>
-          <p class="font-body-md text-[#ccc6ba] leading-relaxed">Deployment isn't the finish line. We continuously monitor performance, audit security, and optimize workflows. Your success becomes our ongoing partnership.</p>
-        </div>
-
       </div>
 
-      <!-- Right Column: Visual Sandbox -->
-      <div class="col-span-1 lg:col-span-6 relative h-[450px] flex items-center justify-center">
-        
-        <!-- Act 1 Visual: Hand-drawn meeting sketches -->
-        <div id="act-1-visual" class="absolute w-full h-full opacity-0 flex items-center justify-center transform scale-95 transition-all duration-300">
-          <div class="relative w-72 h-72 border border-[#fff6de]/10 rounded-full flex items-center justify-center bg-[#fff6de]/[0.01]">
-            <div class="absolute inset-4 border border-dashed border-[#fff6de]/10 rounded-full animate-[spin_40s_linear_infinite]"></div>
-            <!-- Hand drawn SVG sketches -->
-            <svg class="w-48 h-48 text-[#F48F68]" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-              <path class="sketch-path" d="M 20 50 Q 50 35 80 50 Q 80 75 50 80 Q 20 75 20 50 Z" stroke-dasharray="2 2"/>
-              <path class="sketch-path" d="M 35 48 C 35 40, 65 40, 65 48" />
-              <circle class="sketch-path" cx="50" cy="50" r="10" />
-              <path class="sketch-path" d="M 15 25 L 30 20" />
-              <path class="sketch-path" d="M 85 22 L 70 27" />
-              <rect class="sketch-path" x="42" y="15" width="16" height="12" rx="2" stroke-dasharray="1 1" />
-              <path class="sketch-path" d="M 42 15 L 50 21 L 58 15" />
-            </svg>
-            <div class="absolute -top-4 left-1/3 px-3 py-1 rounded bg-[#F48F68]/10 border border-[#F48F68]/20 text-[10px] uppercase font-label-md text-[#F48F68] rotate-[-5deg]">Vision</div>
-            <div class="absolute -bottom-2 right-1/4 px-3 py-1 rounded bg-[#cec6b0]/10 border border-[#cec6b0]/20 text-[10px] uppercase font-label-md text-[#cec6b0] rotate-[3deg]">Feedback</div>
-          </div>
+      <!-- Item 2 -->
+      <div class="reveal-item group cursor-pointer text-center py-2 px-4">
+        <div class="reveal-roll-wrapper">
+          <span class="reveal-roll-primary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            IDENTFY PAIN-POINTS
+          </span>
+          <span aria-hidden="true" class="reveal-roll-secondary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            IDENTFY PAIN-POINTS
+          </span>
         </div>
+      </div>
 
-        <!-- Act 2 Visual: Flowchart analysis -->
-        <div id="act-2-visual" class="absolute w-full h-full opacity-0 flex items-center justify-center transform scale-95 transition-all duration-300">
-          <div class="flex flex-col gap-4 w-72 bg-[#1c1a16]/40 p-6 rounded-2xl border border-[#fff6de]/10 backdrop-blur-md">
-            <span class="text-left font-label-md text-[10px] text-[#cec6b0] uppercase tracking-wider">Business Audit Flow</span>
-            
-            <div class="flex justify-between items-center bg-[#fff6de]/[0.02] p-3 rounded-lg border border-[#fff6de]/5">
-              <span class="text-xs text-[#fff6de] font-bold">Standard CRM System</span>
-              <span class="text-[9px] px-2 py-0.5 rounded bg-[#984726]/20 text-[#ffb59a] font-label-md uppercase">Legacy</span>
-            </div>
-            
-            <div class="flex justify-center my-1">
-              <span class="material-symbols-outlined text-[#cec6b0] text-sm animate-bounce">arrow_downward</span>
-            </div>
-
-            <!-- AI Automation Recommended Option -->
-            <div id="audit-ai-card" class="bg-[#1c1a16] p-4 rounded-xl border border-[#F48F68]/40 shadow-[0_0_20px_rgba(244,143,104,0.15)] flex flex-col gap-2 transition-all duration-500">
-              <div class="flex justify-between items-center">
-                <span class="text-xs text-white font-bold font-headline-sm">AI Automation</span>
-                <span class="text-[9px] px-2 py-0.5 rounded bg-[#F48F68]/20 text-[#fff6de] font-label-md uppercase">Recommend</span>
-              </div>
-              <p class="text-[10px] text-[#ccc6ba] text-left leading-normal">Creates 3.5x more workflow efficiency by qualifying leads autonomously.</p>
-            </div>
-            
-            <div class="flex justify-between items-center opacity-40 bg-[#fff6de]/[0.01] p-3 rounded-lg border border-dashed border-[#fff6de]/10">
-              <span class="text-xs text-[#ccc6ba]">Custom CRM rebuild</span>
-              <span class="text-[9px] px-2 py-0.5 rounded bg-[#fff6de]/5 text-[#ccc6ba] font-label-md uppercase">Skip</span>
-            </div>
-          </div>
+      <!-- Item 3 -->
+      <div class="reveal-item group cursor-pointer text-center py-2 px-4">
+        <div class="reveal-roll-wrapper">
+          <span class="reveal-roll-primary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            CREATE CUSTOME SOLUTIONS
+          </span>
+          <span aria-hidden="true" class="reveal-roll-secondary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            CREATE CUSTOME SOLUTIONS
+          </span>
         </div>
+      </div>
 
-        <!-- Act 3 Visual: Technical Blueprint wireframe -->
-        <div id="act-3-visual" class="absolute w-full h-full opacity-0 flex items-center justify-center transform scale-95 transition-all duration-300">
-          <div class="relative w-80 h-64 border border-[#F48F68]/30 rounded-xl p-4 bg-[#1c1a16]/90 shadow-inner" style="background-image: radial-gradient(#F48F68/8% 1px, transparent 1px); background-size: 16px 16px;">
-            <div class="absolute inset-y-0 left-1/3 border-l border-dashed border-[#F48F68]/15"></div>
-            <div class="absolute inset-y-0 left-2/3 border-l border-dashed border-[#F48F68]/15"></div>
-            <div class="absolute inset-x-0 top-1/2 border-t border-dashed border-[#F48F68]/15"></div>
-            
-            <div class="w-full h-full flex flex-col justify-between border border-[#fff6de]/20 p-3 rounded-lg relative">
-              <div class="flex justify-between items-center">
-                <div class="w-12 h-3 bg-[#fff6de]/10 rounded"></div>
-                <div class="flex gap-2">
-                  <div class="w-6 h-2 bg-[#fff6de]/10 rounded"></div>
-                  <div class="w-6 h-2 bg-[#fff6de]/10 rounded"></div>
-                </div>
-              </div>
-              
-              <div class="my-auto flex flex-col gap-2">
-                <div class="w-3/4 h-4 bg-[#F48F68]/10 border border-dashed border-[#F48F68]/30 rounded mx-auto flex items-center justify-center">
-                  <span class="text-[8px] font-label-md text-[#F48F68] uppercase tracking-wider">Hero Section Layout</span>
-                </div>
-                <div class="flex gap-2 justify-center">
-                  <div class="w-16 h-8 bg-[#fff6de]/5 border border-dashed border-[#fff6de]/20 rounded"></div>
-                  <div class="w-16 h-8 bg-[#fff6de]/5 border border-dashed border-[#fff6de]/20 rounded"></div>
-                </div>
-              </div>
-              
-              <div class="absolute top-1/2 left-0 -translate-x-full pr-1 text-[8px] text-[#cec6b0] font-label-md">W: 100%</div>
-              <div class="absolute bottom-0 left-1/2 translate-y-full pt-1 text-[8px] text-[#cec6b0] font-label-md">H: Auto</div>
-            </div>
-          </div>
+      <!-- Item 4 -->
+      <div class="reveal-item group cursor-pointer text-center py-2 px-4">
+        <div class="reveal-roll-wrapper">
+          <span class="reveal-roll-primary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            ACCELERATE BUSINESS GROWTH
+          </span>
+          <span aria-hidden="true" class="reveal-roll-secondary text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+            ACCELERATE BUSINESS GROWTH
+          </span>
         </div>
-
-        <!-- Act 4 Visual: Tactile UI Mockup Card -->
-        <div id="act-4-visual" class="absolute w-full h-full opacity-0 flex items-center justify-center transform scale-95 transition-all duration-300">
-          <div class="relative w-80 h-72">
-            <div class="absolute inset-0 flex items-center justify-center opacity-30">
-              <svg class="w-full h-full text-[#F48F68]" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-                <circle cx="20" cy="30" r="1" fill="currentColor"/>
-                <circle cx="50" cy="20" r="1.5" fill="currentColor"/>
-                <circle cx="80" cy="30" r="1" fill="currentColor"/>
-                <circle cx="30" cy="70" r="1" fill="currentColor"/>
-                <circle cx="70" cy="75" r="1.5" fill="currentColor"/>
-                <path d="M 20 30 L 50 20 L 80 30" stroke-dasharray="2 2"/>
-                <path d="M 50 20 L 30 70 L 70 75 L 50 20" stroke-dasharray="2 2"/>
-              </svg>
-            </div>
-            
-            <div class="absolute top-12 left-6 w-64 bg-[#fff6de]/[0.02] border border-[#fff6de]/15 rounded-2xl p-4 shadow-[0_12px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl hover:shadow-[0_20px_40px_rgba(244,143,104,0.1)] transition-all duration-500 transform hover:scale-[1.02] hover:-rotate-1">
-              <div class="flex items-center gap-1.5 mb-3 border-b border-[#fff6de]/10 pb-2">
-                <div class="w-2.5 h-2.5 rounded-full bg-[#F48F68]/80"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-[#cec6b0]/80"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-[#fff6de]/30"></div>
-                <span class="text-[8px] text-[#ccc6ba] font-label-md ml-auto">editor.js</span>
-              </div>
-              <div class="font-mono text-[9px] text-[#ccc6ba] text-left space-y-1">
-                <p><span class="text-[#F48F68]">const</span> agent = <span class="text-[#cec6b0]">new AIWebAgent</span>();</p>
-                <p>agent.on(<span class="text-[#fff6de]/80">'click'</span>, () => {</p>
-                <p class="pl-3">agent.launchStorytelling();</p>
-                <p class="pl-3 text-[#cec6b0]">console.log("60fps rendered");</p>
-                <p>});</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Act 5 Visual: Launch Rocket Line & Infinity Graph -->
-        <div id="act-5-visual" class="absolute w-full h-full opacity-0 flex items-center justify-center transform scale-95 transition-all duration-300">
-          <div class="relative w-80 h-72 flex flex-col justify-between p-6 bg-[#fff6de]/[0.01] border border-[#fff6de]/5 rounded-2xl">
-            <div class="flex justify-between items-center">
-              <div class="flex flex-col text-left">
-                <span class="text-[9px] font-label-md text-[#cec6b0] uppercase tracking-wider">Performance Audit</span>
-                <span class="text-2xl font-bold font-display-lg text-[#fff6de] mt-0.5">99.9%</span>
-              </div>
-              <div class="px-3 py-1 rounded bg-[#F48F68]/15 border border-[#F48F68]/30 text-[9px] text-[#F48F68] font-label-md uppercase tracking-wider font-bold">Fast &amp; Secure</div>
-            </div>
-            
-            <div class="h-28 w-full border-b border-l border-[#fff6de]/10 relative">
-              <svg class="w-full h-full text-[#F48F68]" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path id="analytics-chart-path" d="M 0 90 Q 20 80 40 40 T 80 20 T 100 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            
-            <div class="flex justify-center items-center gap-4 border-t border-[#fff6de]/10 pt-4">
-              <span class="text-[9px] text-[#ccc6ba] font-label-md uppercase tracking-wider">Continuous Growth</span>
-              <svg class="w-12 h-6 text-[#F48F68] overflow-visible" viewBox="0 0 50 25" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path id="infinity-path" d="M 12.5 12.5 C 12.5 6.25, 25 6.25, 25 12.5 C 25 18.75, 37.5 18.75, 37.5 12.5 C 37.5 6.25, 25 6.25, 25 12.5 C 25 18.75, 12.5 18.75, 12.5 12.5 Z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
       </div>
 
     </div>
+
+    <!-- Micro interactive hint -->
+    <div class="mt-8 flex items-center gap-2 text-xs font-mono text-[#cec6b0]/60 pointer-events-none">
+      <span class="material-symbols-outlined text-sm text-[#F48F68] animate-pulse">touch_app</span>
+      <span>Hover titles to reveal blueprints &bull; Move pointer to steer horizon lamp</span>
+    </div>
+
   </div>
 </section>
-</div>
-</div>
 
     <!-- HOW IT WORKS SECTION (WebGL Capabilities Ecosystem) -->
-    <div id="how-it-works" class="scroll-mt-28 lg:scroll-mt-32 w-full bg-[#0d0c0a] text-[#fff6de] py-20 lg:py-28 relative overflow-hidden border-t border-b border-[#fff6de]/5">
+    <div id="how-it-works" class="scroll-mt-28 lg:scroll-mt-32 w-full bg-[#0d0c0a] text-[#fff6de] py-20 lg:py-28 relative overflow-hidden border-b border-[#fff6de]/5">
       <!-- Starfield / Energy Dust Overlay -->
       <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
       
@@ -790,7 +672,7 @@
       </div>
 
       <div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-secondary relative z-10">
-        <a href="book-a-call.html" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
           Deploy Web System
           <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
         </a>
@@ -868,7 +750,7 @@
       </div>
 
       <div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-secondary relative z-10">
-        <a href="book-a-call.html" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
           Integrate AI Agents
           <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
         </a>
@@ -946,7 +828,7 @@
       </div>
 
       <div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-secondary relative z-10">
-        <a href="book-a-call.html" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
           Automate WhatsApp
           <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
         </a>
@@ -1022,7 +904,7 @@
       </div>
 
       <div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-secondary relative z-10">
-        <a href="book-a-call.html" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
           Scale Content Engine
           <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
         </a>
@@ -1105,7 +987,7 @@
       </div>
 
       <div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-secondary relative z-10">
-        <a href="book-a-call.html" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
           Launch Ad Campaigns
           <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
         </a>
@@ -1186,7 +1068,7 @@
       </div>
 
       <div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-secondary relative z-10">
-        <a href="book-a-call.html" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="font-label-md text-xs font-bold tracking-wider hover:text-primary transition-colors flex items-center gap-1">
           Build Custom Workflows
           <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
         </a>
@@ -1230,7 +1112,7 @@
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-end gap-3 pt-2 border-t border-outline-variant/20 relative z-10">
-        <a href="book-a-call.html" class="w-full sm:w-auto px-6 py-3 rounded-full bg-tertiary hover:bg-[#793010] text-on-tertiary font-label-md text-xs font-bold shadow-md transition-all text-center">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3 rounded-full bg-tertiary hover:bg-[#793010] text-on-tertiary font-label-md text-xs font-bold shadow-md transition-all text-center">
           Schedule Discovery Call
         </a>
       </div>
@@ -1279,77 +1161,93 @@
       <div class="bg-[#1c1a16] p-8 rounded-xl shadow-sm flex flex-col gap-6 border border-[#fff6de]/10">
         <h4 class="font-headline-sm text-headline-sm text-[#fff6de] font-bold">Still have questions?</h4>
         <p class="font-body-md text-[#cec6b0]">We're here to help clarify any details about our services or your unique project needs.</p>
-        <a href="book-a-call.html" class="bg-tertiary text-on-tertiary font-label-md text-label-md py-3 px-6 rounded-full hover:shadow-md transition-all transform hover:-translate-y-0.5 w-max text-center">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="bg-tertiary text-on-tertiary font-label-md text-label-md py-3 px-6 rounded-full hover:shadow-md transition-all transform hover:-translate-y-0.5 w-max text-center">
           Reach Out to Us
         </a>
       </div>
     </div>
     
     <div class="lg:col-span-8 flex flex-col gap-4" id="faq-container">
-      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-[#fff6de]/10" data-state="closed">
+      <style>
+        #faq-container .faq-item,
+        #faq-container .faq-item[data-state="open"],
+        #faq-container .faq-item[data-state="closed"] {
+          background-color: #1c1a16 !important;
+        }
+        #faq-container .faq-item h3 {
+          color: #ffffff !important;
+        }
+        #faq-container .faq-item:hover h3 {
+          color: #F48F68 !important;
+        }
+        #faq-container .faq-item p {
+          color: #ffffff !important;
+        }
+      </style>
+      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-white/10" data-state="closed">
         <div class="faq-header flex items-center justify-between p-6">
-          <h3 class="font-headline-sm text-headline-sm text-[#fff6de] group-hover:text-[#F48F68] transition-colors pr-8 font-bold">What services does Sociality AI provide?</h3>
+          <h3 class="font-headline-sm text-headline-sm text-white group-hover:text-[#F48F68] transition-colors pr-8 font-bold">What services does Sociality AI provide?</h3>
           <span class="material-symbols-outlined text-[#F48F68] transition-transform duration-300 icon-expand flex-shrink-0">add</span>
         </div>
         <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out opacity-0">
           <div class="overflow-hidden">
-            <p class="font-body-md text-body-md text-[#cec6b0] p-6 pt-0 leading-relaxed">
+            <p class="font-body-md text-body-md text-white p-6 pt-0 leading-relaxed">
               We specialize in blending human creativity with AI efficiency. Our core services include AI-assisted digital product design, bespoke web development, branding with a focus on tactile modern aesthetics, and workflow optimization consulting for creative teams.
             </p>
           </div>
         </div>
       </div>
       
-      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-[#fff6de]/10" data-state="closed">
+      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-white/10" data-state="closed">
         <div class="faq-header flex items-center justify-between p-6">
-          <h3 class="font-headline-sm text-headline-sm text-[#fff6de] group-hover:text-[#F48F68] transition-colors pr-8 font-bold">How do you integrate AI into the design process?</h3>
+          <h3 class="font-headline-sm text-headline-sm text-white group-hover:text-[#F48F68] transition-colors pr-8 font-bold">How do you integrate AI into the design process?</h3>
           <span class="material-symbols-outlined text-[#F48F68] transition-transform duration-300 icon-expand flex-shrink-0">add</span>
         </div>
         <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out opacity-0">
           <div class="overflow-hidden">
-            <p class="font-body-md text-body-md text-[#cec6b0] p-6 pt-0 leading-relaxed">
+            <p class="font-body-md text-body-md text-white p-6 pt-0 leading-relaxed">
               We use AI as a collaborative tool, not a replacement for human intuition. Our process involves using AI for rapid prototyping, data-driven layout testing, and generating foundational code structures, which our expert designers and developers then refine, craft, and polish to ensure a bespoke, high-quality final product.
             </p>
           </div>
         </div>
       </div>
       
-      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-[#fff6de]/10" data-state="closed">
+      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-white/10" data-state="closed">
         <div class="faq-header flex items-center justify-between p-6">
-          <h3 class="font-headline-sm text-headline-sm text-[#fff6de] group-hover:text-[#F48F68] transition-colors pr-8 font-bold">What is your pricing model?</h3>
+          <h3 class="font-headline-sm text-headline-sm text-white group-hover:text-[#F48F68] transition-colors pr-8 font-bold">What is your pricing model?</h3>
           <span class="material-symbols-outlined text-[#F48F68] transition-transform duration-300 icon-expand flex-shrink-0">add</span>
         </div>
         <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out opacity-0">
           <div class="overflow-hidden">
-            <p class="font-body-md text-body-md text-[#cec6b0] p-6 pt-0 leading-relaxed">
+            <p class="font-body-md text-body-md text-white p-6 pt-0 leading-relaxed">
               Our pricing is project-based, tailored to the specific scope and complexity of your needs. We provide transparent, detailed proposals after an initial consultation to ensure alignment on deliverables and value. We also offer retainer options for ongoing design and development support.
             </p>
           </div>
         </div>
       </div>
       
-      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-[#fff6de]/10" data-state="closed">
+      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-white/10" data-state="closed">
         <div class="faq-header flex items-center justify-between p-6">
-          <h3 class="font-headline-sm text-headline-sm text-[#fff6de] group-hover:text-[#F48F68] transition-colors pr-8 font-bold">How long does a typical project take?</h3>
+          <h3 class="font-headline-sm text-headline-sm text-white group-hover:text-[#F48F68] transition-colors pr-8 font-bold">How long does a typical project take?</h3>
           <span class="material-symbols-outlined text-[#F48F68] transition-transform duration-300 icon-expand flex-shrink-0">add</span>
         </div>
         <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out opacity-0">
           <div class="overflow-hidden">
-            <p class="font-body-md text-body-md text-[#cec6b0] p-6 pt-0 leading-relaxed">
+            <p class="font-body-md text-body-md text-white p-6 pt-0 leading-relaxed">
               Timelines vary based on scope. A foundational branding and landing page project typically takes 3-5 weeks, while comprehensive web applications or full platform redesigns may span 8-12 weeks. We establish clear milestones and deliverable dates during the kickoff phase.
             </p>
           </div>
         </div>
       </div>
       
-      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-[#fff6de]/10" data-state="closed">
+      <div class="faq-item group cursor-pointer bg-[#1c1a16] rounded-lg transition-all duration-300 hover:shadow-sm overflow-hidden border border-white/10" data-state="closed">
         <div class="faq-header flex items-center justify-between p-6">
-          <h3 class="font-headline-sm text-headline-sm text-[#fff6de] group-hover:text-[#F48F68] transition-colors pr-8 font-bold">Do you offer post-launch support?</h3>
+          <h3 class="font-headline-sm text-headline-sm text-white group-hover:text-[#F48F68] transition-colors pr-8 font-bold">Do you offer post-launch support?</h3>
           <span class="material-symbols-outlined text-[#F48F68] transition-transform duration-300 icon-expand flex-shrink-0">add</span>
         </div>
         <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out opacity-0">
           <div class="overflow-hidden">
-            <p class="font-body-md text-body-md text-[#cec6b0] p-6 pt-0 leading-relaxed">
+            <p class="font-body-md text-body-md text-white p-6 pt-0 leading-relaxed">
               Yes, absolutely. We believe digital products are living entities. We offer ongoing maintenance, optimization, and feature expansion packages to ensure your platform continues to perform and evolve alongside your business.
             </p>
           </div>
@@ -1371,7 +1269,7 @@
       <span class="font-label-md text-label-md text-[#F48F68] uppercase tracking-widest block font-bold">Ready When You Are.</span>
       <h3 class="font-headline-md text-headline-md lg:text-headline-lg text-[#fff6de] leading-tight font-bold">AI that runs the work.<br/>You run the business.</h3>
       <div class="pt-2 flex flex-col items-start gap-3">
-        <a href="book-a-call.html" class="inline-flex items-center justify-center px-8 py-3.5 bg-[#FDF8F5BF] text-[#1C1B1A] font-bold text-base rounded-full hover:bg-[#FDF8F5] hover:scale-105 transition-all shadow-md">
+        <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3.5 bg-[#FDF8F5BF] text-[#1C1B1A] font-bold text-base rounded-full hover:bg-[#FDF8F5] hover:scale-105 transition-all shadow-md">
           Book a Call
         </a>
         <div class="flex flex-col gap-1.5 pt-1 text-sm font-body-md text-[#fff6de]/80">
@@ -1570,12 +1468,15 @@
 <script src="faq-accordion.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="workflow-storytelling.js"></script>
+<script src="chess-horizon.js"></script>
+<script src="hover-image-reveal.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="webgl-ecosystem.js"></script>
 <script src="nav-controller.js"></script>
 <script src="portfolio-3d-showcase.js"></script>
 <script src="emoji-burst-button.js"></script>
 <script src="originkit-button-animations.js"></script>
+<script src="hero-cloud-sky.js"></script>
+<script src="click-effects.js"></script>
 </body>
 </html>

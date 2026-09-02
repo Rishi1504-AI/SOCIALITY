@@ -40,6 +40,7 @@
             const otherHeader = otherItem.querySelector('.faq-header');
             const otherContent = otherItem.querySelector('.faq-content');
             const otherIcon = otherItem.querySelector('.icon-expand');
+            const isOtherDark = otherItem.classList.contains('bg-[#1c1a16]') || Boolean(otherItem.closest('#faqs'));
 
             if (otherItem.hasAttribute('data-state')) {
               otherItem.setAttribute('data-state', 'closed');
@@ -47,12 +48,14 @@
                 otherContent.style.gridTemplateRows = '0fr';
                 otherContent.style.opacity = '0';
               }
-              otherItem.classList.remove('bg-primary-container');
-              otherItem.classList.add('bg-surface-container-low');
-              const ans = otherItem.querySelector('.faq-content p');
-              if (ans) {
-                ans.classList.remove('text-[#1c1b1a]');
-                ans.classList.add('text-on-surface-variant');
+              if (!isOtherDark) {
+                otherItem.classList.remove('bg-primary-container');
+                otherItem.classList.add('bg-surface-container-low');
+                const ans = otherItem.querySelector('.faq-content p');
+                if (ans) {
+                  ans.classList.remove('text-[#1c1b1a]');
+                  ans.classList.add('text-on-surface-variant');
+                }
               }
             } else {
               if (otherContent) {
@@ -72,17 +75,21 @@
         });
 
         // Toggle current item
+        const isCurrentDark = item.classList.contains('bg-[#1c1a16]') || Boolean(item.closest('#faqs'));
+
         if (isClosed) {
           if (hasDataState) {
             item.setAttribute('data-state', 'open');
             content.style.gridTemplateRows = '1fr';
             content.style.opacity = '1';
-            item.classList.remove('bg-surface-container-low');
-            item.classList.add('bg-primary-container');
-            const ans = item.querySelector('.faq-content p');
-            if (ans) {
-              ans.classList.remove('text-on-surface-variant');
-              ans.classList.add('text-[#1c1b1a]');
+            if (!isCurrentDark) {
+              item.classList.remove('bg-surface-container-low');
+              item.classList.add('bg-primary-container');
+              const ans = item.querySelector('.faq-content p');
+              if (ans) {
+                ans.classList.remove('text-on-surface-variant');
+                ans.classList.add('text-[#1c1b1a]');
+              }
             }
           } else {
             content.classList.remove('hidden');
@@ -99,12 +106,14 @@
             item.setAttribute('data-state', 'closed');
             content.style.gridTemplateRows = '0fr';
             content.style.opacity = '0';
-            item.classList.remove('bg-primary-container');
-            item.classList.add('bg-surface-container-low');
-            const ans = item.querySelector('.faq-content p');
-            if (ans) {
-              ans.classList.remove('text-[#1c1b1a]');
-              ans.classList.add('text-on-surface-variant');
+            if (!isCurrentDark) {
+              item.classList.remove('bg-primary-container');
+              item.classList.add('bg-surface-container-low');
+              const ans = item.querySelector('.faq-content p');
+              if (ans) {
+                ans.classList.remove('text-[#1c1b1a]');
+                ans.classList.add('text-on-surface-variant');
+              }
             }
           } else {
             content.style.maxHeight = '0px';

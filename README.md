@@ -6,16 +6,12 @@ Sociality AI is a premium, modern, tactile digital agency website that blends hu
 
 ```text
 SOCIALITY/
-├── Frontend/             # All client-side files
-│   ├── Assets/           # Local images and media files (e.g., ezgif-frame-*.jpg, Home.zip)
-│   ├── index.html        # Main landing page
-│   ├── blogs.html        # Blogs page
-│   ├── book-a-call.html  # Appointment scheduling form page
-│   ├── ...               # Other pages & navigation scripts
-│   └── nav-controller.js # Mobile menu and active navigation link controller
-└── Backend/              # Database client, API, and server-side code
-    ├── supabase.js       # Supabase SDK bundle
-    └── supabase-client.js# Supabase client & REST database integration
+└── Frontend/             # All client-side web files
+    ├── Assets/           # Local images and media files (e.g., ezgif-frame-*.jpg, Home.zip)
+    ├── index.html        # Main landing page
+    ├── blogs.html        # Blogs page
+    ├── ...               # Other pages & navigation scripts
+    └── nav-controller.js # Mobile menu and active navigation link controller
 ```
 
 ## Getting Started

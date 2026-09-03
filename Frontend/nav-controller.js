@@ -490,6 +490,7 @@
     setupSmoothNavigation();
     ensureEmojiBurstScript();
     ensureButtonAnimationScript();
+    ensureWindPyreScript();
   }
 
   function ensureEmojiBurstScript() {
@@ -508,6 +509,16 @@
     }
     const script = document.createElement('script');
     script.src = 'originkit-button-animations.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
+  function ensureWindPyreScript() {
+    if (window.__windPyreLoaded || document.querySelector('script[src*="wind-pyre.js"]')) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'wind-pyre.js';
     script.defer = true;
     document.head.appendChild(script);
   }

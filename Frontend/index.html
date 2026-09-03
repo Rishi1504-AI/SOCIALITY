@@ -1097,9 +1097,10 @@
 </section>
 <!-- Call to Action Banner -->
 <section class="w-full pb-section-gap px-margin-mobile lg:px-gutter w-full px-6 md:px-12 lg:px-16">
-<div class="bg-primary text-on-primary rounded-[32px] p-8 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl">
-<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-surface/10 rounded-full blur-[40px] pointer-events-none"></div>
-<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-surface/10 to-transparent pointer-events-none"></div>
+<div class="bg-primary text-on-primary rounded-[32px] p-8 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl" data-wind-pyre-section>
+<div class="absolute inset-0 w-full h-full pointer-events-none z-0 rounded-[32px] overflow-hidden opacity-90 mix-blend-screen" data-wind-pyre-canvas></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-surface/10 rounded-full blur-[40px] pointer-events-none z-[1]"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-surface/10 to-transparent pointer-events-none z-[1]"></div>
 <div class="flex flex-col gap-4 max-w-2xl relative z-10">
 <h2 class="font-display-lg text-display-lg">Ready to build something extraordinary?</h2>
 <p class="font-body-lg text-body-lg text-on-primary/90">Let's collaborate to bring your digital vision to life with warmth, precision, and impact.</p>
@@ -1453,6 +1454,7 @@
 <script src="emoji-burst-button.js"></script>
 <script src="originkit-button-animations.js"></script>
 <script src="hero-cloud-sky.js"></script>
+<script src="wind-pyre.js"></script>
 <script src="click-effects.js"></script>
 </body>
 </html>

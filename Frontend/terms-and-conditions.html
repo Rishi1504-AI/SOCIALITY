@@ -34,7 +34,7 @@
     }
     .legal-clause h3 {
       font-family: 'Arima Madurai', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: #1C1B1A;
       margin-top: 2rem;
@@ -42,6 +42,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      scroll-margin-top: 8rem;
     }
     .legal-clause p {
       margin-bottom: 1rem;
@@ -179,7 +180,7 @@
     </section>
 
     <!-- Interactive Navigation Tabs for Part 1 / Part 2 -->
-    <section class="w-full px-6 md:px-12 lg:px-16 py-8 bg-surface-container-lowest border-b border-outline-variant/30 sticky top-24 z-30 shadow-sm backdrop-blur-md bg-surface/90">
+    <section class="w-full px-6 md:px-12 lg:px-16 py-6 bg-surface-container-lowest border-b border-outline-variant/30 sticky top-24 z-30 shadow-sm backdrop-blur-md bg-surface/90">
       <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2 w-full sm:w-auto p-1 bg-surface-container rounded-2xl border border-outline-variant/40">
           <button id="tab-btn-part1" onclick="switchTab('part1')" class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl font-headline-sm text-xs sm:text-sm font-bold transition-all bg-tertiary text-on-tertiary shadow-sm flex items-center justify-center gap-2">
@@ -198,243 +199,291 @@
       </div>
     </section>
 
-    <!-- Legal Content Container -->
+    <!-- Quick Table of Contents & Legal Content Container -->
     <section class="w-full px-6 md:px-12 lg:px-16 py-12">
-      <div class="max-w-4xl mx-auto bg-surface-container-lowest border border-outline-variant/30 rounded-3xl p-6 md:p-12 lg:p-16 shadow-xl">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         
-        <!-- ==================== PART 1: COMMERCIAL, 50/50 PAYMENT & REFUND ==================== -->
-        <div id="content-part1" class="legal-clause space-y-8 animate-fade-in">
+        <!-- Sidebar Navigation (Desktop Sticky Table of Contents) -->
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-44 bg-surface-container-lowest border border-outline-variant/30 rounded-2xl p-5 shadow-sm space-y-3">
+            <span class="text-xs font-bold font-label-md text-tertiary uppercase tracking-wider block mb-2">Sections</span>
+            <nav class="flex flex-col gap-1.5 text-xs font-body-md text-on-surface-variant">
+              
+              <div class="font-bold text-[11px] uppercase tracking-wider text-tertiary mt-1 mb-1">Part 1: Commercial</div>
+              <a href="#clause-1" onclick="jumpToClause('part1', 'clause-1', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>1. Acceptance & SOW</span>
+              </a>
+              <a href="#clause-2" onclick="jumpToClause('part1', 'clause-2', event)" class="hover:text-tertiary transition-colors py-1 font-bold text-on-surface flex items-center gap-1.5">
+                <span>2. 50/50 Payment Model</span>
+              </a>
+              <a href="#clause-3" onclick="jumpToClause('part1', 'clause-3', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>3. Refund Policy</span>
+              </a>
+              <a href="#clause-4" onclick="jumpToClause('part1', 'clause-4', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>4. Scope Revisions</span>
+              </a>
+              
+              <div class="font-bold text-[11px] uppercase tracking-wider text-secondary mt-3 mb-1">Part 2: Legal & AI</div>
+              <a href="#clause-5" onclick="jumpToClause('part2', 'clause-5', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>5. IP & Ownership</span>
+              </a>
+              <a href="#clause-6" onclick="jumpToClause('part2', 'clause-6', event)" class="hover:text-tertiary transition-colors py-1 font-bold text-on-surface flex items-center gap-1.5">
+                <span>6. AI Model Liabilities</span>
+              </a>
+              <a href="#clause-7" onclick="jumpToClause('part2', 'clause-7', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>7. Confidentiality</span>
+              </a>
+              <a href="#clause-8" onclick="jumpToClause('part2', 'clause-8', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>8. SLAs & Maintenance</span>
+              </a>
+              <a href="#clause-9" onclick="jumpToClause('part2', 'clause-9', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>9. Limitation of Liability</span>
+              </a>
+              <a href="#clause-10" onclick="jumpToClause('part2', 'clause-10', event)" class="hover:text-tertiary transition-colors py-1 flex items-center gap-1.5">
+                <span>10. Solapur Jurisdiction</span>
+              </a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Main Legal Clauses Container -->
+        <div class="lg:col-span-3 bg-surface-container-lowest border border-outline-variant/30 rounded-3xl p-6 md:p-12 shadow-xl">
           
-          <div class="border-b border-outline-variant/30 pb-6 mb-8">
-            <div class="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label-md text-xs font-bold rounded-full uppercase tracking-wider mb-2">
-              Page 1 of 2 • Commercial Engagement
-            </div>
-            <h2 class="font-display-lg text-2xl md:text-3xl font-bold text-on-surface">
-              Commercial Terms, 50/50 Payment Protocol & Refund Policy
-            </h2>
-          </div>
-
-          <!-- Clause 1 -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">handshake</span>
-              1. Acceptance of Terms & Statement of Work (SOW)
-            </h3>
-            <p>
-              By engaging <strong>Sociality AI</strong> ("Company", "We", "Us", or "Our") for custom web development, AI agent implementation, digital design, or consulting services, the Client ("You", "Client", or "Customer") agrees to be bound by this Master Services Agreement.
-            </p>
-            <p>
-              All projects commence strictly upon written approval of a formal Proposal, Statement of Work (SOW), or digital contract outlining the agreed scope, milestones, timelines, and deliverable specifications.
-            </p>
-          </div>
-
-          <!-- Clause 2: The 50/50 Payment Model -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">credit_score</span>
-              2. The 50/50 Milestone Payment Structure
-            </h3>
-            <p>
-              To guarantee dedicated engineering resources, zero compromise on architecture quality, and mutual alignment, all project engagements adhere to the standard <strong>50/50 Milestone Payment Protocol</strong>:
-            </p>
+          <!-- ==================== PART 1: COMMERCIAL, 50/50 PAYMENT & REFUND ==================== -->
+          <div id="content-part1" class="legal-clause space-y-8 animate-fade-in">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-              <div class="p-5 bg-surface-container rounded-2xl border border-outline-variant/40">
-                <div class="font-bold text-on-surface text-base mb-1 flex items-center gap-2">
-                  <span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary text-xs flex items-center justify-center font-bold">1</span>
-                  50% Upfront Retainer (Pre-Development)
+            <div class="border-b border-outline-variant/30 pb-6 mb-8">
+              <div class="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label-md text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+                Page 1 of 2 • Commercial Engagement
+              </div>
+              <h2 class="font-display-lg text-2xl md:text-3xl font-bold text-on-surface">
+                Commercial Terms, 50/50 Payment Protocol & Refund Policy
+              </h2>
+            </div>
+
+            <!-- Clause 1 -->
+            <div id="clause-1">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">handshake</span>
+                1. Acceptance of Terms & Statement of Work (SOW)
+              </h3>
+              <p>
+                By engaging <strong>Sociality AI</strong> ("Company", "We", "Us", or "Our") for custom web development, AI agent implementation, digital design, or consulting services, the Client ("You", "Client", or "Customer") agrees to be bound by this Master Services Agreement.
+              </p>
+              <p>
+                All projects commence strictly upon written approval of a formal Proposal, Statement of Work (SOW), or digital contract outlining the agreed scope, milestones, timelines, and deliverable specifications.
+              </p>
+            </div>
+
+            <!-- Clause 2: The 50/50 Payment Model -->
+            <div id="clause-2">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">credit_score</span>
+                2. The 50/50 Milestone Payment Structure
+              </h3>
+              <p>
+                To guarantee dedicated engineering resources, zero compromise on architecture quality, and mutual alignment, all project engagements adhere to the standard <strong>50/50 Milestone Payment Protocol</strong>:
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                <div class="p-5 bg-surface-container rounded-2xl border border-outline-variant/40">
+                  <div class="font-bold text-on-surface text-base mb-1 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary text-xs flex items-center justify-center font-bold">1</span>
+                    50% Upfront Retainer (Pre-Development)
+                  </div>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Due prior to sprint initialization, UI/UX wireframing, custom codebase architecture, server provisioning, or developer allocation. Non-negotiable prerequisite to commence work.
+                  </p>
                 </div>
-                <p class="text-xs text-on-surface-variant leading-relaxed">
-                  Due prior to sprint initialization, UI/UX wireframing, custom codebase architecture, server provisioning, or developer allocation. Non-negotiable prerequisite to commence work.
-                </p>
+
+                <div class="p-5 bg-surface-container rounded-2xl border border-outline-variant/40">
+                  <div class="font-bold text-on-surface text-base mb-1 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-xs flex items-center justify-center font-bold">2</span>
+                    50% Final Settlement (Upon Completion)
+                  </div>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Due upon successful staging demonstration, User Acceptance Testing (UAT), and before final production deployment, live domain handover, or source code repository transfer.
+                  </p>
+                </div>
               </div>
 
-              <div class="p-5 bg-surface-container rounded-2xl border border-outline-variant/40">
-                <div class="font-bold text-on-surface text-base mb-1 flex items-center gap-2">
-                  <span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-xs flex items-center justify-center font-bold">2</span>
-                  50% Final Settlement (Upon Completion)
-                </div>
-                <p class="text-xs text-on-surface-variant leading-relaxed">
-                  Due upon successful staging demonstration, User Acceptance Testing (UAT), and before final production deployment, live domain handover, or source code repository transfer.
-                </p>
+              <div class="legal-highlight-box">
+                <strong>Late Payments & Project Holds:</strong> Invoices are payable within seven (7) calendar days of issuance. In the event of an overdue balance exceeding ten (10) calendar days, Sociality AI reserves the right to suspend active development sprints, pause cloud AI agent endpoints, and withhold final code delivery until all outstanding dues are settled in full.
               </div>
             </div>
 
-            <div class="legal-highlight-box">
-              <strong>Late Payments & Project Holds:</strong> Invoices are payable within seven (7) calendar days of issuance. In the event of an overdue balance exceeding ten (10) calendar days, Sociality AI reserves the right to suspend active development sprints, pause cloud AI agent endpoints, and withhold final code delivery until all outstanding dues are settled in full.
+            <!-- Clause 3: Refund Policy -->
+            <div id="clause-3">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">currency_exchange</span>
+                3. Comprehensive Refund & Cancellation Policy
+              </h3>
+              <p>
+                Sociality AI provides bespoke, high-touch engineering and consulting services. Because custom digital products consume non-recoverable engineering hours, server resources, and proprietary architecture, refunds are governed under the following strictly defined conditions:
+              </p>
+              
+              <ul>
+                <li>
+                  <strong>Discovery Phase Cancellation (Within 48 Hours):</strong> If the Client requests cancellation in writing within 48 hours of onboarding, provided no custom UI designs, wireframes, or code architecture have been initialized, a full refund of the initial 50% deposit will be granted, less a nominal <strong>10% administrative and onboarding processing fee</strong>.
+                </li>
+                <li>
+                  <strong>Active Development Phase:</strong> If a cancellation is requested after wireframes, prototypes, custom frontend components, or AI workflows have been built, the initial 50% deposit is <strong>non-refundable</strong> and will be retained by Sociality AI as fair compensation for committed labor and resource allocation.
+                </li>
+                <li>
+                  <strong>Non-Refundable Third-Party Disbursements:</strong> Any third-party costs directly disbursed on behalf of the client — including domain registrations, third-party server hosting fees (e.g., AWS, Supabase, Vercel), telephony charges (Twilio, Retell, Vapi), LLM token consumption credits (OpenAI, Anthropic), or licensed typography/assets — are <strong>100% non-refundable</strong> under all circumstances.
+                </li>
+                <li>
+                  <strong>Post-Delivery & Final Sign-Off:</strong> Once the project has passed final demonstration, the second 50% milestone is settled, and the source code or administrative credentials have been transferred, no refunds will be issued under any circumstances.
+                </li>
+              </ul>
             </div>
+
+            <!-- Clause 4: Change Requests & Timelines -->
+            <div id="clause-4">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">tune</span>
+                4. Scope Revisions & Change Requests
+              </h3>
+              <p>
+                Any feature, integration, or design modification requested by the Client that exceeds the agreed deliverables defined in the initial SOW shall constitute a "Change Request."
+              </p>
+              <p>
+                Change Requests will be evaluated, quoted as an additional milestone or at an hourly consulting rate, and scheduled into development only upon mutual written approval. Delivery timelines will be adjusted accordingly.
+              </p>
+            </div>
+
+            <!-- Next Page Button -->
+            <div class="pt-8 border-t border-outline-variant/30 flex justify-end">
+              <button onclick="switchTab('part2')" class="px-8 py-3 bg-tertiary text-on-tertiary font-bold text-sm rounded-full hover:shadow-lg transition-all flex items-center gap-2">
+                Proceed to Part 2: Legal & AI Liability
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+            </div>
+
           </div>
 
-          <!-- Clause 3: Refund Policy -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">currency_exchange</span>
-              3. Comprehensive Refund & Cancellation Policy
-            </h3>
-            <p>
-              Sociality AI provides bespoke, high-touch engineering and consulting services. Because custom digital products consume non-recoverable engineering hours, server resources, and proprietary architecture, refunds are governed under the following strictly defined conditions:
-            </p>
+          <!-- ==================== PART 2: LEGAL, AI LIABILITIES, IP & JURISDICTION ==================== -->
+          <div id="content-part2" class="legal-clause space-y-8 hidden animate-fade-in">
             
-            <ul>
-              <li>
-                <strong>Discovery Phase Cancellation (Within 48 Hours):</strong> If the Client requests cancellation in writing within 48 hours of onboarding, provided no custom UI designs, wireframes, or code architecture have been initialized, a full refund of the initial 50% deposit will be granted, less a nominal <strong>10% administrative and onboarding processing fee</strong>.
-              </li>
-              <li>
-                <strong>Active Development Phase:</strong> If a cancellation is requested after wireframes, prototypes, custom frontend components, or AI workflows have been built, the initial 50% deposit is <strong>non-refundable</strong> and will be retained by Sociality AI as fair compensation for committed labor and resource allocation.
-              </li>
-              <li>
-                <strong>Non-Refundable Third-Party Disbursements:</strong> Any third-party costs directly disbursed on behalf of the client — including domain registrations, third-party server hosting fees (e.g., AWS, Supabase, Vercel), telephony charges (Twilio, Retell, Vapi), LLM token consumption credits (OpenAI, Anthropic), or licensed typography/assets — are <strong>100% non-refundable</strong> under all circumstances.
-              </li>
-              <li>
-                <strong>Post-Delivery & Final Sign-Off:</strong> Once the project has passed final demonstration, the second 50% milestone is settled, and the source code or administrative credentials have been transferred, no refunds will be issued under any circumstances.
-              </li>
-            </ul>
-          </div>
-
-          <!-- Clause 4: Change Requests & Timelines -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">tune</span>
-              4. Scope Revisions & Change Requests
-            </h3>
-            <p>
-              Any feature, integration, or design modification requested by the Client that exceeds the agreed deliverables defined in the initial SOW shall constitute a "Change Request."
-            </p>
-            <p>
-              Change Requests will be evaluated, quoted as an additional milestone or at an hourly consulting rate, and scheduled into development only upon mutual written approval. Delivery timelines will be adjusted accordingly.
-            </p>
-          </div>
-
-          <!-- Next Page Button -->
-          <div class="pt-8 border-t border-outline-variant/30 flex justify-end">
-            <button onclick="switchTab('part2')" class="px-8 py-3 bg-tertiary text-on-tertiary font-bold text-sm rounded-full hover:shadow-lg transition-all flex items-center gap-2">
-              Proceed to Part 2: Legal & AI Liability
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
-          </div>
-
-        </div>
-
-        <!-- ==================== PART 2: LEGAL, AI LIABILITIES, IP & JURISDICTION ==================== -->
-        <div id="content-part2" class="legal-clause space-y-8 hidden animate-fade-in">
-          
-          <div class="border-b border-outline-variant/30 pb-6 mb-8">
-            <div class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold rounded-full uppercase tracking-wider mb-2">
-              Page 2 of 2 • Legal Governance & Liability
-            </div>
-            <h2 class="font-display-lg text-2xl md:text-3xl font-bold text-on-surface">
-              Intellectual Property, AI Liabilities, Data & Dispute Resolution
-            </h2>
-          </div>
-
-          <!-- Clause 5: Intellectual Property -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">copyright</span>
-              5. Intellectual Property Rights (IP) & Ownership Transfer
-            </h3>
-            <p>
-              <strong>Full Transfer Upon 100% Settlement:</strong> Upon full and final settlement of all invoices associated with the project (100% payment), all custom frontend designs, website graphics created for the client, and unique client application code are transferred to the Client.
-            </p>
-            <p>
-              <strong>Pre-Existing Code & Tooling:</strong> Sociality AI retains full ownership of its pre-existing libraries, internal developer scripts, proprietary boilerplate architectures, and reusable tools ("Agency Tooling"). The Client is granted a perpetual, non-exclusive, royalty-free license to use such Agency Tooling solely as embedded within the delivered project.
-            </p>
-            <p>
-              <strong>Portfolio Showcase:</strong> Unless an explicit non-disclosure agreement (NDA) is executed prior to engagement, Sociality AI retains the right to display the completed work, project metrics, and client branding in our portfolio, case studies, and marketing materials.
-            </p>
-          </div>
-
-          <!-- Clause 6: AI Agent Liabilities & Hallucinations -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">smart_toy</span>
-              6. AI Model Boundaries & Third-Party API Disclaimer
-            </h3>
-            <p>
-              Sociality AI designs and deploys advanced artificial intelligence agents (including WhatsApp bots, Voice calling agents, and RAG knowledge assistants) powered by state-of-the-art third-party Large Language Models (LLMs) such as OpenAI, Anthropic, Google, and Meta.
-            </p>
-            
-            <div class="legal-highlight-box">
-              <strong>Non-Deterministic AI Disclaimer:</strong> The Client acknowledges that LLMs are inherently probabilistic and non-deterministic. While Sociality AI implements strict guardrails, temperature controls, and prompt engineering, Sociality AI cannot guarantee that an AI agent will never produce an unexpected, erroneous, or hallucinated response. Sociality AI expressly disclaims any liability for business decisions, lost profits, or customer communications resulting from AI-generated outputs.
+            <div class="border-b border-outline-variant/30 pb-6 mb-8">
+              <div class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container font-label-md text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+                Page 2 of 2 • Legal Governance & Liability
+              </div>
+              <h2 class="font-display-lg text-2xl md:text-3xl font-bold text-on-surface">
+                Intellectual Property, AI Liabilities, Data & Dispute Resolution
+              </h2>
             </div>
 
-            <ul>
-              <li>
-                <strong>Third-Party Platform Outages:</strong> Sociality AI is not liable for service disruptions, latency, or API downtime originating from upstream providers, including Meta Cloud API (WhatsApp), telephony networks (Twilio, Retell), or cloud hosting services.
-              </li>
-              <li>
-                <strong>Client Data Responsibility:</strong> The Client is solely responsible for ensuring that all knowledge base documents, price lists, customer databases, and FAQs supplied to Sociality AI for AI training comply with applicable privacy regulations and contain no copyright-infringing materials.
-              </li>
-            </ul>
-          </div>
-
-          <!-- Clause 7: Confidentiality -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">lock</span>
-              7. Confidentiality & Data Protection
-            </h3>
-            <p>
-              Both parties agree to treat all non-public technical data, business plans, customer records, and API credentials as strictly confidential. Neither party shall disclose Confidential Information to any third party without prior written consent, except as required by law.
-            </p>
-          </div>
-
-          <!-- Clause 8: SLAs & Monthly Maintenance -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">support_agent</span>
-              8. Maintenance Agreements & Service Level Agreements (SLAs)
-            </h3>
-            <p>
-              For clients enrolled in our <strong>Monthly Website & AI Maintenance</strong> packages:
-            </p>
-            <ul>
-              <li><strong>Standard Support Requests:</strong> Response and triage within 24 to 48 business hours.</li>
-              <li><strong>Critical Emergency Outages:</strong> Dedicated response within six (6) hours for verified server downtime.</li>
-              <li>Maintenance plans exclude substantial new feature engineering, which remains subject to standard Change Request billing.</li>
-            </ul>
-          </div>
-
-          <!-- Clause 9: Limitation of Liability -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">shield</span>
-              9. Limitation of Liability & Indemnification
-            </h3>
-            <p>
-              To the maximum extent permitted by applicable law, in no event shall <strong>Sociality AI</strong>, its founders, engineers, or affiliates be liable for any indirect, incidental, special, punitive, or consequential damages (including loss of profits, data corruption, or business interruption) arising out of or related to our services.
-            </p>
-            <p>
-              Sociality AI's total cumulative aggregate liability for all claims arising under this agreement shall be strictly capped at the total amount actually paid by the Client to Sociality AI for the specific deliverable giving rise to the dispute during the three (3) months preceding the claim.
-            </p>
-          </div>
-
-          <!-- Clause 10: Governing Law & Jurisdiction -->
-          <div>
-            <h3>
-              <span class="material-symbols-outlined text-tertiary">balance</span>
-              10. Governing Law, Solapur Jurisdiction & Dispute Resolution
-            </h3>
-            <p>
-              This Agreement shall be governed by, construed, and enforced in accordance with the substantive laws of the <strong>Republic of India</strong>, specifically the Indian Contract Act, 1872 and the Information Technology Act, 2000.
-            </p>
-            <div class="legal-highlight-box">
-              <strong>Exclusive Solapur Jurisdiction:</strong> The courts of competent jurisdiction situated in <strong>Solapur, Maharashtra, India</strong> shall have exclusive territorial and subject-matter jurisdiction to resolve any dispute, suit, or legal proceeding arising out of or in connection with these Terms.
+            <!-- Clause 5: Intellectual Property -->
+            <div id="clause-5">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">copyright</span>
+                5. Intellectual Property Rights (IP) & Ownership Transfer
+              </h3>
+              <p>
+                <strong>Full Transfer Upon 100% Settlement:</strong> Upon full and final settlement of all invoices associated with the project (100% payment), all custom frontend designs, website graphics created for the client, and unique client application code are transferred to the Client.
+              </p>
+              <p>
+                <strong>Pre-Existing Code & Tooling:</strong> Sociality AI retains full ownership of its pre-existing libraries, internal developer scripts, proprietary boilerplate architectures, and reusable tools ("Agency Tooling"). The Client is granted a perpetual, non-exclusive, royalty-free license to use such Agency Tooling solely as embedded within the delivered project.
+              </p>
+              <p>
+                <strong>Portfolio Showcase:</strong> Unless an explicit non-disclosure agreement (NDA) is executed prior to engagement, Sociality AI retains the right to display the completed work, project metrics, and client branding in our portfolio, case studies, and marketing materials.
+              </p>
             </div>
-            <p>
-              <strong>Mandatory Amicable Negotiation:</strong> Prior to initiating any formal legal suit or arbitration, both parties agree to engage in good-faith executive negotiations for a minimum period of thirty (30) business days.
-            </p>
-          </div>
 
-          <!-- Previous Page Button & Discovery CTA -->
-          <div class="pt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <button onclick="switchTab('part1')" class="px-6 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-xs rounded-full transition-all flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm">arrow_back</span>
-              Back to Part 1 (Payments & Refunds)
-            </button>
-            <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-tertiary text-on-tertiary font-bold text-sm rounded-full hover:shadow-lg transition-all">
-              Book an Onboarding Call
-            </a>
+            <!-- Clause 6: AI Agent Liabilities & Hallucinations -->
+            <div id="clause-6">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">smart_toy</span>
+                6. AI Model Boundaries & Third-Party API Disclaimer
+              </h3>
+              <p>
+                Sociality AI designs and deploys advanced artificial intelligence agents (including WhatsApp bots, Voice calling agents, and RAG knowledge assistants) powered by state-of-the-art third-party Large Language Models (LLMs) such as OpenAI, Anthropic, Google, and Meta.
+              </p>
+              
+              <div class="legal-highlight-box">
+                <strong>Non-Deterministic AI Disclaimer:</strong> The Client acknowledges that LLMs are inherently probabilistic and non-deterministic. While Sociality AI implements strict guardrails, temperature controls, and prompt engineering, Sociality AI cannot guarantee that an AI agent will never produce an unexpected, erroneous, or hallucinated response. Sociality AI expressly disclaims any liability for business decisions, lost profits, or customer communications resulting from AI-generated outputs.
+              </div>
+
+              <ul>
+                <li>
+                  <strong>Third-Party Platform Outages:</strong> Sociality AI is not liable for service disruptions, latency, or API downtime originating from upstream providers, including Meta Cloud API (WhatsApp), telephony networks (Twilio, Retell), or cloud hosting services.
+                </li>
+                <li>
+                  <strong>Client Data Responsibility:</strong> The Client is solely responsible for ensuring that all knowledge base documents, price lists, customer databases, and FAQs supplied to Sociality AI for AI training comply with applicable privacy regulations and contain no copyright-infringing materials.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Clause 7: Confidentiality -->
+            <div id="clause-7">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">lock</span>
+                7. Confidentiality & Data Protection
+              </h3>
+              <p>
+                Both parties agree to treat all non-public technical data, business plans, customer records, and API credentials as strictly confidential. Neither party shall disclose Confidential Information to any third party without prior written consent, except as required by law.
+              </p>
+            </div>
+
+            <!-- Clause 8: SLAs & Monthly Maintenance -->
+            <div id="clause-8">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">support_agent</span>
+                8. Maintenance Agreements & Service Level Agreements (SLAs)
+              </h3>
+              <p>
+                For clients enrolled in our <strong>Monthly Website & AI Maintenance</strong> packages:
+              </p>
+              <ul>
+                <li><strong>Standard Support Requests:</strong> Response and triage within 24 to 48 business hours.</li>
+                <li><strong>Critical Emergency Outages:</strong> Dedicated response within six (6) hours for verified server downtime.</li>
+                <li>Maintenance plans exclude substantial new feature engineering, which remains subject to standard Change Request billing.</li>
+              </ul>
+            </div>
+
+            <!-- Clause 9: Limitation of Liability -->
+            <div id="clause-9">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">shield</span>
+                9. Limitation of Liability & Indemnification
+              </h3>
+              <p>
+                To the maximum extent permitted by applicable law, in no event shall <strong>Sociality AI</strong>, its founders, engineers, or affiliates be liable for any indirect, incidental, special, punitive, or consequential damages (including loss of profits, data corruption, or business interruption) arising out of or related to our services.
+              </p>
+              <p>
+                Sociality AI's total cumulative aggregate liability for all claims arising under this agreement shall be strictly capped at the total amount actually paid by the Client to Sociality AI for the specific deliverable giving rise to the dispute during the three (3) months preceding the claim.
+              </p>
+            </div>
+
+            <!-- Clause 10: Governing Law & Jurisdiction -->
+            <div id="clause-10">
+              <h3>
+                <span class="material-symbols-outlined text-tertiary">balance</span>
+                10. Governing Law, Solapur Jurisdiction & Dispute Resolution
+              </h3>
+              <p>
+                This Agreement shall be governed by, construed, and enforced in accordance with the substantive laws of the <strong>Republic of India</strong>, specifically the Indian Contract Act, 1872 and the Information Technology Act, 2000.
+              </p>
+              <div class="legal-highlight-box">
+                <strong>Exclusive Solapur Jurisdiction:</strong> The courts of competent jurisdiction situated in <strong>Solapur, Maharashtra, India</strong> shall have exclusive territorial and subject-matter jurisdiction to resolve any dispute, suit, or legal proceeding arising out of or in connection with these Terms.
+              </div>
+              <p>
+                <strong>Mandatory Amicable Negotiation:</strong> Prior to initiating any formal legal suit or arbitration, both parties agree to engage in good-faith executive negotiations for a minimum period of thirty (30) business days.
+              </p>
+            </div>
+
+            <!-- Previous Page Button & Discovery CTA -->
+            <div class="pt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <button onclick="switchTab('part1')" class="px-6 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold text-xs rounded-full transition-all flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back to Part 1 (Payments & Refunds)
+              </button>
+              <a href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-tertiary text-on-tertiary font-bold text-sm rounded-full hover:shadow-lg transition-all">
+                Book an Onboarding Call
+              </a>
+            </div>
+
           </div>
 
         </div>
@@ -444,7 +493,7 @@
 
     <!-- Support CTA Section -->
     <section class="px-6 md:px-12 lg:px-16 w-full mb-20">
-      <div class="max-w-4xl mx-auto bg-surface-container p-8 md:p-10 rounded-3xl border border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="max-w-5xl mx-auto bg-surface-container p-8 md:p-10 rounded-3xl border border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <h4 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Have Questions Regarding Our Terms?</h4>
           <p class="text-xs sm:text-sm text-on-surface-variant">Our legal and engineering team is available to assist you with custom MSAs, enterprise NDAs, or SOW inquiries.</p>
@@ -531,7 +580,7 @@
 <script src="js/core/nav-controller.js"></script>
 
 <script>
-  function switchTab(tabId) {
+  function switchTab(tabId, shouldScroll = true) {
     const part1Content = document.getElementById('content-part1');
     const part2Content = document.getElementById('content-part2');
     const part1Btn = document.getElementById('tab-btn-part1');
@@ -547,7 +596,9 @@
       part2Btn.classList.remove('bg-tertiary', 'text-on-tertiary', 'shadow-sm');
       part2Btn.classList.add('text-on-surface-variant');
       
-      window.scrollTo({ top: 300, behavior: 'smooth' });
+      if (shouldScroll) {
+        window.scrollTo({ top: 380, behavior: 'smooth' });
+      }
     } else if (tabId === 'part2') {
       part2Content.classList.remove('hidden');
       part1Content.classList.add('hidden');
@@ -558,8 +609,26 @@
       part1Btn.classList.remove('bg-tertiary', 'text-on-tertiary', 'shadow-sm');
       part1Btn.classList.add('text-on-surface-variant');
 
-      window.scrollTo({ top: 300, behavior: 'smooth' });
+      if (shouldScroll) {
+        window.scrollTo({ top: 380, behavior: 'smooth' });
+      }
     }
+  }
+
+  function jumpToClause(partId, clauseId, event) {
+    if (event) {
+      event.preventDefault();
+    }
+    // First switch to the correct part without general scrolling
+    switchTab(partId, false);
+
+    // Then smoothly scroll to the exact target clause
+    setTimeout(() => {
+      const targetElement = document.getElementById(clauseId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
   }
 </script>
 

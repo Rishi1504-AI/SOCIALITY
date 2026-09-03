@@ -466,61 +466,37 @@
   </div>
 </section>
 
-    <!-- HOW IT WORKS SECTION (WebGL Capabilities Ecosystem) -->
-    <div id="how-it-works" class="scroll-mt-28 lg:scroll-mt-32 w-full bg-[#0d0c0a] text-[#fff6de] py-20 lg:py-28 relative overflow-hidden border-b border-[#fff6de]/5">
+    <!-- ASCII REVEAL SECTION (Originkit Architecture Matrix) -->
+    <div id="capabilities-system" class="scroll-mt-28 lg:scroll-mt-32 w-full bg-[#0d0c0a] text-[#fff6de] py-20 lg:py-28 relative overflow-hidden border-b border-[#fff6de]/5">
       <!-- Starfield / Energy Dust Overlay -->
       <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
       
       <!-- Content Grid -->
-      <div class="w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 min-h-[75vh]">
+      <div class="w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10 min-h-[70vh]">
         
         <!-- Left Column: Storytelling Copy -->
         <div class="col-span-1 lg:col-span-5 flex flex-col gap-6 text-left relative z-20">
-          <span class="font-label-md text-sm text-[#F48F68] uppercase tracking-widest font-bold">Capabilities System</span>
-          <h2 class="font-display-lg text-4xl lg:text-5xl text-[#fff6de] leading-tight font-bold">
-            Everything Your Business Needs.<br/>
-            <span class="text-[#F48F68]">One Digital Partner.</span>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1c1a16] border border-[#F48F68]/30 backdrop-blur-md w-fit shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-[#F48F68] animate-pulse shadow-[0_0_8px_#F48F68]"></span>
+            <span class="font-label-md text-xs uppercase tracking-widest font-bold text-[#fff6de]">Leadership & Vision</span>
+          </div>
+          <h2 class="font-display-lg text-3xl sm:text-4xl lg:text-5xl text-[#fff6de] leading-tight font-bold">
+            Founder & CEO —<br/>
+            <span class="text-[#F48F68]">Sociality AI</span>
           </h2>
-          <p class="font-body-md text-[#cec6b0] leading-relaxed max-w-md">
-            Designed for speed. Built for growth. Powered by AI. Optimized for results. 
-            We organize all of your digital needs into one unified ecosystem.
-          </p>
-          <div class="flex items-center gap-3 mt-4 text-[#cec6b0]/70 text-xs font-label-md">
-            <span class="material-symbols-outlined text-sm animate-pulse text-[#F48F68]">explore</span>
-            <span>Hover to inspect. Click any pillar to reveal roadmap details.</span>
+          <div class="flex flex-col gap-4 font-body-md text-[#cec6b0] leading-relaxed text-sm sm:text-base">
+            <p>
+              The Founder and CEO of <strong class="text-[#fff6de] font-semibold">Sociality AI</strong> drives the agency’s vision, strategic direction, and growth, with a focus on helping businesses leverage AI, automation, and digital technology. The role involves identifying business challenges and shaping solutions across <strong class="text-[#fff6de] font-semibold">AI agents, WhatsApp automation, web development, digital marketing, and advertising</strong>.
+            </p>
+            <p>
+              As the driving force behind Sociality AI, the Founder oversees business strategy, solution development, innovation, client direction, and the overall execution of the agency’s vision—transforming complex business challenges into <strong class="text-[#fff6de] font-semibold">practical, scalable, technology-driven solutions that enable businesses to operate smarter and grow faster</strong>.
+            </p>
           </div>
         </div>
         
-        <!-- Right Column: Interactive Sandbox -->
-        <div class="col-span-1 lg:col-span-7 relative w-full h-[500px] lg:h-[650px] flex items-center justify-center">
-          <!-- WebGL Canvas Container -->
-          <div id="webgl-ecosystem-container" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"></div>
-          
-          <!-- Glassmorphic Information Card -->
-          <div id="ecosystem-detail-card" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 max-w-[95%] bg-[#1c1a16]/90 border border-[#fff6de]/15 rounded-2xl p-6 shadow-[0_24px_50px_rgba(0,0,0,0.7)] backdrop-blur-2xl opacity-0 scale-95 pointer-events-none transition-all duration-500 z-30 flex flex-col gap-4">
-            <button id="close-detail-card" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center bg-[#fff6de]/5 hover:bg-[#fff6de]/10 border border-[#fff6de]/10 text-[#fff6de] transition-colors">
-              <span class="material-symbols-outlined text-sm">close</span>
-            </button>
-            <div class="flex items-center gap-3 pt-2">
-              <div id="detail-card-icon-container" class="w-11 h-11 rounded-full bg-[#F48F68]/15 border border-[#F48F68]/30 flex items-center justify-center text-[#F48F68] shrink-0">
-                <span id="detail-card-icon" class="material-symbols-outlined text-xl">devices</span>
-              </div>
-              <div class="flex flex-col text-left">
-                <span id="detail-card-category" class="text-[9px] font-label-md text-[#cec6b0] uppercase tracking-wider">Web Architecture</span>
-                <h4 id="detail-card-title" class="font-headline-sm text-sm text-[#fff6de] font-bold">More Than a Website</h4>
-              </div>
-            </div>
-            <div class="h-px bg-[#fff6de]/10"></div>
-            <p id="detail-card-desc" class="text-xs text-[#ccc6ba] text-left leading-relaxed">
-              High-performance digital experiences tailored to your business goals. Engineered to convert visitors into customers.
-            </p>
-            <div class="flex flex-col gap-2">
-              <span class="text-[10px] font-label-md text-[#F48F68] uppercase tracking-widest font-bold">What's Included:</span>
-              <ul id="detail-card-bullets" class="grid grid-cols-1 gap-1 text-[11px] text-[#ccc6ba] text-left list-none pl-0">
-                <!-- Populated dynamically -->
-              </ul>
-            </div>
-          </div>
+        <!-- Right Column: Interactive ASCII Reveal Canvas -->
+        <div class="col-span-1 lg:col-span-7 relative w-full h-[460px] lg:h-[580px] rounded-2xl overflow-hidden border border-[#fff6de]/10 bg-[#0D0C0A] shadow-[0_24px_60px_rgba(0,0,0,0.8)] flex items-center justify-center group">
+          <canvas data-ascii-reveal data-src="Assets/Extra assets/1772188637576.png" class="w-full h-full block rounded-2xl"></canvas>
         </div>
         
       </div>
@@ -1129,7 +1105,7 @@
 <p class="font-body-lg text-body-lg text-on-primary/90">Let's collaborate to bring your digital vision to life with warmth, precision, and impact.</p>
 </div>
 <div class="relative z-10 flex-shrink-0">
-<a class="inline-flex items-center gap-3 px-8 py-4 bg-surface text-primary font-label-md text-label-md rounded-full hover:bg-surface-container hover:shadow-lg transition-all transform hover:-translate-y-1" href="#">
+<a class="inline-flex items-center gap-3 px-8 py-4 bg-surface text-primary font-label-md text-label-md rounded-full hover:bg-surface-container hover:shadow-lg transition-all transform hover:-translate-y-1" href="https://calendly.com/kondarushi42/socialityai-onboarding" target="_blank" rel="noopener noreferrer">
                     Start a Project
                     <span class="material-symbols-outlined">east</span>
 </a>
@@ -1470,8 +1446,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="chess-horizon.js"></script>
 <script src="hover-image-reveal.js"></script>
+<script src="ascii-reveal.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="webgl-ecosystem.js"></script>
 <script src="nav-controller.js"></script>
 <script src="portfolio-3d-showcase.js"></script>
 <script src="emoji-burst-button.js"></script>

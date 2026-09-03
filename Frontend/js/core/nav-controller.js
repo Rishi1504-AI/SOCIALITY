@@ -485,7 +485,7 @@
   function ensureEmojiBurstScript() {
     if (window.__socialityEmojiBurstLoaded || document.querySelector('script[src*="emoji-burst-button.js"]')) return;
     const script = document.createElement('script');
-    script.src = 'emoji-burst-button.js';
+    script.src = 'js/animations/emoji-burst-button.js';
     script.defer = true;
     document.head.appendChild(script);
   }
@@ -493,7 +493,7 @@
   function ensureButtonAnimationScript() {
     if (window.__originkitButtonAnimationsLoaded || document.querySelector('script[src*="originkit-button-animations.js"]')) return;
     const script = document.createElement('script');
-    script.src = 'originkit-button-animations.js';
+    script.src = 'js/animations/originkit-button-animations.js';
     script.defer = true;
     document.head.appendChild(script);
   }
@@ -501,7 +501,7 @@
   function ensureWindPyreScript() {
     if (window.__windPyreLoaded || document.querySelector('script[src*="wind-pyre.js"]')) return;
     const script = document.createElement('script');
-    script.src = 'wind-pyre.js';
+    script.src = 'js/webgl/wind-pyre.js';
     script.defer = true;
     document.head.appendChild(script);
   }

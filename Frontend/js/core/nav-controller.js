@@ -158,6 +158,15 @@
     'hiring': 'We Are Hiring'
   };
 
+  const trackedSectionKeys = [
+    { id: 'home', key: 'home' },
+    { id: 'services', key: 'services' },
+    { id: 'how-it-works', key: 'how-it-works' },
+    { id: 'capabilities-system', key: 'how-it-works' },
+    { id: 'portfolio', key: 'portfolio' },
+    { id: 'faqs', key: 'faqs' }
+  ];
+
   function getLinkKey(target) {
     if (!target) return '';
     const href = typeof target === 'string' ? target : (target.getAttribute ? (target.getAttribute('href') || '') : '');
@@ -194,15 +203,7 @@
     if (currentFile === 'portfolio.html') return 'portfolio';
 
     if (currentFile === 'index.html' || currentFile === '') {
-      if (window.__currentScrollSection) {
-        return window.__currentScrollSection;
-      }
-      if (window.location.hash) {
-        const hashKey = getLinkKey(window.location.hash);
-        if (hashKey) return hashKey;
-      }
-      const activeSec = detectActiveSection();
-      if (activeSec) return activeSec;
+      return detectActiveSection();
     }
 
     return 'home';
@@ -360,9 +361,9 @@
   }
 
   function executeSmoothScroll(targetElement, targetId, targetHash) {
-    window.__currentScrollSection = targetId;
     window.__isProgrammaticScroll = true;
-    updateActiveLinks();
+    updateHeaderAndMobileNav(targetId);
+    updateFooterNav(targetId);
 
     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -372,11 +373,7 @@
 
     setTimeout(() => {
       window.__isProgrammaticScroll = false;
-      const activeSec = detectActiveSection();
-      if (activeSec) {
-        window.__currentScrollSection = activeSec;
-        updateActiveLinks();
-      }
+      updateActiveLinks();
     }, 750);
   }
 
@@ -392,67 +389,48 @@
   }
 
   // 7. Scroll & Section Tracking (ScrollSpy)
-  const trackedSectionIds = ['home', 'services', 'how-it-works', 'portfolio', 'faqs'];
-
   function detectActiveSection() {
-    const sections = trackedSectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
-
-    if (sections.length === 0) return null;
-
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
     const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
 
     if (scrollY < 120) {
-      return sections[0].id;
+      return 'home';
     }
 
-    if (windowHeight + scrollY >= documentHeight - 60) {
-      return sections[sections.length - 1].id;
+    if (windowHeight + scrollY >= documentHeight - 80) {
+      return 'faqs';
     }
 
-    const focalLine = Math.max(140, windowHeight * 0.35);
-    for (let i = 0; i < sections.length; i++) {
-      const rect = sections[i].getBoundingClientRect();
-      if (rect.top <= focalLine && rect.bottom > focalLine) {
-        return sections[i].id;
+    const probe = scrollY + Math.max(140, windowHeight * 0.35);
+
+    const items = trackedSectionKeys
+      .map((item) => {
+        const el = document.getElementById(item.id);
+        if (!el) return null;
+        const rect = el.getBoundingClientRect();
+        const top = rect.top + scrollY;
+        return { ...item, top };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.top - b.top);
+
+    if (items.length === 0) return 'home';
+
+    let matchedKey = items[0].key;
+    for (let i = 0; i < items.length; i++) {
+      if (probe >= items[i].top) {
+        matchedKey = items[i].key;
       }
     }
 
-    return getDominantSectionId(sections, windowHeight);
-  }
-
-  function getDominantSectionId(sections, windowHeight) {
-    let maxVisibleHeight = -1;
-    let dominantId = sections[0].id;
-
-    sections.forEach((sec) => {
-      const rect = sec.getBoundingClientRect();
-      const visibleTop = Math.max(0, rect.top);
-      const visibleBottom = Math.min(windowHeight, rect.bottom);
-      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-
-      if (visibleHeight > maxVisibleHeight) {
-        maxVisibleHeight = visibleHeight;
-        dominantId = sec.id;
-      }
-    });
-
-    return dominantId;
+    return matchedKey;
   }
 
   function setupScrollAndIntersectionTracking() {
-    const sections = trackedSectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
-
-    if (sections.length === 0) return;
-
-    const initial = detectActiveSection();
-    if (initial) window.__currentScrollSection = initial;
-
     let scrollRafId = null;
     function onScroll() {
       if (window.__isProgrammaticScroll) return;
@@ -460,11 +438,7 @@
       if (!scrollRafId) {
         scrollRafId = window.requestAnimationFrame(() => {
           scrollRafId = null;
-          const activeId = detectActiveSection();
-          if (activeId && activeId !== window.__currentScrollSection) {
-            window.__currentScrollSection = activeId;
-            updateActiveLinks();
-          }
+          updateActiveLinks();
         });
       }
     }

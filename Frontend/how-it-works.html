@@ -63,7 +63,7 @@
 <!-- HOW IT WORKS SECTION (Seamlessly Blended Chess Horizon) -->
 <div id="how-it-works" class="w-full relative overflow-hidden h-[88vh] min-h-[700px] bg-[#0D0C0A] flex items-center justify-center">
   <!-- Interactive WebGL Chess Horizon Canvas -->
-  <canvas id="chess-horizon-canvas" data-bg="#0D0C0A" data-base="#181612" data-accent="#F48F68" class="absolute inset-0 w-full h-full object-cover"></canvas>
+  <canvas data-chess-horizon="" id="chess-horizon-canvas" data-bg="#0D0C0A" data-base="#181612" data-accent="#F48F68" class="absolute inset-0 w-full h-full object-cover"></canvas>
   
   <!-- Seamless Top Feathering: Dissolves from Page Cream into Dark Horizon -->
   <div class="absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-[#fdf8f5] via-[#fdf8f5]/40 to-transparent pointer-events-none z-20"></div>
@@ -385,11 +385,11 @@
   </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="nav-controller.js"></script>
-<script src="chess-horizon.js"></script>
-<script src="hover-image-reveal.js"></script>
-<script src="emoji-burst-button.js"></script>
-<script src="originkit-button-animations.js"></script>
-<script src="click-effects.js"></script>
+<script src="js/core/nav-controller.js"></script>
+<script src="js/core/click-effects.js"></script>
+<script src="js/animations/originkit-button-animations.js"></script>
+<script src="js/animations/emoji-burst-button.js"></script>
+<script src="js/webgl/chess-horizon.js"></script>
+<script src="js/components/hover-image-reveal.js"></script>
 </body>
 </html>
